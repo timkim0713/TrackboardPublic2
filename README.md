@@ -7,7 +7,6 @@
 - Muhammad Bilal: muhammad.bilal@stonybrook.edu
 - Haseung Lee: haseung.lee@stonybrook.edu
 - Tim (Daekyung Kim): daekyung.kim@stonybrook.edu
-- ~~Daniel Yun~~ Dropped the class 
 
 **Tentive User Population**  
 Suny Korea's Student Services Team  
