@@ -25,3 +25,5 @@ There is no specific website or app that aims to solve our problem right now, ho
 We're sure that SUNY Korea student service team would be on board to find a solution to managing the bulletin boards. We can email them or visit them in person. We can also reach out to GMU, Ghent, Utah and IGC to see if they are also will to participate.  
 We are also well connected with several club executives and other student learders like Residential Assistants and Student Ambassadors who need to put posters on bulletin board and would be more than willing to participate.  
 Everyone mentioned can be reached in person, though email, or on Kakaotalk. 
+
+**Link to Paper Prototyping Video:** https://drive.google.com/file/d/1vgaT90er7t3Lxd4wXIYl1Rg-q31VX6d9/view?usp=sharing
