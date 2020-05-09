@@ -1,4 +1,4 @@
-# Poster-Tracker
+# Trackboard
 
 > Purpose: Manage posters around the campus in a simple, easy, and technological way
   
