@@ -1,22 +1,99 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8">
+    <meta charset="UTF-8" />
     <title>Trackboard</title>
-    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.12.0/css/all.css">
-    <link href="https://fonts.googleapis.com/css?family=Bonbon&display=swap" rel="stylesheet">
-    <script src="assets\vendor\jquery\jquery.min.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://pro.fontawesome.com/releases/v5.12.0/css/all.css"
+    />
+    <!-- Vendor CSS Files -->
+    <link
+      href="../assets/vendor/bootstrap/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link href="../assets/vendor/icofont/icofont.min.css" rel="stylesheet" />
+    <link
+      href="../assets/vendor/boxicons/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="../assets/vendor/animate.css/animate.min.css"
+      rel="stylesheet"
+    />
+    <link href="../assets/vendor/venobox/venobox.css" rel="stylesheet" />
+    <link
+      href="../assets/vendor/owl.carousel/assets/owl.carousel.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Bonbon&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="../assets/vendor/bootstrap/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+
+    <link href="../assets/css/style.css" rel="stylesheet" />
+    <script src="../assets\vendor\jquery\jquery.min.js"></script>
+    <script src="https://kit.fontawesome.com/b99e675b6e.js"></script>
+    <link href="sidebar-style.css" rel="stylesheet" />
+
     <script>
-    $(function(){
-      $("#header").load("./include/user_header.html"); 
-      $("#footer").load("./include/user_footer.html"); 
-    });
-    </script> 
+      $(function () {
+        $("#header").load("../include/staff_header.html");
+        $("#footer").load("../include/staff_footer.html");
+      });
+    </script>
   </head>
   <body>
     <!-- Run 'firebase serve' and open localhost to see header and footer, otherwise you get CORS error  -->
     <div id="header"></div>
-    none index body works!
-    <div id="footer"></div>
+
+    <button class="openbtn" onclick="openNav()">☰ Open Sidebar</button>
+
+    <div id="mySidebar" class="sidebar">
+      <a href="javascript:void(0)" class="closebtn" onclick="closeNav()"> x </a>
+      <a href="#">Poster Requests</a>
+      <a href="#">Campus Map</a>
+      <a href="#">Boards</a>
+      <a href="#">Edit Requirements</a>
+    </div>
+
+    <div id="main_content">
+      <h2>STAFF - MAIN / MY PAGE</h2>
+      <p>
+        User Information: Student Services Team <br />
+        Account Email:<br />
+        Name: <br />
+        Campus : <br />
+        Account Created:<br />
+      </p>
+
+      <div id="footer"></div>
+    </div>
+
+    <script>
+      function openNav() {
+        document.getElementById("mySidebar").style.width = "250px";
+        document.getElementById("main_content").style.marginLeft = "300px";
+      }
+
+      function closeNav() {
+        document.getElementById("mySidebar").style.width = "0";
+        document.getElementById("main_content").style.marginLeft = "0";
+      }
+    </script>
+
+    <script src="../assets/vendor/jquery/jquery.min.js"></script>
+    <script src="./assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+      integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk"
+      crossorigin="anonymous"
+    />
   </body>
 </html>
