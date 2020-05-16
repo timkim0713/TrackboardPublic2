@@ -428,15 +428,12 @@
         
         var loadPosters = "";
         for( let p of this.myPosters ){
-        console.log(bid + " " + fid + " " + lid + "\n" + p.building_id + " " + p.floor_id + " " + p.location_id);
           if( !(   (bid === '*') 
                 || (bid === p.building_id && fid === '*') 
                 || (bid === p.building_id && fid === p.floor_id && lid === '*') 
                 || (bid === p.building_id && fid === p.floor_id && lid === p.location_id) ) ){
-            console.log('continue');
             continue;
           }
-          console.log('adding');
           loadPosters = loadPosters + this.pos_1 + p.image_link + this.pos_2 + p.image_link + this.pos_3;
         }
         var pbv = $('#posterBoardViewer');
