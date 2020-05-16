@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Trackboard</title>
+    <link
+      rel="stylesheet"
+      href="https://pro.fontawesome.com/releases/v5.12.0/css/all.css"
+    />
+    <!-- Vendor CSS Files -->
+    <link
+      href="../assets/vendor/bootstrap/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link href="../assets/vendor/icofont/icofont.min.css" rel="stylesheet" />
+    <link
+      href="../assets/vendor/boxicons/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="../assets/vendor/animate.css/animate.min.css"
+      rel="stylesheet"
+    />
+    <link href="../assets/vendor/venobox/venobox.css" rel="stylesheet" />
+    <link
+      href="../assets/vendor/owl.carousel/assets/owl.carousel.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Bonbon&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="../assets/vendor/bootstrap/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+
+    <link href="../assets/css/style.css" rel="stylesheet" />
+    <script src="../assets\vendor\jquery\jquery.min.js"></script>
+    <script src="https://kit.fontawesome.com/b99e675b6e.js"></script>
+    <link href="sidebar-style.css" rel="stylesheet" />
+
+    <script>
+      $(function () {
+        $("#header").load("../include/staff_header.html");
+        $("#footer").load("../include/staff_footer.html");
+      });
+    </script>
+  </head>
+  <body>
+    <!-- Run 'firebase serve' and open localhost to see header and footer, otherwise you get CORS error  -->
+    <div id="header"></div>
+
+    <button class="openbtn" id="openbtn" onclick="openNav()">
+      ☰
+    </button>
+    <div id="mySidebar" class="sidebar">
+      <a href="javascript:void(0)" class="closebtn" onclick="closeNav()"> x </a>
+      <a href="./s_authorization_details.html">Poster Details</a>
+      <a href="./s_authorization_location.html">Requested Locations</a>
+      <a href="./s_authorization_approval.html">Approval</a>
+      <a id="goBackToRequestPage" href="./s_main.html">
+        ⇐ Go Back to Requests Page
+      </a>
+      <!-- to requests page-->
+    </div>
+
+    <div id="main_content">
+      <h2>Requested Poster Details</h2><br>
+      <table class="table">
+        <thead>
+          <tr>
+            <th>Campus</th>
+            <td>SUNY Korea</td>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th>Club</td>
+            <td>SUNY Computing Society</td>
+          </tr>
+          <tr>
+            <th>Purpose</td>
+            <td>Hackathon event announcement</td>
+          </tr>
+          <tr>
+            <th>Student Name</td>
+            <td>Tim Kim</td>
+          </tr>
+          <tr>
+            <th>Email</td>
+            <td>daekyung.kim@stonybrook.edu</td>
+          </tr>
+          <tr>
+            <th>Poster Duration</td>
+            <td>4/24/2020 - 6/18/2020</td>
+          </tr>
+          <tr>
+            <th>Paper Size</td>
+            <td>A3</td>
+          </tr>
+          <tr>
+            <th>Total Number of Locations</td>
+            <td>5</td>
+          </tr>
+        </tbody>
+      </table>
+      <br>
+      <a href="./s_authorization_location.html">
+        <button style="float: right;" type="button" class="btn btn-success" >Next</button>
+      </a>
+      <br>
+    </div>
+    <div id="footer"></div>
+
+    <script>
+      function openNav() {
+        document.getElementById("openbtn").style.width = "20%";
+        document.getElementById("mySidebar").style.width = "20%";
+        document.getElementById("main_content").style.marginLeft = "30%";
+        document.getElementById("main_content").style.padding = "40px";
+        document.getElementById("main_content").style.fontSize = "16px";
+
+      }
+
+      function closeNav() {
+        document.getElementById("openbtn").style.width = "5%";
+        document.getElementById("mySidebar").style.width = "0%";
+        document.getElementById("main_content").style.marginLeft = "20%";
+        document.getElementById("main_content").style.padding = "70px";
+        document.getElementById("main_content").style.fontSize = "20px";
+      }
+    </script>
+
+    <script src="../assets/vendor/jquery/jquery.min.js"></script>
+    <script src="./assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+      integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk"
+      crossorigin="anonymous"
+    />
+  </body>
+</html>

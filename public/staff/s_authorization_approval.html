@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Trackboard</title>
+    <link
+      rel="stylesheet"
+      href="https://pro.fontawesome.com/releases/v5.12.0/css/all.css"
+    />
+    <!-- Vendor CSS Files -->
+    <link
+      href="../assets/vendor/bootstrap/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link href="../assets/vendor/icofont/icofont.min.css" rel="stylesheet" />
+    <link
+      href="../assets/vendor/boxicons/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="../assets/vendor/animate.css/animate.min.css"
+      rel="stylesheet"
+    />
+    <link href="../assets/vendor/venobox/venobox.css" rel="stylesheet" />
+    <link
+      href="../assets/vendor/owl.carousel/assets/owl.carousel.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Bonbon&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="../assets/vendor/bootstrap/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+
+    <link href="../assets/css/style.css" rel="stylesheet" />
+    <script src="../assets\vendor\jquery\jquery.min.js"></script>
+    <script src="https://kit.fontawesome.com/b99e675b6e.js"></script>
+    <link href="sidebar-style.css" rel="stylesheet" />
+
+    <script>
+      $(function () {
+        $("#header").load("../include/staff_header.html");
+        $("#footer").load("../include/staff_footer.html");
+      });
+    </script>
+  </head>
+  <body>
+    <!-- Run 'firebase serve' and open localhost to see header and footer, otherwise you get CORS error  -->
+    <div id="header"></div>
+
+    <button class="openbtn" id="openbtn" onclick="openNav()">
+      ☰
+    </button>
+    <div id="mySidebar" class="sidebar">
+      <a href="javascript:void(0)" class="closebtn" onclick="closeNav()"> x </a>
+      <a href="./s_authorization_details.html">Poster Details</a>
+      <a href="./s_authorization_location.html">Requested Locations</a>
+      <a href="./s_authorization_approval.html">Approval</a>
+      <a id="goBackToRequestPage" href="./s_main.html">
+        ⇐ Go Back to Requests Page
+      </a>
+      <!-- to requests page-->
+    </div>
+
+    <div id="main_content">
+      <h2>Approval Stage</h2>
+      <br />
+      <form>
+        <div class="form-group">
+          <label style="font-size: 18px;">Requirements Met</label><br />
+          <small style="color: cornflowerblue;"
+            >*Please check all the boxes that passed the requirements</small
+          >
+
+          <div class="row">
+            <div class="col s2">
+              <div class="custom-control custom-checkbox mb-3">
+                <input
+                  type="checkbox"
+                  class="custom-control-input"
+                  id="univLogo"
+                  name="univLogo"
+                />
+                <label class="custom-control-label" for="univLogo"
+                  >Universitry Logo</label
+                >
+              </div>
+            </div>
+
+            <div class="col s2">
+              <div class="custom-control custom-checkbox mb-3">
+                <input
+                  type="checkbox"
+                  class="custom-control-input"
+                  id="appPoster"
+                  name="appPoster"
+                />
+                <label class="custom-control-label" for="appPoster"
+                  >Appropriate Poster</label
+                >
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col s2">
+              <div class="custom-control custom-checkbox mb-3">
+                <input
+                  type="checkbox"
+                  class="custom-control-input"
+                  id="posterSize"
+                  name="posterSize"
+                />
+                <label class="custom-control-label" for="posterSize"
+                  >Poster Size</label
+                >
+              </div>
+            </div>
+
+            <div class="col s2">
+              <div class="custom-control custom-checkbox mb-3">
+                <input
+                  type="checkbox"
+                  class="custom-control-input"
+                  id="validLoc"
+                  name="validLoc"
+                />
+                <label class="custom-control-label" for="validLoc"
+                  >Valid Locations</label
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="form-group">
+          <label>Message</label><br />
+          <small style="color: cornflowerblue;"
+            >*Please send a message to the student for a next instrution with
+            details.</small
+          >
+          <textarea class="form-control" rows="3"></textarea>
+        </div>
+
+        <br />
+        <div style="font-size: 18px;">
+          <label
+            class="radio-inline"
+            style="color: white; background-color: red; padding: 5px;"
+            ><input type="radio" name="optradio" /> Reject</label
+          >&nbsp; &nbsp;
+          <label
+            class="radio-inline"
+            style="color: white; background-color: green; padding: 5px;"
+            ><input type="radio" name="optradio" /> Approve</label
+          >
+        </div>
+        <button
+          onclick="window.alert('Successfully Sent.')"
+          class="btn btn-success"
+          style="float: right;"
+        >
+          Send
+        </button>
+        <br />
+        <br />
+
+        <div class="alert alert-success" role="alert">
+          make this show once submitted instaed of alert() saying success..
+        </div>
+      </form>
+    </div>
+    <div id="footer"></div>
+
+    <script>
+      function openNav() {
+        document.getElementById("openbtn").style.width = "20%";
+        document.getElementById("mySidebar").style.width = "20%";
+        document.getElementById("main_content").style.marginLeft = "30%";
+        document.getElementById("main_content").style.padding = "40px";
+        document.getElementById("main_content").style.fontSize = "16px";
+      }
+
+      function closeNav() {
+        document.getElementById("openbtn").style.width = "5%";
+        document.getElementById("mySidebar").style.width = "0%";
+        document.getElementById("main_content").style.marginLeft = "20%";
+        document.getElementById("main_content").style.padding = "70px";
+        document.getElementById("main_content").style.fontSize = "20px";
+      }
+    </script>
+
+    <script src="../assets/vendor/jquery/jquery.min.js"></script>
+    <script src="./assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+      integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk"
+      crossorigin="anonymous"
+    />
+  </body>
+</html>
