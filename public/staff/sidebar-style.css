@@ -1,15 +1,14 @@
 .sidebar {
   height: 100%;
-  width: 0;
   position: fixed;
   z-index: 1;
-  top: 0;
+  top: 10;
   left: 0;
   background-color: #111;
   overflow-x: hidden;
-  transition: 0.5s;
+  transition: 1s;
   padding-top: 60px;
-  width: 250px;
+  width: 20%;
 }
 
 .sidebar a {
@@ -34,22 +33,28 @@
 }
 
 .openbtn {
-  font-size: 20px;
+  position: fixed;
+  transition: 1s;
+  font-size: 24px;
   cursor: pointer;
-  background-color: #111;
-  color: white;
-  padding: 10px 15px;
+  background-color: rgb(5, 5, 5);
+  color: rgb(255, 255, 255);
+  width: 20%;
   border: none;
 }
 
 .openbtn:hover {
-  background-color: #444;
+  color: white;
+  background-color: rgb(133, 133, 133);
 }
 
 #main_content {
-  transition: margin-left 0.5s;
-  padding: 16px;
-  margin-left: 300px;
+  transition: all 1s;
+  margin-top: 5%;
+  margin-left: 30%;
+  width: 50%;
+  border: 3px solid black;
+  padding: 10px;
 }
 
 /* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */

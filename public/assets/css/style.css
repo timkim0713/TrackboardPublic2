@@ -1275,6 +1275,11 @@ section {
   color: #444444;
   font-size: 14px;
   background: #f7fbfe;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  text-align: center;
+  width: 100%;
 }
 
 #footer .footer-top {
