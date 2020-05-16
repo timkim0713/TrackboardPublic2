@@ -57,34 +57,78 @@
     <div id="mySidebar" class="sidebar">
       <a href="javascript:void(0)" class="closebtn" onclick="closeNav()"> x </a>
       <a href="./s_authorization_details.html">Poster Details</a>
-      <a href="./s_authorization_location.html">Location Availability</a>
+      <a href="./s_authorization_location.html">Requested Locations</a>
       <a href="./s_authorization_approval.html">Approval</a>
+      <a id="goBackToRequestPage" href="./s_main.html">
+        ⇐ Go Back to Requests Page
+      </a>
+      <!-- to requests page-->
     </div>
 
     <div id="main_content">
-      <h2>STAFF - Authorization - Poster Details</h2>
-      <p>
-        Campus: SUNY Korea<br />
-        Poster Name: SUNY Computing Society <br />
-        Student Name: Tim Kim <br />
-        Email: daekyung.kim@stonybrook.edu <br />
-        Poster Duration: 4/24/2020 - 6/18/2020<br />
-        Paper Size: A3<br />
-        Total Number of Locations: 5 <br />
-      </p>
+      <h2>Requested Poster Details</h2><br>
+      <table class="table">
+        <thead>
+          <tr>
+            <th>Campus</th>
+            <td>SUNY Korea</td>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th>Club</td>
+            <td>SUNY Computing Society</td>
+          </tr>
+          <tr>
+            <th>Purpose</td>
+            <td>Hackathon event announcement</td>
+          </tr>
+          <tr>
+            <th>Student Name</td>
+            <td>Tim Kim</td>
+          </tr>
+          <tr>
+            <th>Email</td>
+            <td>daekyung.kim@stonybrook.edu</td>
+          </tr>
+          <tr>
+            <th>Poster Duration</td>
+            <td>4/24/2020 - 6/18/2020</td>
+          </tr>
+          <tr>
+            <th>Paper Size</td>
+            <td>A3</td>
+          </tr>
+          <tr>
+            <th>Total Number of Locations</td>
+            <td>5</td>
+          </tr>
+        </tbody>
+      </table>
+      <br>
+      <a href="./s_authorization_location.html">
+        <button style="float: right;" type="button" class="btn btn-success" >Next</button>
+      </a>
+      <br>
     </div>
     <div id="footer"></div>
+
     <script>
       function openNav() {
         document.getElementById("openbtn").style.width = "20%";
         document.getElementById("mySidebar").style.width = "20%";
         document.getElementById("main_content").style.marginLeft = "30%";
+        document.getElementById("main_content").style.padding = "40px";
+        document.getElementById("main_content").style.fontSize = "16px";
+
       }
 
       function closeNav() {
         document.getElementById("openbtn").style.width = "5%";
         document.getElementById("mySidebar").style.width = "0%";
         document.getElementById("main_content").style.marginLeft = "20%";
+        document.getElementById("main_content").style.padding = "70px";
+        document.getElementById("main_content").style.fontSize = "20px";
       }
     </script>
 

@@ -1,8 +1,12 @@
+#goBackToRequestPage {
+  font-size: 12px;
+  left: 0;
+}
+
 .sidebar {
-  height: 100%;
+  height: 80%;
   position: fixed;
   z-index: 1;
-  top: 10;
   left: 0;
   background-color: #111;
   overflow-x: hidden;
@@ -37,8 +41,8 @@
   transition: 1s;
   font-size: 24px;
   cursor: pointer;
-  background-color: rgb(5, 5, 5);
-  color: rgb(255, 255, 255);
+  background-color: rgb(224, 224, 224);
+  color: rgb(0, 0, 0);
   width: 20%;
   border: none;
 }
@@ -51,10 +55,11 @@
 #main_content {
   transition: all 1s;
   margin-top: 5%;
+  margin-bottom: 5%;
   margin-left: 30%;
-  width: 50%;
+  width: 65%;
   border: 3px solid black;
-  padding: 10px;
+  padding: 40px;
 }
 
 /* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
