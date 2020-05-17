@@ -4,7 +4,7 @@ function openNav() {
 
   document.getElementById("openbtn").style.width = "20%";
   document.getElementById("mySidebar").style.width = "20%";
-  document.getElementById("main_content").style.width = "50%";
+  document.getElementById("main_content").style.width = "70%";
 
   document.getElementById("main_content").style.marginLeft = "25%";
   document.getElementById("main_content").style.padding = "20px";
