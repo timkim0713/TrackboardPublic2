@@ -27,6 +27,7 @@
 
     <!-- Template Main CSS File -->
     <link href="../assets/css/style.css" rel="stylesheet">
+    <link href="sidebar-style.css" rel="stylesheet" />
 
     <script src="..\assets\vendor\jquery\jquery.min.js"></script>
 
@@ -41,31 +42,43 @@
   <body>
     <!-- Run 'firebase serve' and open localhost to see header and footer, otherwise you get CORS error  -->
     <div id="header"></div>
-    <div id="aside" class=""></div>
 
-     <!-- ======= Boards Section ======= -->
-     <section id="portfolio" class="portfolio">
-      <div class="container">
+    <button class="openbtn" onclick="openNav()">☰ Open Sidebar</button>
 
-        <div class="section-title">
-          <h2>BOARDS</h2>
-          <p>Sit sint consectetur velit quisquam cupiditate impedit suscipit</p>
-        </div>
+    <div id="mySidebar" class="sidebar">
+      <a href="javascript:void(0)" class="closebtn" onclick="closeNav()"> x </a>
+      <a href="#">Poster Requests</a>
+      <a href="#">Campus Map</a>
+      <a href="#">Boards</a>
+      <a href="#">Edit Requirements</a>
+    </div>
 
-        <!-- TODO DYNAMICALLY LOAD CONTENT !! Below is an example -->
-        <div id="dropdownList">
+    <div id="main_content" style="min-width: 1090px; display: flex; padding: 10px;">
+      <!-- ======= Boards Section ======= -->
+      <section id="portfolio" class="portfolio">
+        <div class="container">
 
-        </div>
+          <div class="section-title">
+            <h2>BOARDS</h2>
+            <p>Sit sint consectetur velit quisquam cupiditate impedit suscipit</p>
+          </div>
 
-        <div id="posterBoardViewer" class="row portfolio-container" style="width: 1020px; max-height: 800px; background-color: #aaff99; overflow-y:auto; display: flex; justify-content: space-between;">
           <!-- TODO DYNAMICALLY LOAD CONTENT !! Below is an example -->
+          <div id="dropdownList">
 
+          </div>
+
+            <!-- TODO DYNAMICALLY LOAD CONTENT !! Below is an example -->
+          <div id="posterBoardViewer" class="row portfolio-container" style="width: 1020px; max-height: 720px; margin: 10px; background-color: #aaff99; overflow-y:scroll; display: flex; justify-content: flex-start;"> 
+          </div>
+
+          </div>
         </div>
-      </div>
-    </section><!-- End Portfolio Section -->
+      </section><!-- End Portfolio Section -->
 
 
-    <div id="footer"></div>
+      <div id="footer"></div>
+    </div>
 
     <!-- Vendor JS Files -->
     <script src="../assets/vendor/jquery/jquery.min.js"></script>
@@ -78,6 +91,12 @@
     <script src="../assets/vendor/venobox/venobox.min.js"></script>
     <script src="../assets/vendor/owl.carousel/owl.carousel.min.js"></script>
 
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+      integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk"
+      crossorigin="anonymous"
+    />
     <!-- Template Main JS File -->
     <script src="../assets/js/main.js"></script>
     <script>
@@ -353,9 +372,11 @@
         },
       ]
         
+      var pos_0 = "";
       var pos_1 = "<div class=\"portfolio-item filter-x wow fadeInUp\" style=\"display: inline; width: 250px;\"> <div class=\"portfolio-wrap\"> <figure> <img src=\"";
       var pos_2 = "\" class=\"img-fluid\" alt=\"\"> <a href=\"" ;
-      var pos_3 = "\" data-gall=\"portfolioGallery\" class=\"link-preview venobox\" title=\"Preview\"><i class=\"bx bx-plus\"></i></a> <a href=\"\" class=\"link-details\" title=\"More Details\"><i class=\"bx bx-link\"></i></a> </figure><div class=\"portfolio-info\"> <h4><a href=\"\">Uploader</a></h4> <p>Poster Location</p> </div></div>  </div>";
+      var pos_3 = "\" data-gall=\"portfolioGallery\" class=\"link-preview venobox\" title=\"Preview\"><i class=\"bx bx-plus\"></i></a> <a href=\"\" class=\"link-details\" title=\"More Details\"><i class=\"bx bx-link\"></i></a> </figure><div class=\"portfolio-info\"> <h4><a href=\"\">Uploader</a></h4> <p>Poster Info(?)</p> </div></div>  </div>";
+      var pos_4 = "";
 
       var selectedBuilding = "*";
       var selectedFloor = "*";
@@ -412,12 +433,12 @@
             });
           }
         });
-        myBuildings = myBuildings + "</div></div>";
+        myBuildings = myBuildings + "<hr><a class=\"dropdown-item\" href=\"javascript:addBuilding()\">Add New Building</a><a class=\"dropdown-item\" href=\"javascript:deleteBuilding()\">Delete Building</a></div></div>";
         if( selB !== '*' ){
-          myFloors = myFloors + "</div></div>";
+          myFloors = myFloors + "<hr><a class=\"dropdown-item\" href=\"javascript:addFloor()\">Add New Floor</a><a class=\"dropdown-item\" href=\"javascript:deleteFloor()\">Delete Floor</a></div></div>";
         }
         if( selF !== '*' ){
-          myLocations = myLocations + "</div></div>";
+          myLocations = myLocations + "<hr><a class=\"dropdown-item\" href=\"javascript:addLocation()\">Add New Locations</a><a class=\"dropdown-item\" href=\"javascript:deleteLocation()\">Delete Location</a></div></div>";
         }
         var ddl = $('#dropdownList');
         ddl.html( myBuildings + myFloors + myLocations );
@@ -426,8 +447,9 @@
 
       function updatePosterItems(bid, fid, lid){
         
-        var loadPosters = "";
+        var loadPosters = this.pos_0;
         for( let p of this.myPosters ){
+          console.log(p);
           if( !(   (bid === '*') 
                 || (bid === p.building_id && fid === '*') 
                 || (bid === p.building_id && fid === p.floor_id && lid === '*') 
@@ -436,6 +458,7 @@
           }
           loadPosters = loadPosters + this.pos_1 + p.image_link + this.pos_2 + p.image_link + this.pos_3;
         }
+        loadPosters = loadPosters + this.pos_4;
         var pbv = $('#posterBoardViewer');
         pbv.html(loadPosters);
       }
@@ -474,21 +497,104 @@
         return "All Locations";
       }
 
-
-      function updateViewer(bid, fid, lid){
-        var pbv = $('#posterBoardViewer');
-        pbv.html( this.generateBody(bid, fid, lid) );
+      function buildingNameExists(bname){
+        for( let b of this.bfl ){
+          if(bname === b.building_name){
+            return true;
+          }
+        }
+        return false;
+      }
+      function floorNameExists(fname){
+        for( let b of this.bfl ){
+          if( this.selectedBuilding === b.building_id ){
+            for( let f of b.floors ){
+              if(fname === f.floor_name){
+                return true;
+              }
+            }
+          }
+        }
+        return false;
+      }
+      function locationNameExists(lname){
+        for( let b of this.bfl ){
+          if( this.selectedBuilding === b.building_id ){
+            for( let f of b.floors ){
+              if( this.selectedFloor === f.floor_id ){
+                for( let l of f.locations ){
+                  if(lname === l.location_name){
+                    return true;
+                  }
+                }
+              }
+            }
+          }
+        }
+        return false;
       }
 
-      function generateBody(bid, fid, lid){
-        myBody = "";
-        this.myPosters.forEach(p => {
-          if( (bid === "*" || p.building_id === bid) && (fid === "*" || p.floor_id === fid) && (lid === "*" ||  p.location_id === lid) ){
-            myBody = myBody + pos_1 + pos_3 + p.image_link + pos_4 + p.image_link + pos_5;
-          } 
-        });
-        return myBody;
+      function addBuilding(){
+        let newBdName = prompt("Enter the name of the building you want to add");
+        if( newBdName !== "" && newBdName !== null ){
+          if( buildingNameExists(newBdName)){
+            alert("Building with name \""+newBdName+"\" already exists");
+          } else if( confirm("Add Building with name \:" + newBdName + "\"?" ) ){
+            alert("Successfully added building with name \"" + newBdName + "\"." );
+          }
+        }
       }
+      function addFloor(){
+        let newFlName = prompt("Enter the name of the Floor you want to add");
+        if( newFlName !== "" && newFlName !== null ){
+          if( floorNameExists(newFlName)){
+            alert("Floor with name \""+newFlName+"\" already exists");
+          } else if( confirm("Add Floor with name \"" + newFlName + "\"?" ) ){
+            alert("Successfully added a floor with name " + newFlName + "\"."  );
+          }
+        }
+      }
+      function addLocation(){
+        let newLcName = prompt("Enter the name of the Location you want to add");
+        if( newLcName !== "" && newLcName !== null ){
+          if( locationNameExists(newLcName)){
+            alert("Location with name \""+newLcName+"\" already exists");
+          } else if( confirm("Add Location with name \"" + newLcName + "\"?") ){
+            alert("Successfully added a location with name " + newLcName + "\"."  );
+          }
+        }
+      }
+      function deleteBuilding(){
+        let delBdName = prompt("WARNING: DELETION OF A BUILDING WILL DELETE ALL FLOORS, LOCATIONS, AND POSTERS RELATED TO THIS BUILDING\n\nEnter the name of the building you want to delete.");
+        if( delBdName !== "" && delBdName !== null ){
+          if( !buildingNameExists(delBdName)){
+            alert("Building with name \""+delBdName+"\" does not exist");
+          } else if( confirm("Confirm deletion of Building with name \" + delBdName + "\"?" ) ){
+            alert("Successfully deleted building with name \"" + delBdName + "\"." );
+          }
+        }
+      }
+      function deleteFloor(){
+        let delFlName = prompt("WARNING: DELETION OF A FLOOR WILL DELETE ALL LOCATIONS AND POSTERS RELATED TO THIS FLOOR\n\nEnter the name of the floor you want to delete.");
+        if( delFlName !== "" && delFlName !== null ){
+          if( !floorNameExists(delFlName)){
+            alert("Floor with name \""+delFlName+"\" does not exist");
+          } else if( confirm("Confirm deletion of Floor with name \"" + delFlName + "\"?" ) ){
+            alert("Successfully deleted floor with name " + delFlName + "\"."  );
+          }
+        }
+      }
+      function deleteLocation(){
+        let delLcName = prompt("WARNING: DELETION OF A LOCATION WILL DELETE ALL POSTERS RELATED TO THIS LOCATION\n\nEnter the name of the locawtion you want to delete.");
+        if( delLcName !== "" && delLcName !== null ){
+          if( !locationNameExists(delLcName)){
+            alert("Location with name \""+delLcName+"\" does not exist");
+          } else if( confirm("Confrim deletions of Location with name \"" + delLcName + "\"?") ){
+            alert("Successfully deleted location with name " + delLcName + "\"."  );
+          }
+        }
+      }
+
 
       /**
       * Get the URL parameters
@@ -508,6 +614,17 @@
         }
         return params;
       };
+
+      
+      function openNav() {
+        document.getElementById("mySidebar").style.width = "250px";
+        document.getElementById("main_content").style.marginLeft = "300px";
+      }
+
+      function closeNav() {
+        document.getElementById("mySidebar").style.width = "0";
+        document.getElementById("main_content").style.marginLeft = "0";
+      }
     </script>
   </body>
 </html>
