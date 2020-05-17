@@ -8,9 +8,9 @@
   position: fixed;
   z-index: 1;
   left: 0;
-  background-color: #111;
+  background-color: rgb(32, 32, 32);
   overflow-x: hidden;
-  transition: 1s;
+  transition: 0.5s;
   padding-top: 60px;
   width: 20%;
 }
@@ -38,7 +38,7 @@
 
 .openbtn {
   position: fixed;
-  transition: 1s;
+  transition: 0.5s;
   font-size: 24px;
   cursor: pointer;
   background-color: rgb(224, 224, 224);
@@ -53,13 +53,14 @@
 }
 
 #main_content {
-  transition: all 1s;
+  font-size: 15px;
+  transition: all 0.5s;
   margin-top: 5%;
   margin-bottom: 5%;
-  margin-left: 30%;
-  width: 65%;
+  margin-left: 25%;
+  width: 50%;
   border: 3px solid black;
-  padding: 40px;
+  padding: 20px;
 }
 
 /* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
