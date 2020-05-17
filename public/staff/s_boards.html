@@ -388,7 +388,6 @@
         this.myPosters = [];
         
         let myParams = getParams(window.location.href);
-        // console.log(myParams);
         if( getBuildingName(myParams.bid) !== "All Buildings"  ){
           this.selectedBuilding = myParams.bid;
         } else {
@@ -404,8 +403,7 @@
         } else {
           this.selectedLocation = "*";
         }
-
-        setDropdowns(selectedBuilding, selectedFloor, selectedLocation)
+        setDropdowns(this.selectedBuilding, this.selectedFloor, this.selectedLocation);
         
       });
 
@@ -449,7 +447,6 @@
         
         var loadPosters = this.pos_0;
         for( let p of this.myPosters ){
-          console.log(p);
           if( !(   (bid === '*') 
                 || (bid === p.building_id && fid === '*') 
                 || (bid === p.building_id && fid === p.floor_id && lid === '*') 
