@@ -1,38 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+  <head>
     <meta charset="UTF-8" />
     <title>Trackboard</title>
     <link
-            rel="stylesheet"
-            href="https://pro.fontawesome.com/releases/v5.12.0/css/all.css"
+      rel="stylesheet"
+      href="https://pro.fontawesome.com/releases/v5.12.0/css/all.css"
     />
     <!-- Vendor CSS Files -->
     <link
-            href="../assets/vendor/bootstrap/css/bootstrap.min.css"
-            rel="stylesheet"
+      href="../assets/vendor/bootstrap/css/bootstrap.min.css"
+      rel="stylesheet"
     />
     <link href="../assets/vendor/icofont/icofont.min.css" rel="stylesheet" />
     <link
-            href="../assets/vendor/boxicons/css/boxicons.min.css"
-            rel="stylesheet"
+      href="../assets/vendor/boxicons/css/boxicons.min.css"
+      rel="stylesheet"
     />
     <link
-            href="../assets/vendor/animate.css/animate.min.css"
-            rel="stylesheet"
+      href="../assets/vendor/animate.css/animate.min.css"
+      rel="stylesheet"
     />
     <link href="../assets/vendor/venobox/venobox.css" rel="stylesheet" />
     <link
-            href="../assets/vendor/owl.carousel/assets/owl.carousel.min.css"
-            rel="stylesheet"
+      href="../assets/vendor/owl.carousel/assets/owl.carousel.min.css"
+      rel="stylesheet"
     />
     <link
-            href="https://fonts.googleapis.com/css?family=Bonbon&display=swap"
-            rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Bonbon&display=swap"
+      rel="stylesheet"
     />
     <link
-            href="../assets/vendor/bootstrap/css/bootstrap.min.css"
-            rel="stylesheet"
+      href="../assets/vendor/bootstrap/css/bootstrap.min.css"
+      rel="stylesheet"
     />
 
     <link href="../assets/css/style.css" rel="stylesheet" />
@@ -41,148 +41,225 @@
     <link href="../staff/sidebar-style.css" rel="stylesheet" />
 
     <script>
-        $(function () {
-            $("#header").load("../include/user_header.html");
-            $("#footer").load("../include/user_footer.html");
-        });
+      $(function () {
+        $("#header").load("../include/user_header.html");
+        $("#footer").load("../include/user_footer.html");
+      });
     </script>
-</head>
-<body>
-<!-- Run 'firebase serve' and open localhost to see header and footer, otherwise you get CORS error  -->
-<div id="header"></div>
+  </head>
+  <body>
+    <!-- Run 'firebase serve' and open localhost to see header and footer, otherwise you get CORS error  -->
+    <div id="header"></div>
 
-<button class="openbtn" onclick="openNav()">☰ Open Sidebar</button>
-
-<div id="mySidebar" class="sidebar">
-    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()"> x </a>
-    <a href="u_apply.html">Apply</a>
-    <a href="u_in_progress.html?id=1">In Progress</a>
-    <a href="u_history.html">History</a>
-    <a href="u_rules.html">View Campus Rules</a>
-</div>
-<br>
-<div class="container" style="background: rgba(227,229,216,0.21)">
-    <form>
-        <h1 class="page-header text-center" id="pageHeader">Application Currently In Progress</h1>
-        <hr>
-        <div class="float-left">
+    <button class="openbtn" id="openbtn" onclick="openNav()">
+      ☰
+    </button>
+    <div id="mySidebar" class="sidebar">
+      <a href="javascript:void(0)" class="closebtn" onclick="closeNav()"> x </a>
+      <a href="u_apply.html">Apply</a>
+      <a href="u_in_progress.html?id=1">In Progress</a>
+      <a href="u_history.html">History</a>
+      <a href="u_rules.html">View Campus Rules</a>
+    </div>
+    <br />
+    <div id="main_content">
+      <div class="container" style="background: rgba(227, 229, 216, 0.21);">
+        <form>
+          <h1 class="page-header text-center" id="pageHeader">
+            Application Currently In Progress
+          </h1>
+          <hr />
+          <div class="float-left">
             <div class="form-group">
-                <label for="purpose"><strong>What is the purpose of the poster?</strong></label>
-                <textarea class="form-control" id="purpose" placeholder="Eg. To recruit new members" name="purpose" cols="60" rows="3" disabled autofocus></textarea>
+              <label for="purpose"
+                ><strong>What is the purpose of the poster?</strong></label
+              >
+              <textarea
+                class="form-control"
+                id="purpose"
+                placeholder="Eg. To recruit new members"
+                name="purpose"
+                cols="60"
+                rows="3"
+                disabled
+                autofocus
+              ></textarea>
             </div>
             <div class="form-group">
-                <label><strong>Select Poster Size:</strong></label>
-                <br>
-                <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="radio" name="sizeOptions" id="size1" disabled value="A3"/>
-                    <label class="form-check-label" for="size1">A3</label>
-                </div>
-                <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="radio" name="sizeOptions" id="size2" disabled value="A4">
-                    <label class="form-check-label" for="size2">A4</label>
-                </div>
-                <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="radio" name="sizeOptions" id="size3" disabled value="other">
-                    <label class="form-check-label" for="size3">Other: </label>
-                    <input class="form-control form-control-sm" type="text" name="sizeOptions" id="size3Other" disabled placeholder="Eg. 400mmx300mm" >
-                </div>
+              <label><strong>Select Poster Size:</strong></label>
+              <br />
+              <div class="form-check form-check-inline">
+                <input
+                  class="form-check-input"
+                  type="radio"
+                  name="sizeOptions"
+                  id="size1"
+                  disabled
+                  value="A3"
+                />
+                <label class="form-check-label" for="size1">A3</label>
+              </div>
+              <div class="form-check form-check-inline">
+                <input
+                  class="form-check-input"
+                  type="radio"
+                  name="sizeOptions"
+                  id="size2"
+                  disabled
+                  value="A4"
+                />
+                <label class="form-check-label" for="size2">A4</label>
+              </div>
+              <div class="form-check form-check-inline">
+                <input
+                  class="form-check-input"
+                  type="radio"
+                  name="sizeOptions"
+                  id="size3"
+                  disabled
+                  value="other"
+                />
+                <label class="form-check-label" for="size3">Other: </label>
+                <input
+                  class="form-control form-control-sm"
+                  type="text"
+                  name="sizeOptions"
+                  id="size3Other"
+                  disabled
+                  placeholder="Eg. 400mmx300mm"
+                />
+              </div>
             </div>
             <div class="form-group row">
-                <label for="postDate" class="col-sm-4 col-form-label"><strong>Post Date:</strong></label>
-                <div class="col-sm-8">
-                    <input type="date" class="form-control-plaintext" id="postDate" disabled>
-                </div>
+              <label for="postDate" class="col-sm-4 col-form-label"
+                ><strong>Post Date:</strong></label
+              >
+              <div class="col-sm-8">
+                <input
+                  type="date"
+                  class="form-control-plaintext"
+                  id="postDate"
+                  disabled
+                />
+              </div>
             </div>
             <div class="form-group row">
-                <label for="takeDownDate" class="col-sm-4 col-form-label"><strong>Take Down Date:</strong></label>
-                <div class="col-sm-8">
-                    <input type="date" class="form-control-plaintext" id="takeDownDate" disabled>
-                </div>
+              <label for="takeDownDate" class="col-sm-4 col-form-label"
+                ><strong>Take Down Date:</strong></label
+              >
+              <div class="col-sm-8">
+                <input
+                  type="date"
+                  class="form-control-plaintext"
+                  id="takeDownDate"
+                  disabled
+                />
+              </div>
             </div>
             <div>
-                <div class="form-group">
-                    <label><strong>Select Poster Locations: </strong></label>
-                    <div class="form control">
-                        <div>
-                            <table class="table" id="tableLocations">
-                            </table>
-                        </div>
-                        <button class="btn btn-primary" type="button" data-toggle="modal" data-target="#locationModal" aria-hidden="true" disabled>Add Location</button>
-                    </div>
+              <div class="form-group">
+                <label><strong>Select Poster Locations: </strong></label>
+                <div class="form control">
+                  <div>
+                    <table class="table" id="tableLocations"></table>
+                  </div>
+                  <button
+                    class="btn btn-primary"
+                    type="button"
+                    data-toggle="modal"
+                    data-target="#locationModal"
+                    aria-hidden="true"
+                    disabled
+                  >
+                    Add Location
+                  </button>
                 </div>
+              </div>
             </div>
             <div class="form-group">
-                <label for="specialRequest"><strong>Do you have any special location request?</strong></label>
-                <textarea class="form-control" id="specialRequest" placeholder="Eg. C202 Door when the event is happening" name="specialRequest" cols="60" rows="3" disabled></textarea>
+              <label for="specialRequest"
+                ><strong
+                  >Do you have any special location request?</strong
+                ></label
+              >
+              <textarea
+                class="form-control"
+                id="specialRequest"
+                placeholder="Eg. C202 Door when the event is happening"
+                name="specialRequest"
+                cols="60"
+                rows="3"
+                disabled
+              ></textarea>
             </div>
-        </div>
-        <div class="float-right">
+          </div>
+          <div class="float-right">
             <div class="container text-center">
-                <div class="custom-file">
-                    <p><img id="outputIMG" width="500" height="600"/></p>
-                </div>
+              <div class="custom-file">
+                <p><img id="outputIMG" width="500" height="600" /></p>
+              </div>
             </div>
-        </div>
-        <div class="clearfix"></div>
-    </form>
-</div>
-<div id="footer"></div>
+          </div>
+          <div class="clearfix"></div>
+        </form>
+      </div>
+    </div>
+    <div id="footer"></div>
 
-<script>
-    // var firestore = firebase.firestore();
-    // const docRef = firestore.collection("test");
-    $( document ).ready(function() {
+    <script>
+      // var firestore = firebase.firestore();
+      // const docRef = firestore.collection("test");
+      $(document).ready(function () {
         var parameters = location.search.substring(1).split("&");
         var id = 1;
         var temp = parameters[0].split("=");
         var tempId = unescape(temp[1]);
-        if (tempId != undefined || tempId != ""){
-            id = tempId
+        if (tempId != undefined || tempId != "") {
+          id = tempId;
         }
         processUser(id);
-    });
+      });
 
-    function processUser(id) {
-        fetch('data/test.json')
-            .then((res) => res.json())
-            .then((data) => {
-                let table = document.getElementById('posterHistory');
-                data.forEach(function (application) {
-                    if(application.id == id){
-                        showStuff(application);
-                        document.getElementById("outputIMG").src = "data/"+id+".jpg";
-                    }
-                })
-            })
-    }
+      function processUser(id) {
+        fetch("data/test.json")
+          .then((res) => res.json())
+          .then((data) => {
+            let table = document.getElementById("posterHistory");
+            data.forEach(function (application) {
+              if (application.id == id) {
+                showStuff(application);
+                document.getElementById("outputIMG").src =
+                  "data/" + id + ".jpg";
+              }
+            });
+          });
+      }
 
-    function showStuff(data) {
-        if(data.approved === false || data.approved === true){
-            document.getElementById('pageHeader').innerText = "Completed Application"
+      function showStuff(data) {
+        if (data.approved === false || data.approved === true) {
+          document.getElementById("pageHeader").innerText =
+            "Completed Application";
         }
-        document.getElementById('purpose').value = data.reason;
-        if (data.size != 'A3' || data.size != 'A4'){
-            //give other value
+        document.getElementById("purpose").value = data.reason;
+        if (data.size != "A3" || data.size != "A4") {
+          //give other value
+        } else {
         }
-        else{
+        document.getElementById("postDate").value = data.postDate;
+        document.getElementById("takeDownDate").value = data.takeDownDate;
 
-        }
-        document.getElementById('postDate').value = data.postDate;
-        document.getElementById('takeDownDate').value = data.takeDownDate;
-
-        data.locations.forEach(function(loc) {
-            addlocation(loc.campus, loc.building, loc.floor, loc.board)
+        data.locations.forEach(function (loc) {
+          addlocation(loc.campus, loc.building, loc.floor, loc.board);
         });
 
-        if (data.specialRequest == ""){
-            document.getElementById('specialRequest').value = "  ";
+        if (data.specialRequest == "") {
+          document.getElementById("specialRequest").value = "  ";
+        } else {
+          document.getElementById("specialRequest").value = data.specialRequest;
         }
-        else{
-            document.getElementById('specialRequest').value = data.specialRequest;
-        }
-    }
+      }
 
-    function addlocation (campus,build,floor,board) {
+      function addlocation(campus, build, floor, board) {
         var table = document.getElementById("tableLocations");
         var row = table.insertRow();
         var cell1 = row.insertCell(0);
@@ -190,25 +267,24 @@
         var cell3 = row.insertCell(2);
         var cell4 = row.insertCell(3);
 
-        row.setAttribute('scope',"row");
+        row.setAttribute("scope", "row");
 
         cell1.innerText = campus.trim();
         cell2.innerText = build.trim();
         cell3.innerText = floor.trim();
         cell4.innerText = board.trim();
+      }
+    </script>
+    <script src="../staff/sidebar.js"></script>
 
-    }
+    <script src="../assets/vendor/jquery/jquery.min.js"></script>
+    <script src="../assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
-</script>
-
-<script src="../assets/vendor/jquery/jquery.min.js"></script>
-<script src="../assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-
-<link
-        rel="stylesheet"
-        href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
-        integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk"
-        crossorigin="anonymous"
-/>
-</body>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+      integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk"
+      crossorigin="anonymous"
+    />
+  </body>
 </html>
