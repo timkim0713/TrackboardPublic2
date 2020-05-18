@@ -206,7 +206,7 @@
                     >Upload Poster</label
                   >
                 </p>
-                <p><img id="outputIMG" width="500" /></p>
+                <p><img id="outputIMG" width="450" /></p>
               </div>
             </div>
           </div>
@@ -362,7 +362,7 @@
           var reader = new FileReader();
 
           reader.onload = function (e) {
-            $("#outputIMG").attr("src", e.target.result).width(500).height(600);
+            $("#outputIMG").attr("src", e.target.result).width(450).height(600);
           };
 
           reader.readAsDataURL(input.files[0]);
