@@ -1,38 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+  <head>
     <meta charset="UTF-8" />
     <title>Trackboard</title>
     <link
-            rel="stylesheet"
-            href="https://pro.fontawesome.com/releases/v5.12.0/css/all.css"
+      rel="stylesheet"
+      href="https://pro.fontawesome.com/releases/v5.12.0/css/all.css"
     />
     <!-- Vendor CSS Files -->
     <link
-            href="../assets/vendor/bootstrap/css/bootstrap.min.css"
-            rel="stylesheet"
+      href="../assets/vendor/bootstrap/css/bootstrap.min.css"
+      rel="stylesheet"
     />
     <link href="../assets/vendor/icofont/icofont.min.css" rel="stylesheet" />
     <link
-            href="../assets/vendor/boxicons/css/boxicons.min.css"
-            rel="stylesheet"
+      href="../assets/vendor/boxicons/css/boxicons.min.css"
+      rel="stylesheet"
     />
     <link
-            href="../assets/vendor/animate.css/animate.min.css"
-            rel="stylesheet"
+      href="../assets/vendor/animate.css/animate.min.css"
+      rel="stylesheet"
     />
     <link href="../assets/vendor/venobox/venobox.css" rel="stylesheet" />
     <link
-            href="../assets/vendor/owl.carousel/assets/owl.carousel.min.css"
-            rel="stylesheet"
+      href="../assets/vendor/owl.carousel/assets/owl.carousel.min.css"
+      rel="stylesheet"
     />
     <link
-            href="https://fonts.googleapis.com/css?family=Bonbon&display=swap"
-            rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Bonbon&display=swap"
+      rel="stylesheet"
     />
     <link
-            href="../assets/vendor/bootstrap/css/bootstrap.min.css"
-            rel="stylesheet"
+      href="../assets/vendor/bootstrap/css/bootstrap.min.css"
+      rel="stylesheet"
     />
 
     <link href="../assets/css/style.css" rel="stylesheet" />
@@ -41,119 +41,145 @@
     <link href="../staff/sidebar-style.css" rel="stylesheet" />
 
     <script>
-        $(function () {
-            $("#header").load("../include/user_header.html");
-            $("#footer").load("../include/user_footer.html");
-        });
+      $(function () {
+        $("#header").load("../include/user_header.html");
+        $("#footer").load("../include/user_footer.html");
+      });
     </script>
-</head>
-<body>
-<!-- Run 'firebase serve' and open localhost to see header and footer, otherwise you get CORS error  -->
-<div id="header"></div>
+  </head>
+  <body>
+    <!-- Run 'firebase serve' and open localhost to see header and footer, otherwise you get CORS error  -->
+    <div id="header"></div>
 
-<button class="openbtn" onclick="openNav()">☰ Open Sidebar</button>
+    <button class="openbtn" id="openbtn" onclick="openNav()">
+      ☰
+    </button>
+    <div id="mySidebar" class="sidebar">
+      <a href="javascript:void(0)" class="closebtn" onclick="closeNav()"> x </a>
+      <a href="u_apply.html">Apply</a>
+      <a href="u_in_progress.html?id=1">In Progress</a>
+      <a href="u_history.html">History</a>
+      <a href="u_rules.html">View Campus Rules</a>
+    </div>
+    <br />
+    <div id="main_content">
+      <div class="container" style="background: rgba(227, 229, 216, 0.21);">
+        <h1 class="page-header text-center">Poster Application History</h1>
+        <hr />
+        <select
+          id="campusSelect"
+          class="btn btn-secondary"
+          editable="true"
+          searchable="Search and add here..."
+          onchange="showRules(event)"
+        >
+          <option value="igc">IGC</option>
+          <option value="suny" selected>SUNY Korea</option>
+        </select>
 
-<div id="mySidebar" class="sidebar">
-    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()"> x </a>
-    <a href="u_apply.html">Apply</a>
-    <a href="u_in_progress.html?id=1">In Progress</a>
-    <a href="u_history.html">History</a>
-    <a href="u_rules.html">View Campus Rules</a>
-</div>
-<br>
-<div class="container" style="background: rgba(227,229,216,0.21)">
-    <h1 class="page-header text-center">Poster Application History</h1>
-    <hr>
-    <select id="campusSelect" class="btn btn-secondary" editable="true" searchable="Search and add here..." onchange="showRules(event)">
-        <option  value="igc">IGC</option>
-        <option  value="suny" selected>SUNY Korea</option>
-    </select>
-
-    <br>
-    <table class="table table-bordered" id="igc" width="10">
-        <thead class="thead-dark"><tr>
-            <th class="text-center" scope="col" style="width: 10%">#</th>
-            <th class="text-center" scope="col" style="width: 90%">Rules</th>
-        </tr></thead>
-        <tbody>
+        <br />
+        <table class="table table-bordered" id="igc" width="10">
+          <thead class="thead-dark">
             <tr>
-                <td class="text-center">1</td>
-                <td class="text-center"><strong>IGC Logo</strong> <br>
-                    Must have IGC logo in the poster. Unedited and Upright.
-                </td>
+              <th class="text-center" scope="col" style="width: 10%;">#</th>
+              <th class="text-center" scope="col" style="width: 90%;">Rules</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="text-center">1</td>
+              <td class="text-center">
+                <strong>IGC Logo</strong> <br />
+                Must have IGC logo in the poster. Unedited and Upright.
+              </td>
             </tr>
             <tr>
-                <td class="text-center">2</td>
-                <td class="text-center"><strong>Appropriate Poster</strong> <br>
-                    The content of the poster must not inlcude anything inappropriate.
-                </td>
-            </tr><tr>
-                <td class="text-center">3</td>
-                <td class="text-center"><strong>Poster Size</strong> <br>
-                    Poster dimensions must not be larger than A3
-                </td>
+              <td class="text-center">2</td>
+              <td class="text-center">
+                <strong>Appropriate Poster</strong> <br />
+                The content of the poster must not inlcude anything
+                inappropriate.
+              </td>
             </tr>
-        </tbody>
-    </table>
-    <table class="table table-bordered" id="suny" width="10">
-        <thead class="thead-dark"><tr>
-            <th class="text-center" scope="col" style="width: 10%">#</th>
-            <th class="text-center" scope="col" style="width: 90%">Rules</th>
-        </tr></thead>
-        <tbody>
-        <tr>
-            <td class="text-center">1</td>
-            <td class="text-center"><strong>SUNY Korea Logo</strong> <br>
-                Must have SUNY Korea logo in the poster. Unedited and Upright.
-            </td>
-        </tr>
-        <tr>
-            <td class="text-center">2</td>
-            <td class="text-center"><strong>Appropriate Poster</strong> <br>
-                The content of the poster must not inlcude anything inappropriate.
-            </td>
-        </tr><tr>
-            <td class="text-center">3</td>
-            <td class="text-center"><strong>Poster Size</strong> <br>
+            <tr>
+              <td class="text-center">3</td>
+              <td class="text-center">
+                <strong>Poster Size</strong> <br />
                 Poster dimensions must not be larger than A3
-            </td>
-        </tr><tr>
-            <td class="text-center">4</td>
-            <td class="text-center"><strong>Special Location Requests</strong> <br>
-                Must list number of posters, the special locations, and duration of posting.
-            </td>
-        </tr>
-        </tbody>
-    </table>
-</div>
-<div id="footer"></div>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        <table class="table table-bordered" id="suny" width="10">
+          <thead class="thead-dark">
+            <tr>
+              <th class="text-center" scope="col" style="width: 10%;">#</th>
+              <th class="text-center" scope="col" style="width: 90%;">Rules</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="text-center">1</td>
+              <td class="text-center">
+                <strong>SUNY Korea Logo</strong> <br />
+                Must have SUNY Korea logo in the poster. Unedited and Upright.
+              </td>
+            </tr>
+            <tr>
+              <td class="text-center">2</td>
+              <td class="text-center">
+                <strong>Appropriate Poster</strong> <br />
+                The content of the poster must not inlcude anything
+                inappropriate.
+              </td>
+            </tr>
+            <tr>
+              <td class="text-center">3</td>
+              <td class="text-center">
+                <strong>Poster Size</strong> <br />
+                Poster dimensions must not be larger than A3
+              </td>
+            </tr>
+            <tr>
+              <td class="text-center">4</td>
+              <td class="text-center">
+                <strong>Special Location Requests</strong> <br />
+                Must list number of posters, the special locations, and duration
+                of posting.
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <div id="footer"></div>
 
-<script>
-    $(document).ready(function() {
-        $('#igc').hide();
-    });
+    <script>
+      $(document).ready(function () {
+        $("#igc").hide();
+      });
 
-    function showRules(e) {
+      function showRules(e) {
         var campus = document.getElementById("campusSelect").value;
-        if (campus == "igc"){
-            $('#igc').show();
-            $('#suny').hide();
+        if (campus == "igc") {
+          $("#igc").show();
+          $("#suny").hide();
+        } else {
+          $("#igc").hide();
+          $("#suny").show();
         }
-        else{
-            $('#igc').hide();
-            $('#suny').show();
-        }
-    }
-</script>
+      }
+    </script>
+    <script src="../staff/sidebar.js"></script>
 
-<script src="../assets/vendor/jquery/jquery.min.js"></script>
-<script src="../assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="../assets/vendor/jquery/jquery.min.js"></script>
+    <script src="../assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
-<link
-        rel="stylesheet"
-        href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
-        integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk"
-        crossorigin="anonymous"
-/>
-</body>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+      integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk"
+      crossorigin="anonymous"
+    />
+  </body>
 </html>
