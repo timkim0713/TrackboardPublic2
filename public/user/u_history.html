@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Trackboard</title>
+    <link
+            rel="stylesheet"
+            href="https://pro.fontawesome.com/releases/v5.12.0/css/all.css"
+    />
+    <!-- Vendor CSS Files -->
+    <link
+            href="../assets/vendor/bootstrap/css/bootstrap.min.css"
+            rel="stylesheet"
+    />
+    <link href="../assets/vendor/icofont/icofont.min.css" rel="stylesheet" />
+    <link
+            href="../assets/vendor/boxicons/css/boxicons.min.css"
+            rel="stylesheet"
+    />
+    <link
+            href="../assets/vendor/animate.css/animate.min.css"
+            rel="stylesheet"
+    />
+    <link href="../assets/vendor/venobox/venobox.css" rel="stylesheet" />
+    <link
+            href="../assets/vendor/owl.carousel/assets/owl.carousel.min.css"
+            rel="stylesheet"
+    />
+    <link
+            href="https://fonts.googleapis.com/css?family=Bonbon&display=swap"
+            rel="stylesheet"
+    />
+    <link
+            href="../assets/vendor/bootstrap/css/bootstrap.min.css"
+            rel="stylesheet"
+    />
+
+    <link href="../assets/css/style.css" rel="stylesheet" />
+    <script src="../assets/vendor/jquery/jquery.min.js"></script>
+    <script src="https://kit.fontawesome.com/b99e675b6e.js"></script>
+    <link href="../staff/sidebar-style.css" rel="stylesheet" />
+
+    <script>
+        $(function () {
+            $("#header").load("../include/user_header.html");
+            $("#footer").load("../include/user_footer.html");
+        });
+    </script>
+</head>
+<body>
+<!-- Run 'firebase serve' and open localhost to see header and footer, otherwise you get CORS error  -->
+<div id="header"></div>
+
+<button class="openbtn" onclick="openNav()">☰ Open Sidebar</button>
+
+<div id="mySidebar" class="sidebar">
+    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()"> x </a>
+    <a href="u_apply.html">Apply</a>
+    <a href="u_in_progress.html?id=1">In Progress</a>
+    <a href="u_history.html">History</a>
+    <a href="u_rules.html">View Campus Rules</a>
+</div>
+<br>
+<div class="container" style="background: rgba(227,229,216,0.21)">
+    <h1 class="page-header text-center">Poster Application History</h1>
+    <hr>
+    <table class="table table-bordered table-hover" id="posterHistory">
+        <thead class="thead-dark"><tr>
+            <th class="text-center" scope="col">Applied Date</th>
+            <th class="text-center" scope="col">Application Status</th>
+            <th class="text-center" scope="col">Comment</th>
+            <th class="text-center" scope="col"></th>
+        </tr></thead>
+
+    </table>
+</div>
+<div id="footer"></div>
+
+<script>
+    // var firestore = firebase.firestore();
+    // const docRef = firestore.collection("test");
+    $( document ).ready(function() {
+        fetch('data/test.json')
+        .then((res) => res.json())
+        .then((data) => {
+            let table = document.getElementById('posterHistory');
+            data.forEach(function (application) {
+                var row = table.insertRow();
+                var cell1 = row.insertCell(0);
+                var cell2 = row.insertCell(1);
+                var cell3 = row.insertCell(2);
+                var cell4 = row.insertCell(3);
+
+                cell1.className = "text-center";
+                cell2.className = "text-center";
+                cell3.className = "text-center";
+                cell4.className = "text-center";
+
+                row.id = application.id;
+                cell1.innerText = application.appDate;
+                if(application.approved === true){
+                    cell2.innerText = "Application was approved";
+                }
+                else if(application.approved === false){
+                    cell2.innerText = "Application was rejected";
+                }
+                else{
+                    cell2.innerText = "Application is pending";
+                }
+                cell3.innerText = application.comment;
+                cell4.innerHTML = "<button type='button' class='btn btn-primary' onclick='viewRow()'>View</button>";
+
+            })
+        })
+    });
+
+    function viewRow() {
+        var td = event.target.parentNode;
+        var tr = td.parentNode;
+        const id = tr.id;
+        window.location.href = "u_in_progress.html?id=" +id;
+    }
+
+</script>
+
+<script src="../assets/vendor/jquery/jquery.min.js"></script>
+<script src="../assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+<link
+        rel="stylesheet"
+        href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+        integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk"
+        crossorigin="anonymous"
+/>
+</body>
+</html>
