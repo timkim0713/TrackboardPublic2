@@ -1,0 +1,50 @@
+[
+  {
+    "id": 1,
+    "reason": "To recruit New Members",
+    "size": "A3",
+    "postDate": "2020-05-20",
+    "takeDownDate": "2020-06-12",
+    "locations": [
+      {"campus": "SUNY", "building": "Building A", "floor": "Floor 4", "board": "Main Board"},
+      {"campus": "SUNY", "building": "Building B", "floor": "Floor 5", "board": "Commons"},
+      {"campus": "SUNY", "building": "Building C", "floor": "Floor 2", "board": "General"}
+    ],
+    "specialRequest": "",
+    "appDate": "2020-04-28",
+    "approved": "",
+    "comment": ""
+  },
+  {
+    "id": 2,
+    "reason": "To Promote Event",
+    "size": "A3",
+    "postDate": "2020-05-20",
+    "takeDownDate": "2020-06-12",
+    "locations": [
+      {"campus": "SUNY", "building": "Building A", "floor": "Floor 4", "board": "Main Board"},
+      {"campus": "SUNY", "building": "Building B", "floor": "Floor 4", "board": "CS Commons"},
+      {"campus": "SUNY", "building": "Building C", "floor": "Floor 2", "board": "General"}
+    ],
+    "specialRequest": "",
+    "appDate": "2020-04-28",
+    "approved": false,
+    "comment": "You haven't added the school logo to the poster"
+  },
+  {
+    "id": 3,
+    "reason": "Newsletter",
+    "size": "A3",
+    "postDate": "2020-05-20",
+    "takeDownDate": "2020-06-12",
+    "locations": [
+      {"campus": "SUNY", "building": "Building A", "floor": "Floor 6", "board": "Main Board"},
+      {"campus": "SUNY", "building": "Building B", "floor": "Floor 3", "board": "Commons"},
+      {"campus": "SUNY", "building": "Building C", "floor": "Floor 3", "board": "General"}
+    ],
+    "specialRequest": "",
+    "appDate": "2020-04-28",
+    "approved": true,
+    "comment": "You can come to A208 and get your poster stamped"
+  }
+]
