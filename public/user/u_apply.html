@@ -1,38 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+  <head>
     <meta charset="UTF-8" />
     <title>Trackboard</title>
     <link
-            rel="stylesheet"
-            href="https://pro.fontawesome.com/releases/v5.12.0/css/all.css"
+      rel="stylesheet"
+      href="https://pro.fontawesome.com/releases/v5.12.0/css/all.css"
     />
     <!-- Vendor CSS Files -->
     <link
-            href="../assets/vendor/bootstrap/css/bootstrap.min.css"
-            rel="stylesheet"
+      href="../assets/vendor/bootstrap/css/bootstrap.min.css"
+      rel="stylesheet"
     />
     <link href="../assets/vendor/icofont/icofont.min.css" rel="stylesheet" />
     <link
-            href="../assets/vendor/boxicons/css/boxicons.min.css"
-            rel="stylesheet"
+      href="../assets/vendor/boxicons/css/boxicons.min.css"
+      rel="stylesheet"
     />
     <link
-            href="../assets/vendor/animate.css/animate.min.css"
-            rel="stylesheet"
+      href="../assets/vendor/animate.css/animate.min.css"
+      rel="stylesheet"
     />
     <link href="../assets/vendor/venobox/venobox.css" rel="stylesheet" />
     <link
-            href="../assets/vendor/owl.carousel/assets/owl.carousel.min.css"
-            rel="stylesheet"
+      href="../assets/vendor/owl.carousel/assets/owl.carousel.min.css"
+      rel="stylesheet"
     />
     <link
-            href="https://fonts.googleapis.com/css?family=Bonbon&display=swap"
-            rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Bonbon&display=swap"
+      rel="stylesheet"
     />
     <link
-            href="../assets/vendor/bootstrap/css/bootstrap.min.css"
-            rel="stylesheet"
+      href="../assets/vendor/bootstrap/css/bootstrap.min.css"
+      rel="stylesheet"
     />
 
     <link href="../assets/css/style.css" rel="stylesheet" />
@@ -41,202 +41,335 @@
     <link href="../staff/sidebar-style.css" rel="stylesheet" />
 
     <script>
-        $(function () {
-            $("#header").load("../include/user_header.html");
-            $("#footer").load("../include/user_footer.html");
-        });
+      $(function () {
+        $("#header").load("../include/user_header.html");
+        $("#footer").load("../include/user_footer.html");
+      });
     </script>
-</head>
-<body>
-<!-- Run 'firebase serve' and open localhost to see header and footer, otherwise you get CORS error  -->
-<div id="header"></div>
+  </head>
+  <body>
+    <!-- Run 'firebase serve' and open localhost to see header and footer, otherwise you get CORS error  -->
+    <div id="header"></div>
 
-<button class="openbtn" onclick="openNav()">☰ Open Sidebar</button>
-
-<div id="mySidebar" class="sidebar">
-    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()"> x </a>
-    <a href="u_apply.html">Apply</a>
-    <a href="u_in_progress.html?id=1">In Progress</a>
-    <a href="u_history.html">History</a>
-    <a href="u_rules.html">View Campus Rules</a>
-</div>
-<br>
-<div class="container" style="background: rgba(227,229,216,0.21)">
-    <form action="u_history.html">
-        <h1 class="page-header text-center">Poster Application</h1>
-        <hr>
-        <div class="float-left">
-            <div class="form-group">
-                <label for="purpose"><strong>What is the purpose of the poster?</strong></label>
-                <textarea class="form-control" id="purpose" placeholder="Eg. To recruit new members" name="purpose" cols="60" rows="3" required autofocus></textarea>
-            </div>
-            <div class="form-group">
-                <label><strong>Select Poster Size:</strong></label>
-                <br>
-                <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="radio" name="sizeOptions" id="size1" value="A3"/>
-                    <label class="form-check-label" for="size1">A3</label>
-                </div>
-                <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="radio" name="sizeOptions" id="size2" value="A4">
-                    <label class="form-check-label" for="size2">A4</label>
-                </div>
-                <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="radio" name="sizeOptions" id="size3" value="other">
-                    <label class="form-check-label" for="size3">Other: </label>
-                    <input class="form-control form-control-sm" type="text" name="sizeOptions" id="size3Other" placeholder="Eg. 400mmx300mm" >
-                </div>
-            </div>
-            <div class="form-group row">
-                <label for="postDate" class="col-sm-4 col-form-label"><strong>Post Date:</strong></label>
-                <div class="col-sm-8">
-                    <input type="date" class="form-control-plaintext" id="postDate" required>
-                </div>
-            </div>
-            <div class="form-group row">
-                <label for="takeDownDate" class="col-sm-4 col-form-label"><strong>Take Down Date:</strong></label>
-                <div class="col-sm-8">
-                    <input type="date" class="form-control-plaintext" id="takeDownDate" required>
-                </div>
-             </div>
-            <div>
-                <div class="form-group">
-                    <label><strong>Select Poster Locations: </strong></label>
-                    <div class="form control">
-                        <div>
-                            <table class="table" id="tableLocations">
-                            </table>
-                        </div>
-                        <button class="btn btn-primary" type="button" data-toggle="modal" data-target="#locationModal" aria-hidden="true">Add Location</button>
-                    </div>
-                </div>
-            </div>
-            <div class="form-group">
-                <label for="specialRequest"><strong>Do you have any special location request?</strong></label>
-                <textarea class="form-control" id="specialRequest" placeholder="Eg. C202 Door when the event is happening" name="specialRequest" cols="60" rows="3"></textarea>
-            </div>
-        </div>
-        <div class="float-right">
-            <div class="container text-center">
-                <div class="custom-file">
-                    <p><input type="file" accept="image/*" name="image" id="file"  onchange="readURL(this);" hidden/></p>
-                    <p><label class="btn btn-primary" for="file" style="cursor: pointer;">Upload Poster</label></p>
-                    <p><img id="outputIMG" width="500"/></p>
-                </div>
-            </div>
-        </div>
-        <div class="clearfix"></div>
-        <button class="btn btn-primary" id="submit" type="submit" onclick="submitApp(event)">Submit Application</button>
-    </form>
-</div>
-<div id="footer"></div>
-
-<!-- The Modal -->
-<div class="modal fade" id="locationModal" aria-hidden="true" aria-labelledby="Select Poster Location Modal">
-    <div class="modal-dialog modal-dialog-centered modal-lg">
-        <div class="modal-content">
-
-            <!-- Modal Header -->
-            <div class="modal-header">
-                <h2 class="modal-title">Select Poster Location</h2>
-                <button type="button" class="close" data-dismiss="modal">&times;</button>
-            </div>
-
-            <!-- Modal body -->
-            <div class="modal-body">
-                <h4>Browse Location:</h4>
-                <br>
-                <div class="dropdown" style="display: inline">
-                    <button class="btn btn-secondary dropdown-toggle" type="button" id="locationCampus" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Campus
-                    </button>
-                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                        <a class="dropdown-item" value='IGC' href="#">IGC</a>
-                        <a class="dropdown-item" value='SUNY' href="#">SUNY</a>
-                    </div>
-                </div>
-                <div class="dropdown" style="display: inline">
-                    <button class="btn btn-secondary dropdown-toggle" type="button" id="locationBuilding" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Building
-                    </button>
-                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                        <a class="dropdown-item" value='Building A' href="#">Building A</a>
-                        <a class="dropdown-item" value='Building B' href="#">Building B</a>
-                        <a class="dropdown-item" value='Building C' href="#">Building C</a>
-                    </div>
-                </div>
-                <div class="dropdown" style="display: inline">
-                    <button class="btn btn-secondary dropdown-toggle" type="button" id="locationFloor" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Floor
-                    </button>
-                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                        <a class="dropdown-item" value='Floor 1' href="#">Floor 1</a>
-                        <a class="dropdown-item" value='Floor 2' href="#">Floor 2</a>
-                        <a class="dropdown-item" value='Floor 3' ref="#">Floor 3</a>
-                    </div>
-                </div>
-                <div class="dropdown" style="display: inline">
-                    <button class="btn btn-secondary dropdown-toggle" type="button" id="locationBoard" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Board
-                    </button>
-                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                        <a class="dropdown-item" value='Board 1' href="#">Board 1</a>
-                        <a class="dropdown-item" value='Board 2' href="#">Board 2</a>
-                        <a class="dropdown-item" value='Board 3' href="#">Board 3</a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Modal footer -->
-            <div class="modal-footer">
-                <button type="button" class="btn btn-danger" data-dismiss="modal" aria-label="Cancel">Cancel</button>
-                <button type="button" class="btn btn-success" data-dismiss="modal" aria-label="Add Location" onclick="addlocation()">Add</button>
-            </div>
-
-        </div>
+    <button class="openbtn" id="openbtn" onclick="openNav()">
+      ☰
+    </button>
+    <div id="mySidebar" class="sidebar">
+      <a href="javascript:void(0)" class="closebtn" onclick="closeNav()"> x </a>
+      <a href="u_apply.html">Apply</a>
+      <a href="u_in_progress.html?id=1">In Progress</a>
+      <a href="u_history.html">History</a>
+      <a href="u_rules.html">View Campus Rules</a>
     </div>
-</div>
+    <br />
+    <div id="main_content">
+      <div class="container" style="background: rgba(227, 229, 216, 0.21);">
+        <form action="u_history.html">
+          <h1 class="page-header text-center">Poster Application</h1>
+          <hr />
+          <div class="float-left">
+            <div class="form-group">
+              <label for="purpose"
+                ><strong>What is the purpose of the poster?</strong></label
+              >
+              <textarea
+                class="form-control"
+                id="purpose"
+                placeholder="Eg. To recruit new members"
+                name="purpose"
+                cols="60"
+                rows="3"
+                required
+                autofocus
+              ></textarea>
+            </div>
+            <div class="form-group">
+              <label><strong>Select Poster Size:</strong></label>
+              <br />
+              <div class="form-check form-check-inline">
+                <input
+                  class="form-check-input"
+                  type="radio"
+                  name="sizeOptions"
+                  id="size1"
+                  value="A3"
+                />
+                <label class="form-check-label" for="size1">A3</label>
+              </div>
+              <div class="form-check form-check-inline">
+                <input
+                  class="form-check-input"
+                  type="radio"
+                  name="sizeOptions"
+                  id="size2"
+                  value="A4"
+                />
+                <label class="form-check-label" for="size2">A4</label>
+              </div>
+              <div class="form-check form-check-inline">
+                <input
+                  class="form-check-input"
+                  type="radio"
+                  name="sizeOptions"
+                  id="size3"
+                  value="other"
+                />
+                <label class="form-check-label" for="size3">Other: </label>
+                <input
+                  class="form-control form-control-sm"
+                  type="text"
+                  name="sizeOptions"
+                  id="size3Other"
+                  placeholder="Eg. 400mmx300mm"
+                />
+              </div>
+            </div>
+            <div class="form-group row">
+              <label for="postDate" class="col-sm-4 col-form-label"
+                ><strong>Post Date:</strong></label
+              >
+              <div class="col-sm-8">
+                <input
+                  type="date"
+                  class="form-control-plaintext"
+                  id="postDate"
+                  required
+                />
+              </div>
+            </div>
+            <div class="form-group row">
+              <label for="takeDownDate" class="col-sm-4 col-form-label"
+                ><strong>Take Down Date:</strong></label
+              >
+              <div class="col-sm-8">
+                <input
+                  type="date"
+                  class="form-control-plaintext"
+                  id="takeDownDate"
+                  required
+                />
+              </div>
+            </div>
+            <div>
+              <div class="form-group">
+                <label><strong>Select Poster Locations: </strong></label>
+                <div class="form control">
+                  <div>
+                    <table class="table" id="tableLocations"></table>
+                  </div>
+                  <button
+                    class="btn btn-primary"
+                    type="button"
+                    data-toggle="modal"
+                    data-target="#locationModal"
+                    aria-hidden="true"
+                  >
+                    Add Location
+                  </button>
+                </div>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="specialRequest"
+                ><strong
+                  >Do you have any special location request?</strong
+                ></label
+              >
+              <textarea
+                class="form-control"
+                id="specialRequest"
+                placeholder="Eg. C202 Door when the event is happening"
+                name="specialRequest"
+                cols="60"
+                rows="3"
+              ></textarea>
+            </div>
+          </div>
+          <div class="float-right">
+            <div class="container text-center">
+              <div class="custom-file">
+                <p>
+                  <input
+                    type="file"
+                    accept="image/*"
+                    name="image"
+                    id="file"
+                    onchange="readURL(this);"
+                    hidden
+                  />
+                </p>
+                <p>
+                  <label
+                    class="btn btn-primary"
+                    for="file"
+                    style="cursor: pointer;"
+                    >Upload Poster</label
+                  >
+                </p>
+                <p><img id="outputIMG" width="450" /></p>
+              </div>
+            </div>
+          </div>
+          <div class="clearfix"></div>
+          <button
+            class="btn btn-primary"
+            id="submit"
+            type="submit"
+            onclick="submitApp(event)"
+          >
+            Submit Application
+          </button>
+        </form>
+      </div>
+    </div>
+    <div id="footer"></div>
 
+    <!-- The Modal -->
+    <div
+      class="modal fade"
+      id="locationModal"
+      aria-hidden="true"
+      aria-labelledby="Select Poster Location Modal"
+    >
+      <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content">
+          <!-- Modal Header -->
+          <div class="modal-header">
+            <h2 class="modal-title">Select Poster Location</h2>
+            <button type="button" class="close" data-dismiss="modal">
+              &times;
+            </button>
+          </div>
 
-<script>
-    // var firestore = firebase.firestore();
-    // const docRef = firestore.collection("test");
+          <!-- Modal body -->
+          <div class="modal-body">
+            <h4>Browse Location:</h4>
+            <br />
+            <div class="dropdown" style="display: inline;">
+              <button
+                class="btn btn-secondary dropdown-toggle"
+                type="button"
+                id="locationCampus"
+                data-toggle="dropdown"
+                aria-haspopup="true"
+                aria-expanded="false"
+              >
+                Campus
+              </button>
+              <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                <a class="dropdown-item" value="IGC" href="#">IGC</a>
+                <a class="dropdown-item" value="SUNY" href="#">SUNY</a>
+              </div>
+            </div>
+            <div class="dropdown" style="display: inline;">
+              <button
+                class="btn btn-secondary dropdown-toggle"
+                type="button"
+                id="locationBuilding"
+                data-toggle="dropdown"
+                aria-haspopup="true"
+                aria-expanded="false"
+              >
+                Building
+              </button>
+              <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                <a class="dropdown-item" value="Building A" href="#"
+                  >Building A</a
+                >
+                <a class="dropdown-item" value="Building B" href="#"
+                  >Building B</a
+                >
+                <a class="dropdown-item" value="Building C" href="#"
+                  >Building C</a
+                >
+              </div>
+            </div>
+            <div class="dropdown" style="display: inline;">
+              <button
+                class="btn btn-secondary dropdown-toggle"
+                type="button"
+                id="locationFloor"
+                data-toggle="dropdown"
+                aria-haspopup="true"
+                aria-expanded="false"
+              >
+                Floor
+              </button>
+              <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                <a class="dropdown-item" value="Floor 1" href="#">Floor 1</a>
+                <a class="dropdown-item" value="Floor 2" href="#">Floor 2</a>
+                <a class="dropdown-item" value="Floor 3" ref="#">Floor 3</a>
+              </div>
+            </div>
+            <div class="dropdown" style="display: inline;">
+              <button
+                class="btn btn-secondary dropdown-toggle"
+                type="button"
+                id="locationBoard"
+                data-toggle="dropdown"
+                aria-haspopup="true"
+                aria-expanded="false"
+              >
+                Board
+              </button>
+              <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                <a class="dropdown-item" value="Board 1" href="#">Board 1</a>
+                <a class="dropdown-item" value="Board 2" href="#">Board 2</a>
+                <a class="dropdown-item" value="Board 3" href="#">Board 3</a>
+              </div>
+            </div>
+          </div>
 
-    $( document ).ready(function() {
+          <!-- Modal footer -->
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-danger"
+              data-dismiss="modal"
+              aria-label="Cancel"
+            >
+              Cancel
+            </button>
+            <button
+              type="button"
+              class="btn btn-success"
+              data-dismiss="modal"
+              aria-label="Add Location"
+              onclick="addlocation()"
+            >
+              Add
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
 
-    });
+    <script>
+      // var firestore = firebase.firestore();
+      // const docRef = firestore.collection("test");
 
-    $('.dropdown').each(function (key, dropdown) {
+      $(document).ready(function () {});
+
+      $(".dropdown").each(function (key, dropdown) {
         var $dropdown = $(dropdown);
-        $dropdown.find('.dropdown-menu a').on('click', function () {
-            $dropdown.find('button').text($(this).text());
+        $dropdown.find(".dropdown-menu a").on("click", function () {
+          $dropdown.find("button").text($(this).text());
         });
-    });
+      });
 
-    function openNav() {
-        document.getElementById("mySidebar").style.width = "20%";
-    }
-
-    function closeNav() {
-        document.getElementById("mySidebar").style.width = "0";
-    }
-
-    function readURL(input) {
+      function readURL(input) {
         if (input.files && input.files[0]) {
-            var reader = new FileReader();
+          var reader = new FileReader();
 
-            reader.onload = function (e) {
-                $('#outputIMG')
-                    .attr('src', e.target.result)
-                    .width(500)
-                    .height(600);
-            };
+          reader.onload = function (e) {
+            $("#outputIMG").attr("src", e.target.result).width(450).height(600);
+          };
 
-            reader.readAsDataURL(input.files[0]);
+          reader.readAsDataURL(input.files[0]);
         }
-    }
+      }
 
-    function addlocation () {
+      function addlocation() {
         var e = document.getElementById("locationCampus");
         var campus = e.firstChild.data;
         e = document.getElementById("locationBuilding");
@@ -254,54 +387,55 @@
         var cell4 = row.insertCell(3);
         var cell5 = row.insertCell(4);
 
-        row.setAttribute('scope',"row");
+        row.setAttribute("scope", "row");
 
         cell1.innerText = campus.trim();
         cell2.innerText = build.trim();
         cell3.innerText = floor.trim();
         cell4.innerText = board.trim();
-        cell5.innerHTML = "<button type='button' class='btn btn-danger' onclick='deleteRow()'>Delete</button>";
+        cell5.innerHTML =
+          "<button type='button' class='btn btn-danger' onclick='deleteRow()'>Delete</button>";
+      }
 
-    }
-
-    function deleteRow () {
+      function deleteRow() {
         var td = event.target.parentNode;
         var tr = td.parentNode;
         tr.parentNode.removeChild(tr);
-    }
+      }
 
-    function submitApp (e) {
-        let reason = document.getElementById('purpose').value;
-        let size = document.querySelector('input[name="sizeOptions"]:checked').value;
-        if (size == 'other'){
-            size = document.getElementById('size3Other').value;
+      function submitApp(e) {
+        let reason = document.getElementById("purpose").value;
+        let size = document.querySelector('input[name="sizeOptions"]:checked')
+          .value;
+        if (size == "other") {
+          size = document.getElementById("size3Other").value;
         }
-        let postDate = document.getElementById('postDate').value;
-        let takeDownDate = document.getElementById('takeDownDate').value;
-        let table = document.getElementById('tableLocations');
+        let postDate = document.getElementById("postDate").value;
+        let takeDownDate = document.getElementById("takeDownDate").value;
+        let table = document.getElementById("tableLocations");
         let locations = [];
-        for (var i = 0, row; row = table.rows[i]; i++) {
-            let x = {
-                campus:row.cells[0].innerText,
-                building:row.cells[1].innerText,
-                floor:row.cells[2].innerText,
-                board:row.cells[3].innerText
-            };
-            locations.push(x);
+        for (var i = 0, row; (row = table.rows[i]); i++) {
+          let x = {
+            campus: row.cells[0].innerText,
+            building: row.cells[1].innerText,
+            floor: row.cells[2].innerText,
+            board: row.cells[3].innerText,
+          };
+          locations.push(x);
         }
-        let specialRequest = document.getElementById('specialRequest').value;
+        let specialRequest = document.getElementById("specialRequest").value;
+      }
+    </script>
+    <script src="../staff/sidebar.js"></script>
 
-    }
-</script>
+    <script src="../assets/vendor/jquery/jquery.min.js"></script>
+    <script src="../assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
-<script src="../assets/vendor/jquery/jquery.min.js"></script>
-<script src="../assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-
-<link
-        rel="stylesheet"
-        href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
-        integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk"
-        crossorigin="anonymous"
-/>
-</body>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+      integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk"
+      crossorigin="anonymous"
+    />
+  </body>
 </html>

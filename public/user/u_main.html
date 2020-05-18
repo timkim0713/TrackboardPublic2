@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Trackboard</title>
+    <link
+      rel="stylesheet"
+      href="https://pro.fontawesome.com/releases/v5.12.0/css/all.css"
+    />
+    <!-- Vendor CSS Files -->
+    <link
+      href="../assets/vendor/bootstrap/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link href="../assets/vendor/icofont/icofont.min.css" rel="stylesheet" />
+    <link
+      href="../assets/vendor/boxicons/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="../assets/vendor/animate.css/animate.min.css"
+      rel="stylesheet"
+    />
+    <link href="../assets/vendor/venobox/venobox.css" rel="stylesheet" />
+    <link
+      href="../assets/vendor/owl.carousel/assets/owl.carousel.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Bonbon&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="../assets/vendor/bootstrap/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+
+    <link href="../assets/css/style.css" rel="stylesheet" />
+    <script src="../assets/vendor/jquery/jquery.min.js"></script>
+    <script src="https://kit.fontawesome.com/b99e675b6e.js"></script>
+    <link href="../staff/sidebar-style.css" rel="stylesheet" />
+
+    <script>
+      $(function () {
+        $("#header").load("../include/user_header.html");
+        $("#footer").load("../include/user_footer.html");
+      });
+    </script>
+  </head>
+  <body>
+    <!-- Run 'firebase serve' and open localhost to see header and footer, otherwise you get CORS error  -->
+    <div id="header"></div>
+
+    <button class="openbtn" id="openbtn" onclick="openNav()">
+      ☰
+    </button>
+    <div id="mySidebar" class="sidebar">
+      <a href="javascript:void(0)" class="closebtn" onclick="closeNav()"> x </a>
+      <a href="u_apply.html">Apply</a>
+      <a href="u_in_progress.html?id=1">In Progress</a>
+      <a href="u_history.html">History</a>
+      <a href="u_rules.html">View Campus Rules</a>
+    </div>
+    <br />
+    <div id="main_content">
+        <h2> My Page</h2>
+        <small style="color: cornflowerblue;"
+        >*Please check your information. Edit, if necessary.</small
+      >
+  
+     
+        <table class="table">
+          <thead>
+            <tr>
+              <th>Account Name</th>
+              <td>Tim Kim</td>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th>Password</td>
+              <td>********</td>
+            </tr>
+            <tr>
+              <th>Email</td>
+              <td>daekyung.kim@stonybrook.edu</td>
+            </tr>
+            <tr>
+              <th>Profile Picture</td>
+              <td>N/A</td>
+            </tr>
+            <tr>
+              <th>Campus</td>
+              <td>SUNY Korea</td>
+            </tr>
+            <tr>
+              <th>Account Created</td>
+              <td>5/18/2020</td>
+            </tr>
+           
+          </tbody>
+        </table>
+        <button type="button" class="btn btn-primary">Edit</button>
+    </div>
+    <div id="footer"></div>
+
+    <script src="../staff/sidebar.js"></script>
+
+    <script src="../assets/vendor/jquery/jquery.min.js"></script>
+    <script src="../assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+      integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk"
+      crossorigin="anonymous"
+    />
+  </body>
+</html>
