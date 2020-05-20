@@ -66,9 +66,9 @@
           href="#"
           class="btn-get-started scrollto"
           data-toggle="modal"
-          data-target="#getStartedModal"
+          data-target="#logInModal"
           aria-hidden="true"
-          >Get Started</a
+          >Log In </a
         >
         <a href="#about" class="btn-get-started scrollto">About Us</a>
         <a href="#portfolio" class="btn-get-started scrollto">View Boards</a
@@ -318,47 +318,244 @@
     </section>
     <!-- End Portfolio Section -->
 
-    <!-- The Modal -->
+<!--start  of log in-->
     <div
       class="modal fade"
-      id="getStartedModal"
+      id="logInModal"
+      tabindex="-1"
+      role="dialog"
+      aria-labelledby="exampleModalLabel"
       aria-hidden="true"
-      aria-labelledby="Sign in as:"
     >
-      <div class="modal-dialog modal-dialog-centered modal-lg">
+      <div class="modal-dialog" role="document">
         <div class="modal-content">
-          <!-- Modal Header -->
-          <div class="modal-header"></div>
-
-          <!-- Modal body -->
-          <div class="modal-body">
-            <div class="container text-center"><h1>Sign in as:</h1></div>
-            <br />
-            <div class="float-left">
-              <a
-                href="user/u_main.html"
-                type="button"
-                class="btn btn-primary"
-                aria-label="student"
-                >Student</a
-              >
-            </div>
-            <div class="float-right">
-              <a
-                href="staff/s_main.html"
-                type="button"
-                class="btn btn-primary"
-                aria-label="staff"
-                >Staff</a
-              >
-            </div>
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Log in</h5>
+            <button
+              type="button"
+              class="close"
+              data-dismiss="modal"
+              aria-label="Close"
+            >
+              <span aria-hidden="true">&times;</span>
+            </button>
           </div>
+          <div class="modal-body">
+            <form>
+                <div class="form-group">
+                  <label for="exampleInputEmail1">Email address</label>
+                  <input
+                    type="email"
+                    class="form-control"
+                    id="exampleInputEmail1"
+                    aria-describedby="emailHelp"
+                    placeholder="Enter email"
+                  />
+                  <small id="emailHelp" class="form-text text-muted"
+                    >We'll never share your email with anyone else.</small
+                  >
+                </div>
+                <div class="form-group">
+                  <label for="exampleInputPassword1">Password</label>
+                  <input
+                    type="password"
+                    class="form-control"
+                    id="exampleInputPassword1"
+                    placeholder="Password"
+                  />
+                </div>
+                      <br>
+              
+                  <label for="studentstaff">Log in as</label>
+                  <select class="form-control form-control-sm" id="studentstaff" onclick="logInMode()">
+                    <option>--Select--</option>
+                    <option>Student</option>
+                    <option>Staff</option>
+                  </select>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-dismiss="modal"
 
-          <!-- Modal footer -->
-          <div class="modal-footer"></div>
+              href="#"
+              data-toggle="modal"
+              data-target="#createNewAccountModal"
+              aria-hidden="true"
+            >
+              New?
+            </button>
+            <button
+              type="button"
+              id="staffstudentsubmit"
+              class="btn btn-primary" style="background-color: rgb(67, 175, 148);"
+             
+            >
+              Log in
+            </button>
+          </div>
+        </div>
         </div>
       </div>
     </div>
+
+<!--end  of log in-->
+
+
+<!--start  of  create a new account-->
+
+    <div
+    class="modal fade"
+    id="createNewAccountModal"
+    tabindex="-1"
+    role="dialog"
+    aria-labelledby="exampleModalLabel2"
+    aria-hidden="true"
+  >
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="newAccount">Create New Account</h5>
+                  <button
+                    type="button"
+                    class="close"
+                    data-dismiss="modal"
+                    aria-label="Close"
+                  >
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+                  <form>
+                      <div class="form-group">
+                        <label for="name">Full Name</label>
+                        <input
+                          type="text"
+                          class="form-control"
+                          id="name"
+                          aria-describedby="name"
+                          placeholder="First Name    Last Name"
+                        />
+                    
+                        <label for="exampleInputEmail1">Email address</label>
+                        <input
+                          type="email"
+                          class="form-control"
+                          id="exampleInputEmail1"
+                          aria-describedby="emailHelp"
+                          placeholder="Enter email"
+                        />
+                        <small id="emailHelp" class="form-text text-muted"
+                          >We'll never share your email with anyone else.</small
+                        >
+                      </div>
+
+                      <div class="form-group">
+                        <label for="exampleInputPassword1">Create Password</label>
+                        <input
+                          type="text"
+                          class="form-control"
+                          id="exampleInputPassword1"
+                          placeholder="Password"
+                        />
+                      </div>
+                      <label for="campus">Campus</label>
+                      <select class="form-control form-control-sm" id="campus" onclick="">
+                        <option>--Select Campus--</option>
+
+                        <option>IGC</option>
+                        <option>SUNY Korea</option>
+                        <option>Utah</option>
+                        <option>Ghent</option>
+                        <option>George Mason</option>
+                      
+                      </select>
+                    
+                            <br>
+                    
+                        <label for="studentstaff">Create the account as</label>
+                        <select class="form-control form-control-sm" id="studentstaff" onclick="logInMode()">
+                          <option>--Select--</option>
+                          <option>Student</option>
+                          <option>Staff</option>
+                        </select>
+                  </form>
+                </div>
+                <div class="modal-footer">
+                  <button
+                    type="button"
+                    class="btn btn-secondary"
+                    data-dismiss="modal"
+                    href="#"
+                    data-toggle="modal"
+                    data-target="#aboutModal"
+                    aria-hidden="true"
+                  >
+                    About
+                  </button>
+                  <button
+                    type="button"
+                    id="staffstudentsubmit"
+                    class="btn btn-primary" style="background-color: rgb(67, 175, 148);"
+
+                    data-dismiss="modal"
+                    href="#"
+                    data-toggle="modal"
+                    data-target="#loginModal"
+                    aria-hidden="true"
+                  >
+                    Sign up!
+                  </button>
+                </div>
+              </div>
+      </div>
+    </div>
+  </div>
+<!--end of  create a new account-->
+
+
+
+
+<!--start  of about -->
+<div
+class="modal fade"
+id="aboutModal"
+tabindex="-1"
+role="dialog"
+aria-labelledby="aboutlabel"
+aria-hidden="true"
+>
+<div class="modal-dialog" role="document">
+  <div class="modal-content">
+    <div class="modal-header">
+      <h5 class="modal-title" id="about1">About</h5>
+      <button
+        type="button"
+        class="close"
+        data-dismiss="modal"
+        aria-label="Close"
+      >
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <div class="modal-body">
+      <p>Trackboard is a simple and technological way of managing and
+      requesting posters online across the universities and
+      institutions. Trackbaord aims to create a well-structured poster
+      management system for both the administrators and the users.</p>
+    </div>
+  
+  </div>
+  </div>
+</div>
+</div>
+
+<!--end  of about in-->
+
+
+
 
     <footer id="footer"></footer>
 

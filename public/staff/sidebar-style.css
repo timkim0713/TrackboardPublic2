@@ -8,7 +8,7 @@
   position: fixed;
   z-index: 1;
   left: 0;
-  background-color: rgb(32, 32, 32);
+  background-color: #275f6d;
   overflow-x: hidden;
   transition: 0.5s;
   padding-top: 60px;
@@ -19,13 +19,13 @@
   padding: 8px 8px 8px 32px;
   text-decoration: none;
   font-size: 25px;
-  color: #818181;
+  color: rgb(180, 203, 204);
   display: block;
   transition: 0.3s;
 }
 
 .sidebar a:hover {
-  color: #f1f1f1;
+  color: rgb(92, 135, 138);
 }
 
 .sidebar .closebtn {
