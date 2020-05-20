@@ -11,14 +11,15 @@
 body {
   font-family: "Open Sans", sans-serif;
   color: #444444;
+  background-color: rgb(238, 238, 238);
 }
 
 a {
-  color: #3498db;
+  color: #275f6d;
 }
 
 a:hover {
-  color: #5faee3;
+  color: #275f6d;
   text-decoration: none;
 }
 
@@ -29,6 +30,7 @@ h4,
 h5,
 h6 {
   font-family: "Raleway", sans-serif;
+  color: #275f6d;
 }
 
 /*--------------------------------------------------------------
@@ -56,7 +58,7 @@ h6 {
 }
 
 .back-to-top i:hover {
-  background: #57aae1;
+  background: #275f6d;
   color: #fff;
 }
 
@@ -68,7 +70,7 @@ h6 {
   transition: all 0.5s;
   z-index: 997;
   transition: all 0.5s;
-  background: #fff;
+  background: rgb(180, 203, 204);
   box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.1);
 }
 
@@ -78,12 +80,12 @@ h6 {
   font-weight: 600;
   letter-spacing: 1px;
   text-transform: uppercase;
-  color: #384046;
+  color: #275f6d;
 }
 
 #header .logo h1 a,
 #header .logo h1 a:hover {
-  color: #384046;
+  color: #275f6d;
   text-decoration: none;
 }
 
@@ -95,7 +97,7 @@ h6 {
 # Header Social Links
 --------------------------------------------------------------*/
 .header-social-links a {
-  color: #9ba6af;
+  color: #a3a3a3;
   padding-left: 8px;
   display: inline-block;
   line-height: 1px;
@@ -103,7 +105,7 @@ h6 {
 }
 
 .header-social-links a:hover {
-  color: #3498db;
+  color: #275f6d;
 }
 
 @media (max-width: 768px) {
@@ -135,7 +137,7 @@ h6 {
 .nav-menu a {
   display: block;
   position: relative;
-  color: #4f5a62;
+  color: #3c6786;
   padding: 12px 15px;
   transition: 0.3s;
   font-size: 16px;
@@ -146,7 +148,10 @@ h6 {
 .nav-menu a:hover,
 .nav-menu .active > a,
 .nav-menu li:hover > a {
-  color: #3498db;
+  font-style: italic;
+  font-size: 14px;
+
+  color: #656666;
   text-decoration: none;
 }
 
@@ -179,14 +184,14 @@ h6 {
   padding: 10px 20px;
   font-size: 14px;
   text-transform: none;
-  color: #21262a;
+  color: #669eaf;
   font-weight: 400;
 }
 
 .nav-menu .drop-down ul a:hover,
 .nav-menu .drop-down ul .active > a,
 .nav-menu .drop-down ul li:hover > a {
-  color: #3498db;
+  color: #669eaf;
 }
 
 .nav-menu .drop-down > a:after {
@@ -246,7 +251,7 @@ h6 {
 }
 
 .mobile-nav-toggle i {
-  color: #384046;
+  color: #457d8b;
 }
 
 .mobile-nav {
@@ -283,7 +288,7 @@ h6 {
 .mobile-nav a:hover,
 .mobile-nav .active > a,
 .mobile-nav li:hover > a {
-  color: #3498db;
+  color: #457d8b;
   text-decoration: none;
 }
 
@@ -344,7 +349,7 @@ h6 {
 #hero {
   width: 100%;
   height: 60vh;
-  background: url("../img/hero-bg.jpg") center center;
+  background: url("../img/main-bg.jpg") center center;
   background-size: cover;
   position: relative;
   margin-top: 70px;
@@ -374,7 +379,7 @@ h6 {
 }
 
 #hero h1 span {
-  border-bottom: 4px solid #3498db;
+  border-bottom: 4px solid #08283d;
 }
 
 #hero h2 {
@@ -393,12 +398,12 @@ h6 {
   border-radius: 4px;
   transition: ease-in-out 0.3s;
   color: #fff;
-  background: #3498db;
+  background: #275f6d;
   text-transform: uppercase;
 }
 
 #hero .btn-get-started:hover {
-  background: #4ea5e0;
+  background: #15404b;
 }
 
 @media (max-width: 992px) {
@@ -460,7 +465,7 @@ section {
   display: block;
   width: 40px;
   height: 3px;
-  background: #3498db;
+  background: #152d3d;
   bottom: 0;
   left: calc(50% - 20px);
 }
@@ -493,7 +498,7 @@ section {
 }
 
 .what-we-do .icon-box .icon i {
-  color: #3498db;
+  color: #152d3d;
   font-size: 28px;
 }
 
@@ -521,7 +526,7 @@ section {
 
 .what-we-do .icon-box:hover h4 a,
 .what-we-do .icon-box:hover .icon i {
-  color: #3498db;
+  color: #152d3d;
 }
 
 /*--------------------------------------------------------------
@@ -556,7 +561,7 @@ section {
   left: 0;
   top: 0;
   font-size: 22px;
-  color: #3498db;
+  color: #152d3d;
 }
 
 .about .icon-boxes {
@@ -571,7 +576,7 @@ section {
 
 .about .icon-boxes i {
   font-size: 48px;
-  color: #3498db;
+  color: #89c5c5;
 }
 
 .about .icon-boxes p {
@@ -611,7 +616,7 @@ section {
   width: 1px;
   height: 10px;
   transition: 0.9s;
-  background-color: #5faee3;
+  background-color: #152d3d;
 }
 
 /*--------------------------------------------------------------
@@ -636,7 +641,7 @@ section {
   left: 50%;
   transform: translateX(-50%);
   font-size: 24px;
-  background: #3498db;
+  background: #152d3d;
   padding: 12px;
   color: #fff;
   border-radius: 50px;
@@ -668,7 +673,7 @@ section {
 
 .services .icon-box i {
   float: left;
-  color: #3498db;
+  color: #152d3d;
   font-size: 40px;
 }
 
@@ -695,7 +700,7 @@ section {
 }
 
 .services .icon-box:hover h4 a {
-  color: #3498db;
+  color: #152d3d;
 }
 
 /*--------------------------------------------------------------
@@ -729,7 +734,7 @@ section {
 
 .portfolio #portfolio-flters li:hover,
 .portfolio #portfolio-flters li.filter-active {
-  background: #3498db;
+  background: #152d3d;
   color: #fff;
 }
 
@@ -792,7 +797,7 @@ section {
 
 .portfolio .portfolio-item figure .link-preview:hover,
 .portfolio .portfolio-item figure .link-details:hover {
-  background: #3498db;
+  background: #152d3d;
 }
 
 .portfolio .portfolio-item figure .link-preview:hover i,
@@ -841,7 +846,7 @@ section {
 }
 
 .portfolio .portfolio-item .portfolio-info h4 a:hover {
-  color: #3498db;
+  color: #152d3d;
 }
 
 .portfolio .portfolio-item .portfolio-info p {
@@ -981,7 +986,7 @@ section {
 }
 
 .team .member .social a:hover {
-  color: #3498db;
+  color: #152d3d;
 }
 
 .team .member .social i {
@@ -1000,7 +1005,7 @@ section {
 
 .contact .info i {
   font-size: 20px;
-  color: #3498db;
+  color: #152d3d;
   float: left;
   width: 44px;
   height: 44px;
@@ -1212,7 +1217,7 @@ section {
 }
 
 .portfolio-details .portfolio-details-carousel .owl-dot.active {
-  background-color: #3498db !important;
+  background-color: #152d3d !important;
 }
 
 .portfolio-details .portfolio-info {
