@@ -369,10 +369,6 @@
       var pos_3 = "\" data-gall=\"portfolioGallery\" class=\"link-preview venobox\" title=\"Preview\"><i class=\"bx bx-plus\"></i></a> <a href=\"\" class=\"link-details\" title=\"More Details\"><i class=\"bx bx-link\"></i></a> </figure><div class=\"portfolio-info\"> <h4><a href=\"\">Uploader</a></h4> <p>Poster Info(?)</p> </div></div>  </div>";
       var pos_4 = "";
 
-      var selectedBuilding = "a";
-      var selectedFloor = "*";
-      var selectedLocation = "*";
-
       $( document ).ready(function() {
         // TODO call API and get full list of posters and bfl
         // this.bfl = [];
@@ -424,10 +420,10 @@
         });
         myBuildings = myBuildings + "<hr><a class=\"dropdown-item\" href=\"javascript:addBuilding()\">Add New Building</a><a class=\"dropdown-item\" href=\"javascript:deleteBuilding()\">Delete Building</a></div></div>";
         if( selB !== '*' ){
-          myFloors = myFloors + "<hr><a class=\"dropdown-item\" href=\"javascript:addFloor()\">Add New Floor</a><a class=\"dropdown-item\" href=\"javascript:deleteFloor()\">Delete Floor</a></div></div>";
+          myFloors = myFloors + "<hr><a class=\"dropdown-item\" href=\"javascript:addFloor('" + selB + "')\">Add New Floor</a><a class=\"dropdown-item\" href=\"javascript:deleteFloor('" + selB + "')\">Delete Floor</a></div></div>";
         }
         if( selF !== '*' ){
-          myLocations = myLocations + "<hr><a class=\"dropdown-item\" href=\"javascript:addLocation()\">Add New Locations</a><a class=\"dropdown-item\" href=\"javascript:deleteLocation()\">Delete Location</a></div></div>";
+          myLocations = myLocations + "<hr><a class=\"dropdown-item\" href=\"javascript:addLocation('" + selB + "','"+ selF+"')\">Add New Locations</a><a class=\"dropdown-item\" href=\"javascript:deleteLocation('" + selB + "','"+ selF+"')\">Delete Location</a></div></div>";
         }
         var ddl = $('#dropdownList');
         ddl.html( myBuildings + myFloors + myLocations );
@@ -493,9 +489,9 @@
         }
         return false;
       }
-      function floorNameExists(fname){
+      function floorNameExists(inBid, fname){
         for( let b of this.bfl ){
-          if( this.selectedBuilding === b.building_id ){
+          if( inBid === b.building_id ){
             for( let f of b.floors ){
               if(fname === f.floor_name){
                 return true;
@@ -505,11 +501,11 @@
         }
         return false;
       }
-      function locationNameExists(lname){
+      function locationNameExists(inBid, inFid, lname){
         for( let b of this.bfl ){
-          if( this.selectedBuilding === b.building_id ){
+          if( inBid === b.building_id ){
             for( let f of b.floors ){
-              if( this.selectedFloor === f.floor_id ){
+              if( inFid === f.floor_id ){
                 for( let l of f.locations ){
                   if(lname === l.location_name){
                     return true;
@@ -532,22 +528,24 @@
           }
         }
       }
-      function addFloor(){
+      function addFloor( inBid ){
         let newFlName = prompt("Enter the name of the Floor you want to add");
         if( newFlName !== "" && newFlName !== null ){
-          if( floorNameExists(newFlName)){
+          if( floorNameExists( inBid, newFlName)){
             alert("Floor with name \""+newFlName+"\" already exists");
           } else if( confirm("Add Floor with name \"" + newFlName + "\"?" ) ){
+            // TODO Call database to add Floor
             alert("Successfully added a floor with name " + newFlName + "\"."  );
           }
         }
       }
-      function addLocation(){
+      function addLocation( inBid, inFid ){
         let newLcName = prompt("Enter the name of the Location you want to add");
         if( newLcName !== "" && newLcName !== null ){
-          if( locationNameExists(newLcName)){
+          if( locationNameExists( inBid, inFid, newLcName)){
             alert("Location with name \""+newLcName+"\" already exists");
           } else if( confirm("Add Location with name \"" + newLcName + "\"?") ){
+            // TODO Call database to add Location
             alert("Successfully added a location with name " + newLcName + "\"."  );
           }
         }
@@ -562,22 +560,24 @@
           }
         }
       }
-      function deleteFloor(){
+      function deleteFloor( inBid ){
         let delFlName = prompt("WARNING: DELETION OF A FLOOR WILL DELETE ALL LOCATIONS AND POSTERS RELATED TO THIS FLOOR\n\nEnter the name of the floor you want to delete.");
         if( delFlName !== "" && delFlName !== null ){
-          if( !floorNameExists(delFlName)){
+          if( !floorNameExists( inBid, delFlName)){
             alert("Floor with name \""+delFlName+"\" does not exist");
           } else if( confirm("Confirm deletion of Floor with name \"" + delFlName + "\"?" ) ){
+            // TODO call database to delete Floor
             alert("Successfully deleted floor with name " + delFlName + "\"."  );
           }
         }
       }
-      function deleteLocation(){
-        let delLcName = prompt("WARNING: DELETION OF A LOCATION WILL DELETE ALL POSTERS RELATED TO THIS LOCATION\n\nEnter the name of the locawtion you want to delete.");
+      function deleteLocation( inBid, inFid ){
+        let delLcName = prompt("WARNING: DELETION OF A LOCATION WILL DELETE ALL POSTERS RELATED TO THIS LOCATION\n\nEnter the name of the location you want to delete.");
         if( delLcName !== "" && delLcName !== null ){
-          if( !locationNameExists(delLcName)){
+          if( !locationNameExists( inBid, inFid, delLcName)){
             alert("Location with name \""+delLcName+"\" does not exist");
           } else if( confirm("Confrim deletions of Location with name \"" + delLcName + "\"?") ){
+            // TODO call database to delete Location
             alert("Successfully deleted location with name " + delLcName + "\"."  );
           }
         }
