@@ -27,3 +27,4 @@ We are also well connected with several club executives and other student learde
 Everyone mentioned can be reached in person, though email, or on Kakaotalk. 
 
 **Link to Paper Prototyping Video:** https://drive.google.com/file/d/1vgaT90er7t3Lxd4wXIYl1Rg-q31VX6d9/view?usp=sharing
+**Link to Prototype on Figma:** https://www.figma.com/proto/HmNYGlS3hcwMyxQGwkh9xJ/Trackboard?node-id=0%3A1&scaling=min-zoom
