@@ -405,7 +405,7 @@
         // TODO call API and get full list of posters and bfl
         // this.bfl = [];
         // this.myPosters = [];
-        // console.log(bfl);
+        console.log(bfl);
         // console.log(db);
         // console.log(db.collection("buildings").get());
 
@@ -426,48 +426,48 @@
           selectedLocation = "*";
         }
         setDropdowns(selectedBuilding, selectedFloor, selectedLocation);
-        /*
-        db.collection("establishment")
-          .where("staff", "array-contains", "staff1@sunykorea.ac.kr") //get proper email later
-          .get()
-          .then((querySnapshot) => { 
-            // console.log(querySnapshot);
-            querySnapshot.forEach((doc) => {
-              console.log("Establishment", doc.id, doc.data());
-              db.collection("buildings")
-                .where("belongs_to", "==", doc.id)
-                .get()
-                .then((bdQuerySnapshot) => {
-                  bdQuerySnapshot.forEach((bdDoc) => {
-                    console.log("Building", bdDoc.id, bdDoc.data());
-                    db.collection("floors")
-                      .where("belongs_to", "==", bdDoc.id)
-                      .get()
-                      .then((flQuerySnapshot) => {
-                        flQuerySnapshot.forEach((flDoc) => {
-                          console.log("Floors", flDoc.id, flDoc.data());
-                          db.collection("bulletin_boards")
-                            .where("belongs_to", "==", flDoc.id)
-                            .get()
-                            .then((bbQuerySnapshot) => {
-                              bbQuerySnapshot.forEach((bbDoc) => {
-                                console.log("Bulletin Board", bbDoc.id, bbDoc.data());
-                              })
-                            })
-                            .catch(function(error) { console.log(error); });
-                        })
-                      })
-                      .catch(function(error) { console.log(error); });
-                  });
-                })
-                .catch(function(error) { console.log(error); });
-            });
-          })
-          .catch(function(error) {
-            console.error("Error: Could not get data", error);
-          });
       });
-      */
+      /*
+      db.collection("establishment")
+        .where("staff", "array-contains", "staff1@sunykorea.ac.kr") //get proper email later
+        .get()
+        .then((querySnapshot) => { 
+          // console.log(querySnapshot);
+          querySnapshot.forEach((doc) => {
+            console.log("Establishment", doc.id, doc.data());
+            db.collection("buildings")
+              .where("belongs_to", "==", doc.id)
+              .get()
+              .then((bdQuerySnapshot) => {
+                bdQuerySnapshot.forEach((bdDoc) => {
+                  console.log("Building", bdDoc.id, bdDoc.data());
+                  db.collection("floors")
+                    .where("belongs_to", "==", bdDoc.id)
+                    .get()
+                    .then((flQuerySnapshot) => {
+                      flQuerySnapshot.forEach((flDoc) => {
+                        console.log("Floors", flDoc.id, flDoc.data());
+                        db.collection("bulletin_boards")
+                          .where("belongs_to", "==", flDoc.id)
+                          .get()
+                          .then((bbQuerySnapshot) => {
+                            bbQuerySnapshot.forEach((bbDoc) => {
+                              console.log("Bulletin Board", bbDoc.id, bbDoc.data());
+                            })
+                          })
+                          .catch(function(error) { console.log(error); });
+                      })
+                    })
+                    .catch(function(error) { console.log(error); });
+                });
+              })
+              .catch(function(error) { console.log(error); });
+          });
+        })
+        .catch(function(error) {
+          console.error("Error: Could not get data", error);
+        });
+    */
       function setDropdowns(selB, selF, selL){
         let myBuildings = "";
         let myFloors = "";
