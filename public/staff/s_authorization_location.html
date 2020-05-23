@@ -39,6 +39,16 @@
     <script src="../assets\vendor\jquery\jquery.min.js"></script>
     <script src="https://kit.fontawesome.com/b99e675b6e.js"></script>
     <link href="sidebar-style.css" rel="stylesheet" />
+    
+    <!--Loading the modal for boards view modal-->
+    <script> 
+      $(function(){
+        $("#bv1").load("../include/bv.html"); 
+  
+
+      });
+    </script> 
+    <!-------------------------------------------->
 
     <script>
       $(function () {
@@ -85,17 +95,17 @@
 
     </tr>
   </thead>
-  <tbody>
-    <tr>
-      <td scope="row">SUNY Korea</td>
+  <tbody >
+    <div id="bv1">
+    <tr >
+      <td scope="row" >SUNY Korea</td>
       <td>Academic Bldg. A</td>
       <td>2nd</td>
       <td>Library Bulletin Board</td>
       <td>    
-        <a href="./s_boards.html?bid=bd1&fid=fl1&lid=lc1">
-          <button type="button" class="btn btn-primary">View</button>
-        </a>
-        
+
+          <button type="button" class="btn btn-primary" onclick="openBVPosters('bd1','fl2','lc3')"> View </button>
+
       </td>
     </tr>
     <tr>
@@ -103,9 +113,9 @@
       <td>Academic Bldg. A</td>
       <td>2nd</td>
       <td>Computer Lab Bulletin Board</td>
-      <td>       <a href="./s_boards.html?bid=bd1&fid=fl1&lid=lc2">
-        <button type="button" class="btn btn-primary">View</button>
-      </a>
+      <td>        
+        
+        <button type="button" class="btn btn-primary" id="bv1" onclick="openBVPosters('bd3','fl5','lc10')"> View </button>       
       
       </td>
     </tr>
@@ -114,9 +124,9 @@
       <td>Academic Bldg. A</td>
       <td>2nd</td>
       <td>Student Affairs Bulletin Board</td>
-      <td>       <a href="./s_boards.html?bid=bd1&fid=fl2&lid=lc3">
-        <button type="button" class="btn btn-primary">View</button>
-      </a>
+      <td>
+            <button type="button" class="btn btn-primary" id="bv1" onclick="openBVPosters('bd3','fl5','lc10')"> View </button>       
+
       
       </td>
     </tr>
@@ -125,10 +135,7 @@
       <td>Academic Bldg. B</td>
       <td>4th</td>
       <td>CS Commons Bulletin Board</td>
-      <td>      <a href="./s_boards.html?bid=bd1&fid=fl2&lid=lc4">
-        <button type="button" class="btn btn-primary">View</button>
-      </a>
-      
+      <td>          <button type="button" class="btn btn-primary" id="bv1" onclick="openBVPosters('bd3','fl5','lc10')"> View </button>       
       </td>
     </tr>
     <tr>
@@ -136,12 +143,11 @@
       <td>Academic Bldg. B</td>
       <td>5th</td>
       <td>AMS Dept. Lounge Bulletin Board</td>
-      <td>       <a href="./s_boards.html?bid=bd2&fid=fl3&lid=lc5">
-        <button type="button" class="btn btn-primary">View</button>
-      </a>
+      <td>          <button type="button" class="btn btn-primary" id="bv1" onclick="openBVPosters('bd3','fl5','lc10')"> View </button>       
       
       </td>
     </tr>
+  </div>
   </tbody>
 </table>
 <br>

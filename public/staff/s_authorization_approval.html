@@ -45,6 +45,13 @@
         $("#header").load("../include/staff_header.html");
         $("#footer").load("../include/staff_footer.html");
       });
+
+      function showAlert() {
+        $("#submitAlert").append(
+          "<div class='alert alert-success alert-dismissable' id='submitAlert'>Success! message sent successfully.</div>"
+        );
+      }
+      // $("#myAlert").css("display", "");
     </script>
   </head>
   <body>
@@ -156,23 +163,18 @@
             ><input type="radio" name="optradio" /> Approve</label
           >
         </div>
-        <a href="./s_requests.html">
-          <button
-            style="float: right;"
-            type="button"
-            class="btn btn-success"
-            onclick="window.alert('Successfully Sent. [*with db, the request status will be changed to complete [Approved/Rejected]]')"
-          >
-            Send
-          </button>
-        </a>
+        <button
+          style="float: right;"
+          type="button"
+          class="btn btn-success"
+          onclick="showAlert()"
+        >
+          Send
+        </button>
 
         <br />
         <br />
-
-        <div class="alert alert-success" role="alert">
-          make this show once submitted instaed of alert() saying success..
-        </div>
+        <div id="submitAlert"></div>
       </form>
     </div>
     <div id="footer"></div>
