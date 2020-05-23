@@ -90,6 +90,38 @@
 
     <!-- Template Main JS File -->
     <!-- <script src="../assets/js/main.js"></script> -->
+
+    
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/7.14.4/firebase-app.js"></script>
+
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+        https://firebase.google.com/docs/web/setup#available-libraries -->
+    <script src="https://www.gstatic.com/firebasejs/7.14.4/firebase-analytics.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.14.4/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.14.4/firebase-firestore.js"></script>
+
+    <!-- <script src="../include/init_firebase.js"></script> -->
+    <script>
+        // Your web app's Firebase configuration
+      var firebaseConfig = {
+        apiKey: "AIzaSyBveio8IuFGOMymSnwNgAWqc14BVliUwHY",
+        authDomain: "trackboard-d41a2.firebaseapp.com",
+        databaseURL: "https://trackboard-d41a2.firebaseio.com",
+        projectId: "trackboard-d41a2",
+        storageBucket: "trackboard-d41a2.appspot.com",
+        messagingSenderId: "880705427344",
+        appId: "1:880705427344:web:43e253a149143cc9218515",
+        measurementId: "G-5GLK0MX33D",
+      };
+      // Initialize Firebase
+      firebase.initializeApp(firebaseConfig);
+      firebase.analytics();
+
+      var st = firebase.storage();
+      var db = firebase.firestore();
+    </script>
+
     <script>
 
       // var bfl = [];
@@ -373,6 +405,9 @@
         // TODO call API and get full list of posters and bfl
         // this.bfl = [];
         // this.myPosters = [];
+        // console.log(bfl);
+        // console.log(db);
+        // console.log(db.collection("buildings").get());
 
         let myParams = getParams(window.location.href);
         if( getBuildingName(myParams.bid) !== "All Buildings"  ){
@@ -391,9 +426,48 @@
           selectedLocation = "*";
         }
         setDropdowns(selectedBuilding, selectedFloor, selectedLocation);
-        
+        /*
+        db.collection("establishment")
+          .where("staff", "array-contains", "staff1@sunykorea.ac.kr") //get proper email later
+          .get()
+          .then((querySnapshot) => { 
+            // console.log(querySnapshot);
+            querySnapshot.forEach((doc) => {
+              console.log("Establishment", doc.id, doc.data());
+              db.collection("buildings")
+                .where("belongs_to", "==", doc.id)
+                .get()
+                .then((bdQuerySnapshot) => {
+                  bdQuerySnapshot.forEach((bdDoc) => {
+                    console.log("Building", bdDoc.id, bdDoc.data());
+                    db.collection("floors")
+                      .where("belongs_to", "==", bdDoc.id)
+                      .get()
+                      .then((flQuerySnapshot) => {
+                        flQuerySnapshot.forEach((flDoc) => {
+                          console.log("Floors", flDoc.id, flDoc.data());
+                          db.collection("bulletin_boards")
+                            .where("belongs_to", "==", flDoc.id)
+                            .get()
+                            .then((bbQuerySnapshot) => {
+                              bbQuerySnapshot.forEach((bbDoc) => {
+                                console.log("Bulletin Board", bbDoc.id, bbDoc.data());
+                              })
+                            })
+                            .catch(function(error) { console.log(error); });
+                        })
+                      })
+                      .catch(function(error) { console.log(error); });
+                  });
+                })
+                .catch(function(error) { console.log(error); });
+            });
+          })
+          .catch(function(error) {
+            console.error("Error: Could not get data", error);
+          });
       });
-
+      */
       function setDropdowns(selB, selF, selL){
         let myBuildings = "";
         let myFloors = "";
