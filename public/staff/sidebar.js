@@ -12,7 +12,7 @@ function openNav() {
 }
 
 function closeNav() {
-  document.body.style.backgroundColor = "rgb(54, 54, 54)";
+  document.body.style.backgroundColor = "#0e262c";
   document.getElementById("main_content").style.backgroundColor = "white";
 
   document.getElementById("openbtn").style.width = "5%";
