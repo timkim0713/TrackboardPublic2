@@ -1,0 +1,896 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Trackboard</title>
+    <meta content="" name="descriptison" />
+    <meta content="" name="keywords" />
+
+    <!-- Favicons -->
+    <link href="" rel="icon" />
+    <link href="" rel="apple-touch-icon" />
+
+    <!-- Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
+      rel="stylesheet"
+    />
+
+    <!-- Vendor CSS Files -->
+    <link
+      href="assets/vendor/bootstrap/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link href="assets/vendor/icofont/icofont.min.css" rel="stylesheet" />
+    <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet" />
+    <link href="assets/vendor/animate.css/animate.min.css" rel="stylesheet" />
+    <link href="assets/vendor/venobox/venobox.css" rel="stylesheet" />
+    <link
+      href="assets/vendor/owl.carousel/assets/owl.carousel.min.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://pro.fontawesome.com/releases/v5.12.0/css/all.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Bonbon&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://unpkg.com/ionicons@5.0.0/dist/ionicons.js"></script>
+    <!-- Template Main CSS File -->
+    <link href="assets/css/style.css" rel="stylesheet" />
+
+    <script src="assets\vendor\jquery\jquery.min.js"></script>
+    <script>
+      $(function () {
+        $("#header").load("include/none_header.html");
+        $("#footer").load("include/none_footer.html");
+      });
+    </script>
+  </head>
+  <body>
+    <!-- Run 'firebase serve' and open localhost to see header and footer, otherwise you get CORS error  -->
+    <header id="header" class="fixed-top d-flex align-items-center"></header>
+
+    <!-- ======= Hero Section ======= -->
+    <section
+      id="hero"
+      class="d-flex flex-column justify-content-center align-items-center"
+    >
+      <div class="container text-center text-md-left" data-aos="fade-up">
+        <h1>Welcome to <span>Trackboard</span></h1>
+        <h2>Authorize your posters for all IGC Universities in one place</h2>
+        <a
+          href="#"
+          class="btn-get-started scrollto"
+          data-toggle="modal"
+          data-target="#logInModal"
+          aria-hidden="true"
+          >Log In </a
+        >
+        <a href="#about" class="btn-get-started scrollto">About Us</a>
+        <a href="#portfolio" class="btn-get-started scrollto">View Boards</a
+        ><br /><br />
+        <!--
+        <a href="/" class="btn-get-started scrollto">Primary Task 1 - Student Request</a><br>
+        <a href="staff/s_authorization_approval.html" class="btn-get-started scrollto">Primary Task 2 - Staff Authorization</a><br>
+        <a href="/staff/s_boards.html" class="btn-get-started scrollto">Primary Task 3 - Staff Boards/Location</a>
+        -->
+      </div>
+    </section>
+    <!-- End Hero -->
+
+    <!-- ======= About Section ======= -->
+    <section id="about" class="about">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-6">
+            <img src="assets/img/trackboard.png" class="img-fluid" alt="" />
+          </div>
+          <br />
+          <div class="col-lg-6 pt-4 pt-lg-0">
+            <br />
+            <br />
+            <br />
+
+            <h3>
+              <ion-icon name="chatbubble-ellipses-outline"></ion-icon> &nbsp; About Us
+            </h3>
+            <p>
+              Trackboard is a simple and technological way of managing and
+              requesting posters online across the universities and
+              institutions. Trackbaord aims to create a well-structured poster
+              management system for both the administrators and the users.
+            </p>
+            <ul>
+              <li>
+                <i class="bx bx-check-double"></i>
+                Request poster authorization faster, easier, better
+              </li>
+              <li>
+                <i class="bx bx-check-double"></i>
+                No more messy bulletin boards
+              </li>
+            </ul>
+            <div class="row icon-boxes">
+              <div class="col-md-6">
+                <i class="bx bx-receipt"></i>
+                <h4>Making Process</h4>
+                <p>
+                  We aim to technologically solve messy posters around your campus.
+                  <br>
+                  <br>
+                  <a style="font-style: italic;"target="_blank" rel="noopener noreferrer"  href="https://drive.google.com/file/d/15GhbO8tm4JjqHlvgYfyj7VizbObbxxi2/view?usp=sharing
+                  "><ion-icon name="key-outline"></ion-icon> User Research</a> <br>
+
+                  <a style="font-style: italic;"target="_blank" rel="noopener noreferrer"  href="https://drive.google.com/file/d/1vgaT90er7t3Lxd4wXIYl1Rg-q31VX6d9/view
+                  "><ion-icon name="key-outline"></ion-icon> Paper Prototype</a> <br>
+
+                  <a style="font-style: italic;"target="_blank" rel="noopener noreferrer"  href="https://www.figma.com/proto/HmNYGlS3hcwMyxQGwkh9xJ/Trackboard?node-id=0%3A1&scaling=min-zoom"><ion-icon name="key-outline"></ion-icon> Figma Prototype</a> <br>
+                </p>
+              </div>
+              <div class="col-md-6 mt-4 mt-md-0">
+                <i class="bx bx-cube-alt"></i>
+                <h4>Team Members</h4>
+                <p>
+                  It is created by a group of Computer Science students at SUNY
+                  Korea.<br />
+                  <br>
+                  <ion-icon name="man-outline"></ion-icon> Haseung Lee<br />
+                  <ion-icon name="man-outline"></ion-icon> Muhammad Bilal
+                  <br />
+                  <ion-icon name="man-outline"></ion-icon> Tim Kim
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- End About Section -->
+
+
+    <!-- ======= Team Section ======= -->
+    <section id="team" class="team">
+      <div class="container">
+
+        <div class="section-title">
+          <h2>Team</h2>
+          <p>Sit sint consectetur velit quos quisquam cupiditate nemo qui</p>
+        </div>
+
+        <div class="row">
+          <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
+            <div class="member">
+              <img src="assets/img/team/Haseung.jpg" alt="">
+              <h4>Haseung Lee</h4>
+              <span>Chief Executive Officer</span>
+              <p>
+                Magni qui quod omnis unde et eos fuga et exercitationem. Odio veritatis perspiciatis quaerat qui aut aut aut
+              </p>
+              <div class="social">
+                <a href=""><i class="icofont-twitter"></i></a>
+                <a href=""><i class="icofont-facebook"></i></a>
+                <a href=""><i class="icofont-instagram"></i></a>
+                <a href=""><i class="icofont-linkedin"></i></a>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
+            <div class="member">
+              <img src="assets/img/team/Tim.jpg" alt="">
+              <h4>Tim Kim</h4>
+              <span>Barista</span>
+              <p>
+                Repellat fugiat adipisci nemo illum nesciunt voluptas repellendus. In architecto rerum rerum temporibus
+              </p>
+              <div class="social">
+                <a href=""><i class="icofont-twitter"></i></a>
+                <a href=""><i class="icofont-facebook"></i></a>
+                <a href=""><i class="icofont-instagram"></i></a>
+                <a href=""><i class="icofont-linkedin"></i></a>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
+            <div class="member">
+              <img src="assets/img/team/team-3.jpg" alt="">
+              <h4>William Anderson</h4>
+              <span>CTO</span>
+              <p>
+                Voluptas necessitatibus occaecati quia. Earum totam consequuntur qui porro et laborum toro des clara
+              </p>
+              <div class="social">
+                <a href=""><i class="icofont-twitter"></i></a>
+                <a href=""><i class="icofont-facebook"></i></a>
+                <a href=""><i class="icofont-instagram"></i></a>
+                <a href=""><i class="icofont-linkedin"></i></a>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section><!-- End Team Section -->
+
+    <!-- ======= Boards Section ======= -->
+    <section id="portfolio" class="portfolio">
+      <div class="container">
+        <div class="section-title">
+          <br>
+          <h2>BOARDS</h2>
+          <p>Navigate through the campuses to explore exciting posters</p>
+        </div>
+
+        <div class="row">
+          <div class="col-lg-12">
+            <ul id="portfolio-flters">
+              <li data-filter="*" class="filter-active">All</li>
+              <li data-filter=".filter-igc">IGC</li>
+              <li data-filter=".filter-suny">SUNY</li>
+              <li data-filter=".filter-gmu">GMU</li>
+              <li data-filter=".filter-ghent">Ghent</li>
+              <li data-filter=".filter-utah">Utah</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="row portfolio-container" style="min-height: 720px; max-height: 720px; margin: 10px; padding-Top:20px; background-color: rgb(180, 203, 204); overflow-y:scroll; display: flex; justify-content: flex-start;">
+          <!-- TODO DYNAMICALLY LOAOD CONTENT !! Below is an example -->
+          <!-- --IGC-- -->
+          <div class="col-lg-4 col-md-6 portfolio-item filter-igc wow fadeInUp">
+            <div class="portfolio-wrap">
+              <figure>
+                <img src="assets/img/posters/poster-1.jpg" class="img-fluid" alt=""/>
+                <a href="assets/img/portfolio/poster-1.jpg" data-gall="portfolioGallery" class="link-preview venobox" title="Preview" ><i class="bx bx-plus"></i></a>
+                <a href="portfolio-details.html" class="link-details" title="More Details" ><i class="bx bx-link"></i></a>
+              </figure>
+              <div class="portfolio-info">
+                <h4><a href="portfolio-details.html">Uploader</a></h4>
+                <p>Poster Info (?)</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6 portfolio-item filter-suny wow fadeInUp">
+            <div class="portfolio-wrap">
+              <figure>
+                <img src="assets/img/posters/poster-2.jpg" class="img-fluid" alt=""/>
+                <a href="assets/img/portfolio/poster-2.jpg" data-gall="portfolioGallery" class="link-preview venobox" title="Preview" ><i class="bx bx-plus"></i></a>
+                <a href="portfolio-details.html" class="link-details" title="More Details" ><i class="bx bx-link"></i></a>
+              </figure>
+              <div class="portfolio-info">
+                <h4><a href="portfolio-details.html">Uploader</a></h4>
+                <p>Poster Info (?)</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6 portfolio-item filter-gmu wow fadeInUp">
+            <div class="portfolio-wrap">
+              <figure>
+                <img src="assets/img/posters/poster-3.jpg" class="img-fluid" alt=""/>
+                <a href="assets/img/portfolio/poster-3.jpg" data-gall="portfolioGallery" class="link-preview venobox" title="Preview" ><i class="bx bx-plus"></i></a>
+                <a href="portfolio-details.html" class="link-details" title="More Details" ><i class="bx bx-link"></i></a>
+              </figure>
+              <div class="portfolio-info">
+                <h4><a href="portfolio-details.html">Uploader</a></h4>
+                <p>Poster Info (?)</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6 portfolio-item filter-ghent wow fadeInUp">
+            <div class="portfolio-wrap">
+              <figure>
+                <img src="assets/img/posters/poster-4.jpg" class="img-fluid" alt=""/>
+                <a href="assets/img/portfolio/poster-4.jpg" data-gall="portfolioGallery" class="link-preview venobox" title="Preview" ><i class="bx bx-plus"></i></a>
+                <a href="portfolio-details.html" class="link-details" title="More Details" ><i class="bx bx-link"></i></a>
+              </figure>
+              <div class="portfolio-info">
+                <h4><a href="portfolio-details.html">Uploader</a></h4>
+                <p>Poster Info (?)</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6 portfolio-item filter-utah wow fadeInUp">
+            <div class="portfolio-wrap">
+              <figure>
+                <img src="assets/img/posters/poster-5.jpg" class="img-fluid" alt=""/>
+                <a href="assets/img/portfolio/poster-5.jpg" data-gall="portfolioGallery" class="link-preview venobox" title="Preview" ><i class="bx bx-plus"></i></a>
+                <a href="portfolio-details.html" class="link-details" title="More Details" ><i class="bx bx-link"></i></a>
+              </figure>
+              <div class="portfolio-info">
+                <h4><a href="portfolio-details.html">Uploader</a></h4>
+                <p>Poster Info (?)</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6 portfolio-item filter-igc wow fadeInUp">
+            <div class="portfolio-wrap">
+              <figure>
+                <img src="assets/img/posters/poster-6.jpg" class="img-fluid" alt=""/>
+                <a href="assets/img/portfolio/poster-6.jpg" data-gall="portfolioGallery" class="link-preview venobox" title="Preview" ><i class="bx bx-plus"></i></a>
+                <a href="portfolio-details.html" class="link-details" title="More Details" ><i class="bx bx-link"></i></a>
+              </figure>
+              <div class="portfolio-info">
+                <h4><a href="portfolio-details.html">Uploader</a></h4>
+                <p>Poster Info (?)</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6 portfolio-item filter-suny wow fadeInUp">
+            <div class="portfolio-wrap">
+              <figure>
+                <img src="assets/img/posters/poster-7.jpeg" class="img-fluid" alt=""/>
+                <a href="assets/img/portfolio/poster-7.jpeg" data-gall="portfolioGallery" class="link-preview venobox" title="Preview" ><i class="bx bx-plus"></i></a>
+                <a href="portfolio-details.html" class="link-details" title="More Details" ><i class="bx bx-link"></i></a>
+              </figure>
+              <div class="portfolio-info">
+                <h4><a href="portfolio-details.html">Uploader</a></h4>
+                <p>Poster Info (?)</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6 portfolio-item filter-gmu wow fadeInUp">
+            <div class="portfolio-wrap">
+              <figure>
+                <img src="assets/img/posters/poster-8.jpg" class="img-fluid" alt=""/>
+                <a href="assets/img/portfolio/poster-8.jpg" data-gall="portfolioGallery" class="link-preview venobox" title="Preview" ><i class="bx bx-plus"></i></a>
+                <a href="portfolio-details.html" class="link-details" title="More Details" ><i class="bx bx-link"></i></a>
+              </figure>
+              <div class="portfolio-info">
+                <h4><a href="portfolio-details.html">Uploader</a></h4>
+                <p>Poster Info (?)</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6 portfolio-item filter-ghent wow fadeInUp">
+            <div class="portfolio-wrap">
+              <figure>
+                <img src="assets/img/posters/poster-9.jpg" class="img-fluid" alt=""/>
+                <a href="assets/img/portfolio/poster-9.jpg" data-gall="portfolioGallery" class="link-preview venobox" title="Preview" ><i class="bx bx-plus"></i></a>
+                <a href="portfolio-details.html" class="link-details" title="More Details" ><i class="bx bx-link"></i></a>
+              </figure>
+              <div class="portfolio-info">
+                <h4><a href="portfolio-details.html">Uploader</a></h4>
+                <p>Poster Info (?)</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6 portfolio-item filter-utah wow fadeInUp">
+            <div class="portfolio-wrap">
+              <figure>
+                <img src="assets/img/posters/poster-10.jpg" class="img-fluid" alt=""/>
+                <a href="assets/img/portfolio/poster-10.jpg" data-gall="portfolioGallery" class="link-preview venobox" title="Preview" ><i class="bx bx-plus"></i></a>
+                <a href="portfolio-details.html" class="link-details" title="More Details" ><i class="bx bx-link"></i></a>
+              </figure>
+              <div class="portfolio-info">
+                <h4><a href="portfolio-details.html">Uploader</a></h4>
+                <p>Poster Info (?)</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6 portfolio-item filter-igc wow fadeInUp">
+            <div class="portfolio-wrap">
+              <figure>
+                <img src="assets/img/posters/poster-11.jpg" class="img-fluid" alt=""/>
+                <a href="assets/img/portfolio/poster-11.jpg" data-gall="portfolioGallery" class="link-preview venobox" title="Preview" ><i class="bx bx-plus"></i></a>
+                <a href="portfolio-details.html" class="link-details" title="More Details" ><i class="bx bx-link"></i></a>
+              </figure>
+              <div class="portfolio-info">
+                <h4><a href="portfolio-details.html">Uploader</a></h4>
+                <p>Poster Info (?)</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6 portfolio-item filter-suny wow fadeInUp">
+            <div class="portfolio-wrap">
+              <figure>
+                <img src="assets/img/posters/poster-12.jpg" class="img-fluid" alt=""/>
+                <a href="assets/img/portfolio/poster-12.jpg" data-gall="portfolioGallery" class="link-preview venobox" title="Preview" ><i class="bx bx-plus"></i></a>
+                <a href="portfolio-details.html" class="link-details" title="More Details" ><i class="bx bx-link"></i></a>
+              </figure>
+              <div class="portfolio-info">
+                <h4><a href="portfolio-details.html">Uploader</a></h4>
+                <p>Poster Info (?)</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6 portfolio-item filter-gmu wow fadeInUp">
+            <div class="portfolio-wrap">
+              <figure>
+                <img src="assets/img/posters/poster-13.jpg" class="img-fluid" alt=""/>
+                <a href="assets/img/portfolio/poster-13.jpg" data-gall="portfolioGallery" class="link-preview venobox" title="Preview" ><i class="bx bx-plus"></i></a>
+                <a href="portfolio-details.html" class="link-details" title="More Details" ><i class="bx bx-link"></i></a>
+              </figure>
+              <div class="portfolio-info">
+                <h4><a href="portfolio-details.html">Uploader</a></h4>
+                <p>Poster Info (?)</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6 portfolio-item filter-ghent wow fadeInUp">
+            <div class="portfolio-wrap">
+              <figure>
+                <img src="assets/img/posters/poster-14.jpg" class="img-fluid" alt=""/>
+                <a href="assets/img/portfolio/poster-14.jpg" data-gall="portfolioGallery" class="link-preview venobox" title="Preview" ><i class="bx bx-plus"></i></a>
+                <a href="portfolio-details.html" class="link-details" title="More Details" ><i class="bx bx-link"></i></a>
+              </figure>
+              <div class="portfolio-info">
+                <h4><a href="portfolio-details.html">Uploader</a></h4>
+                <p>Poster Info (?)</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6 portfolio-item filter-utah wow fadeInUp">
+            <div class="portfolio-wrap">
+              <figure>
+                <img src="assets/img/posters/poster-15.jpg" class="img-fluid" alt=""/>
+                <a href="assets/img/portfolio/poster-15.jpg" data-gall="portfolioGallery" class="link-preview venobox" title="Preview" ><i class="bx bx-plus"></i></a>
+                <a href="portfolio-details.html" class="link-details" title="More Details" ><i class="bx bx-link"></i></a>
+              </figure>
+              <div class="portfolio-info">
+                <h4><a href="portfolio-details.html">Uploader</a></h4>
+                <p>Poster Info (?)</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6 portfolio-item filter-igc wow fadeInUp">
+            <div class="portfolio-wrap">
+              <figure>
+                <img src="assets/img/posters/poster-16.jpg" class="img-fluid" alt=""/>
+                <a href="assets/img/portfolio/poster-16.jpg" data-gall="portfolioGallery" class="link-preview venobox" title="Preview" ><i class="bx bx-plus"></i></a>
+                <a href="portfolio-details.html" class="link-details" title="More Details" ><i class="bx bx-link"></i></a>
+              </figure>
+              <div class="portfolio-info">
+                <h4><a href="portfolio-details.html">Uploader</a></h4>
+                <p>Poster Info (?)</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6 portfolio-item filter-suny wow fadeInUp">
+            <div class="portfolio-wrap">
+              <figure>
+                <img src="assets/img/posters/poster-17.jpg" class="img-fluid" alt=""/>
+                <a href="assets/img/portfolio/poster-17.jpg" data-gall="portfolioGallery" class="link-preview venobox" title="Preview" ><i class="bx bx-plus"></i></a>
+                <a href="portfolio-details.html" class="link-details" title="More Details" ><i class="bx bx-link"></i></a>
+              </figure>
+              <div class="portfolio-info">
+                <h4><a href="portfolio-details.html">Uploader</a></h4>
+                <p>Poster Info (?)</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6 portfolio-item filter-gmu wow fadeInUp">
+            <div class="portfolio-wrap">
+              <figure>
+                <img src="assets/img/posters/poster-18.jpg" class="img-fluid" alt=""/>
+                <a href="assets/img/portfolio/poster-18.jpg" data-gall="portfolioGallery" class="link-preview venobox" title="Preview" ><i class="bx bx-plus"></i></a>
+                <a href="portfolio-details.html" class="link-details" title="More Details" ><i class="bx bx-link"></i></a>
+              </figure>
+              <div class="portfolio-info">
+                <h4><a href="portfolio-details.html">Uploader</a></h4>
+                <p>Poster Info (?)</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6 portfolio-item filter-ghent wow fadeInUp">
+            <div class="portfolio-wrap">
+              <figure>
+                <img src="assets/img/posters/poster-19.jpg" class="img-fluid" alt=""/>
+                <a href="assets/img/portfolio/poster-19.jpg" data-gall="portfolioGallery" class="link-preview venobox" title="Preview" ><i class="bx bx-plus"></i></a>
+                <a href="portfolio-details.html" class="link-details" title="More Details" ><i class="bx bx-link"></i></a>
+              </figure>
+              <div class="portfolio-info">
+                <h4><a href="portfolio-details.html">Uploader</a></h4>
+                <p>Poster Info (?)</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6 portfolio-item filter-utah wow fadeInUp">
+            <div class="portfolio-wrap">
+              <figure>
+                <img src="assets/img/posters/poster-20.jpg" class="img-fluid" alt=""/>
+                <a href="assets/img/portfolio/poster-20.jpg" data-gall="portfolioGallery" class="link-preview venobox" title="Preview" ><i class="bx bx-plus"></i></a>
+                <a href="portfolio-details.html" class="link-details" title="More Details" ><i class="bx bx-link"></i></a>
+              </figure>
+              <div class="portfolio-info">
+                <h4><a href="portfolio-details.html">Uploader</a></h4>
+                <p>Poster Info (?)</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6 portfolio-item filter-igc wow fadeInUp">
+            <div class="portfolio-wrap">
+              <figure>
+                <img src="assets/img/posters/poster-21.jpg" class="img-fluid" alt=""/>
+                <a href="assets/img/portfolio/poster-21.jpg" data-gall="portfolioGallery" class="link-preview venobox" title="Preview" ><i class="bx bx-plus"></i></a>
+                <a href="portfolio-details.html" class="link-details" title="More Details" ><i class="bx bx-link"></i></a>
+              </figure>
+              <div class="portfolio-info">
+                <h4><a href="portfolio-details.html">Uploader</a></h4>
+                <p>Poster Info (?)</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6 portfolio-item filter-suny wow fadeInUp">
+            <div class="portfolio-wrap">
+              <figure>
+                <img src="assets/img/posters/poster-22.jpg" class="img-fluid" alt=""/>
+                <a href="assets/img/portfolio/poster-22.jpg" data-gall="portfolioGallery" class="link-preview venobox" title="Preview" ><i class="bx bx-plus"></i></a>
+                <a href="portfolio-details.html" class="link-details" title="More Details" ><i class="bx bx-link"></i></a>
+              </figure>
+              <div class="portfolio-info">
+                <h4><a href="portfolio-details.html">Uploader</a></h4>
+                <p>Poster Info (?)</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6 portfolio-item filter-gmu wow fadeInUp">
+            <div class="portfolio-wrap">
+              <figure>
+                <img src="assets/img/posters/poster-23.jpg" class="img-fluid" alt=""/>
+                <a href="assets/img/portfolio/poster-23.jpg" data-gall="portfolioGallery" class="link-preview venobox" title="Preview" ><i class="bx bx-plus"></i></a>
+                <a href="portfolio-details.html" class="link-details" title="More Details" ><i class="bx bx-link"></i></a>
+              </figure>
+              <div class="portfolio-info">
+                <h4><a href="portfolio-details.html">Uploader</a></h4>
+                <p>Poster Info (?)</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6 portfolio-item filter-ghent wow fadeInUp">
+            <div class="portfolio-wrap">
+              <figure>
+                <img src="assets/img/posters/poster-24.jpg" class="img-fluid" alt=""/>
+                <a href="assets/img/portfolio/poster-24.jpg" data-gall="portfolioGallery" class="link-preview venobox" title="Preview" ><i class="bx bx-plus"></i></a>
+                <a href="portfolio-details.html" class="link-details" title="More Details" ><i class="bx bx-link"></i></a>
+              </figure>
+              <div class="portfolio-info">
+                <h4><a href="portfolio-details.html">Uploader</a></h4>
+                <p>Poster Info (?)</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6 portfolio-item filter-utah wow fadeInUp">
+            <div class="portfolio-wrap">
+              <figure>
+                <img src="assets/img/posters/poster-25.jpg" class="img-fluid" alt=""/>
+                <a href="assets/img/portfolio/poster-25.jpg" data-gall="portfolioGallery" class="link-preview venobox" title="Preview" ><i class="bx bx-plus"></i></a>
+                <a href="portfolio-details.html" class="link-details" title="More Details" ><i class="bx bx-link"></i></a>
+              </figure>
+              <div class="portfolio-info">
+                <h4><a href="portfolio-details.html">Uploader</a></h4>
+                <p>Poster Info (?)</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6 portfolio-item filter-igc wow fadeInUp">
+            <div class="portfolio-wrap">
+              <figure>
+                <img src="assets/img/posters/poster-26.jpg" class="img-fluid" alt=""/>
+                <a href="assets/img/portfolio/poster-26.jpg" data-gall="portfolioGallery" class="link-preview venobox" title="Preview" ><i class="bx bx-plus"></i></a>
+                <a href="portfolio-details.html" class="link-details" title="More Details" ><i class="bx bx-link"></i></a>
+              </figure>
+              <div class="portfolio-info">
+                <h4><a href="portfolio-details.html">Uploader</a></h4>
+                <p>Poster Info (?)</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6 portfolio-item filter-suny wow fadeInUp">
+            <div class="portfolio-wrap">
+              <figure>
+                <img src="assets/img/posters/poster-27.jpg" class="img-fluid" alt=""/>
+                <a href="assets/img/portfolio/poster-27.jpg" data-gall="portfolioGallery" class="link-preview venobox" title="Preview" ><i class="bx bx-plus"></i></a>
+                <a href="portfolio-details.html" class="link-details" title="More Details" ><i class="bx bx-link"></i></a>
+              </figure>
+              <div class="portfolio-info">
+                <h4><a href="portfolio-details.html">Uploader</a></h4>
+                <p>Poster Info (?)</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6 portfolio-item filter-gmu wow fadeInUp">
+            <div class="portfolio-wrap">
+              <figure>
+                <img src="assets/img/posters/poster-28.jpg" class="img-fluid" alt=""/>
+                <a href="assets/img/portfolio/poster-28.jpg" data-gall="portfolioGallery" class="link-preview venobox" title="Preview" ><i class="bx bx-plus"></i></a>
+                <a href="portfolio-details.html" class="link-details" title="More Details" ><i class="bx bx-link"></i></a>
+              </figure>
+              <div class="portfolio-info">
+                <h4><a href="portfolio-details.html">Uploader</a></h4>
+                <p>Poster Info (?)</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6 portfolio-item filter-ghent wow fadeInUp">
+            <div class="portfolio-wrap">
+              <figure>
+                <img src="assets/img/posters/poster-29.jpg" class="img-fluid" alt=""/>
+                <a href="assets/img/portfolio/poster-29.jpg" data-gall="portfolioGallery" class="link-preview venobox" title="Preview" ><i class="bx bx-plus"></i></a>
+                <a href="portfolio-details.html" class="link-details" title="More Details" ><i class="bx bx-link"></i></a>
+              </figure>
+              <div class="portfolio-info">
+                <h4><a href="portfolio-details.html">Uploader</a></h4>
+                <p>Poster Info (?)</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6 portfolio-item filter-igc wow fadeInUp">
+            <div class="portfolio-wrap">
+              <figure>
+                <img src="assets/img/posters/poster-30.jpg" class="img-fluid" alt=""/>
+                <a href="assets/img/portfolio/poster-30.jpg" data-gall="portfolioGallery" class="link-preview venobox" title="Preview" ><i class="bx bx-plus"></i></a>
+                <a href="portfolio-details.html" class="link-details" title="More Details" ><i class="bx bx-link"></i></a>
+              </figure>
+              <div class="portfolio-info">
+                <h4><a href="portfolio-details.html">Uploader</a></h4>
+                <p>Poster Info (?)</p>
+              </div>
+            </div>
+          </div>
+
+
+        </div>
+      </div>
+    </section>
+    <!-- End Portfolio Section -->
+
+<!--start  of log in-->
+    <div
+      class="modal fade"
+      id="logInModal"
+      tabindex="-1"
+      role="dialog"
+      aria-labelledby="exampleModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Log in</h5>
+            <button
+              type="button"
+              class="close"
+              data-dismiss="modal"
+              aria-label="Close"
+            >
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <form>
+                <div class="form-group">
+                  <label for="exampleInputEmail1">Email address</label>
+                  <input
+                    type="email"
+                    class="form-control"
+                    id="exampleInputEmail1"
+                    aria-describedby="emailHelp"
+                    placeholder="Enter email"
+                  />
+                  <small id="emailHelp" class="form-text text-muted"
+                    >We'll never share your email with anyone else.</small
+                  >
+                </div>
+                <div class="form-group">
+                  <label for="exampleInputPassword1">Password</label>
+                  <input
+                    type="password"
+                    class="form-control"
+                    id="exampleInputPassword1"
+                    placeholder="Password"
+                  />
+                </div>
+                      <br>
+              
+                  <label for="studentstaff">Log in as</label>
+                  <select class="form-control form-control-sm" id="studentstaff" onclick="logInMode()">
+                    <option>--Select User--</option>
+                    <option>Student</option>
+                    <option>Staff</option>
+                  </select>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-dismiss="modal"
+
+              href="#"
+              data-toggle="modal"
+              data-target="#createNewAccountModal"
+              aria-hidden="true"
+            >
+              New?
+            </button>
+            <button
+              type="button"
+              id="staffstudentsubmit"
+              class="btn btn-primary" style="background-color: rgb(67, 175, 148);"
+             
+            >
+              Log in
+            </button>
+          </div>
+        </div>
+        </div>
+      </div>
+    </div>
+
+<!--end  of log in-->
+
+
+<!--start  of  create a new account-->
+
+    <div
+    class="modal fade"
+    id="createNewAccountModal"
+    tabindex="-1"
+    role="dialog"
+    aria-labelledby="exampleModalLabel2"
+    aria-hidden="true"
+  >
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="newAccount">Create New Account</h5>
+                  <button
+                    type="button"
+                    class="close"
+                    data-dismiss="modal"
+                    aria-label="Close"
+                  >
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+                  <form>
+                      <div class="form-group">
+                        <label for="name">Full Name</label>
+                        <input
+                          type="text"
+                          class="form-control"
+                          id="name"
+                          aria-describedby="name"
+                          placeholder="First Name    Last Name"
+                        />
+                    
+                        <label for="exampleInputEmail1">Email address</label>
+                        <input
+                          type="email"
+                          class="form-control"
+                          id="exampleInputEmail1"
+                          aria-describedby="emailHelp"
+                          placeholder="Enter email"
+                        />
+                        <small id="emailHelp" class="form-text text-muted"
+                          >We'll never share your email with anyone else.</small
+                        >
+                      </div>
+
+                      <div class="form-group">
+                        <label for="exampleInputPassword1">Create Password</label>
+                        <input
+                          type="text"
+                          class="form-control"
+                          id="exampleInputPassword1"
+                          placeholder="Password"
+                        />
+                      </div>
+                      <label for="campus">Campus</label>
+                      <select class="form-control form-control-sm" id="campus" onclick="">
+                        <option>--Select Campus--</option>
+
+                        <option>IGC</option>
+                        <option>SUNY Korea</option>
+                        <option>Utah</option>
+                        <option>Ghent</option>
+                        <option>George Mason</option>
+                      
+                      </select>
+                    
+                            <br>
+                    
+                        <label for="studentstaff">Create the account user as</label>
+                        <select class="form-control form-control-sm" id="studentstaff" onclick="logInMode()">
+                          <option>--Select User--</option>
+                          <option>Student</option>
+                          <option>Staff</option>
+                        </select>
+                  </form>
+                </div>
+                <div class="modal-footer">
+                  <button
+                    type="button"
+                    class="btn btn-secondary"
+                    data-dismiss="modal"
+                    href="#"
+                    data-toggle="modal"
+                    data-target="#aboutModal"
+                    aria-hidden="true"
+                  >
+                    About
+                  </button>
+                  <button
+                    type="button"
+                    class="btn btn-primary" style="background-color: rgb(67, 175, 148);"
+                    data-dismiss="modal"
+                    href="#"
+                    data-toggle="modal"
+                    data-target="#logInModal"
+                    aria-hidden="true"
+                  >
+                    Sign up!
+                  </button>
+                </div>
+              </div>
+      </div>
+    </div>
+  </div>
+<!--end of  create a new account-->
+
+
+
+
+<!--start  of about -->
+<div
+class="modal fade"
+id="aboutModal"
+tabindex="-1"
+role="dialog"
+aria-labelledby="aboutlabel"
+aria-hidden="true"
+>
+<div class="modal-dialog" role="document">
+  <div class="modal-content">
+    <div class="modal-header">
+      <h5 class="modal-title" id="about1">About</h5>
+      <button
+        type="button"
+        class="close"
+        data-dismiss="modal"
+        aria-label="Close"
+      >
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <div class="modal-body">
+      <p>Trackboard is a simple and technological way of managing and
+      requesting posters online across the universities and
+      institutions. Trackbaord aims to create a well-structured poster
+      management system for both the administrators and the users.</p>
+    </div>
+  
+  </div>
+  </div>
+</div>
+</div>
+
+<!--end  of about in-->
+
+
+
+
+    <footer id="footer"></footer>
+
+    <!-- Vendor JS Files -->
+    <script src="assets/vendor/jquery/jquery.min.js"></script>
+    <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/vendor/jquery.easing/jquery.easing.min.js"></script>
+    <script src="assets/vendor/php-email-form/validate.js"></script>
+    <script src="assets/vendor/waypoints/jquery.waypoints.min.js"></script>
+    <script src="assets/vendor/counterup/counterup.min.js"></script>
+    <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+    <script src="assets/vendor/venobox/venobox.min.js"></script>
+    <script src="assets/vendor/owl.carousel/owl.carousel.min.js"></script>
+
+    <!-- Template Main JS File -->
+    <script src="assets/js/main.js"></script>
+  </body>
+</html>

@@ -479,7 +479,6 @@
         }
         let specialRequest = document.getElementById("specialRequest").value;
 
-<<<<<<< HEAD
         var metadata = {
           contentType: posterIMG.type,
         };
@@ -501,44 +500,6 @@
           let storageRef = st.ref("Posters/" + docRef.id);
           storageRef.put(posterIMG);
         });
-||||||| 5ee65b2
-        colRef.add({
-          submitted_by: 'test',
-          reason: reason,
-          size: size,
-          postDate: postDate,
-          takeDownDate: takeDownDate,
-          locations: locations,
-          specialRequest: specialRequest,
-          appDate: Date.now(),
-          approved: "",
-          comment: ""
-        }).then(function(docRef) {
-          let storageRef = st.ref('Posters/' + docRef.id);
-          storageRef.put(posterIMG);
-        });
-
-
-
-=======
-        colRef
-          .add({
-            submitted_by: "test",
-            reason: reason,
-            size: size,
-            postDate: postDate,
-            takeDownDate: takeDownDate,
-            locations: locations,
-            specialRequest: specialRequest,
-            appDate: Date.now(),
-            approved: "",
-            comment: "",
-          })
-          .then(function (docRef) {
-            let storageRef = st.ref("Posters/" + docRef.id);
-            storageRef.put(posterIMG);
-          });
->>>>>>> 82f629911f6ac5c10cdb6d0b27b7ef9f1178746e
       }
     </script>
     <script src="../staff/sidebar.js"></script>
