@@ -13,7 +13,10 @@
     "specialRequest": "",
     "appDate": "2020-04-28",
     "approved": "",
-    "comment": ""
+    "comment": "",
+    "email": "daekyung.kim@stonybrook.edu",
+    "name": "Tim Kim",
+    "club": "SUNY FC"
   },
   {
     "id": 2,
@@ -29,7 +32,10 @@
     "specialRequest": "",
     "appDate": "2020-04-28",
     "approved": false,
-    "comment": "You haven't added the school logo to the poster"
+    "comment": "You haven't added the school logo to the poster",
+    "email": "Lebron.J@stonybrook.edu",
+    "name": "Lebron James",
+    "club": "SUNY Basketball"
   },
   {
     "id": 3,
@@ -45,6 +51,9 @@
     "specialRequest": "",
     "appDate": "2020-04-28",
     "approved": true,
-    "comment": "You can come to A208 and get your poster stamped"
+    "comment": "You can come to A208 and get your poster stamped",
+    "email": "jimmy.kim@stonybrook.edu",
+    "name": "Jimym Kim",
+    "club": "SUNY Movie Review Club"
   }
 ]

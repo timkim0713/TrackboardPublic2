@@ -71,6 +71,18 @@
           <hr />
           <div class="float-left">
             <div class="form-group">
+              <label for="name"><strong>Name</strong></label>
+              <input class="form-control" type="text" name="name" id="name" placeholder="e.g John Doe" disabled required>
+            </div>
+            <div class="form-group">
+              <label for="club"><strong>Organisation</strong></label>
+              <input class="form-control" type="text" id="club" name="club" placeholder="e.g SUNY Korea Startup Club or Student" disabled required>
+            </div>
+            <div class="form-group">
+              <label for="email"><strong>Email</strong></label>
+              <input class="form-control" type="email" id="email" name="email" placeholder="e.g John.Doe@stonybrook.edu" disabled required>
+            </div>
+            <div class="form-group">
               <label for="purpose"
                 ><strong>What is the purpose of the poster?</strong></label
               >
@@ -227,6 +239,8 @@
             let table = document.getElementById("posterHistory");
             data.forEach(function (application) {
               if (application.id == id) {
+                console.log(application);
+
                 showStuff(application);
                 document.getElementById("outputIMG").src =
                   "data/" + id + ".jpg";
@@ -240,6 +254,10 @@
           document.getElementById("pageHeader").innerText =
             "Completed Application";
         }
+        document.getElementById("name").value = data.name;
+        document.getElementById("email").value = data.email;
+        document.getElementById("club").value = data.club;
+
         document.getElementById("purpose").value = data.reason;
         if (data.size != "A3" || data.size != "A4") {
           //give other value
