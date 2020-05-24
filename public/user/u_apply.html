@@ -188,7 +188,7 @@
           <div class="float-right">
             <div class="container text-center">
               <div class="custom-file">
-                <p>
+
                   <input
                     type="file"
                     accept="image/*"
@@ -197,15 +197,13 @@
                     onchange="readURL(this);"
                     hidden
                   />
-                </p>
-                <p>
                   <label
                     class="btn btn-primary"
                     for="file"
                     style="cursor: pointer;"
                     >Upload Poster</label
                   >
-                </p>
+
                 <p><img id="outputIMG" width="450" /></p>
               </div>
             </div>
@@ -343,12 +341,46 @@
         </div>
       </div>
     </div>
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/7.14.4/firebase-app.js"></script>
+
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+        https://firebase.google.com/docs/web/setup#available-libraries -->
+    <script src="https://www.gstatic.com/firebasejs/7.14.4/firebase-analytics.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.14.4/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.14.4/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.14.4/firebase-storage.js"></script>
+
+
+    <!-- <script src="../include/init_firebase.js"></script> -->
+    <script>
+
+      // Your web app's Firebase configuration
+      var firebaseConfig = {
+        apiKey: "AIzaSyBveio8IuFGOMymSnwNgAWqc14BVliUwHY",
+        authDomain: "trackboard-d41a2.firebaseapp.com",
+        databaseURL: "https://trackboard-d41a2.firebaseio.com",
+        projectId: "trackboard-d41a2",
+        storageBucket: "trackboard-d41a2.appspot.com",
+        messagingSenderId: "880705427344",
+        appId: "1:880705427344:web:43e253a149143cc9218515",
+        measurementId: "G-5GLK0MX33D",
+      };
+      // Initialize Firebase
+      firebase.initializeApp(firebaseConfig);
+      firebase.analytics();
+
+      var st = firebase.storage();
+      var db = firebase.firestore();
+    </script>
 
     <script>
-      // var firestore = firebase.firestore();
-      // const docRef = firestore.collection("test");
+      const colRef = db.collection("applications");
+      var posterIMG;
 
-      $(document).ready(function () {});
+      $(document).ready(function () {
+
+      });
 
       $(".dropdown").each(function (key, dropdown) {
         var $dropdown = $(dropdown);
@@ -362,10 +394,11 @@
           var reader = new FileReader();
 
           reader.onload = function (e) {
-            $("#outputIMG").attr("src", e.target.result).width(450).height(600);
+            $("#outputIMG").attr("src", e.target.result).width(450).height(550);
           };
 
           reader.readAsDataURL(input.files[0]);
+          posterIMG = input.files[0];
         }
       }
 
@@ -424,6 +457,25 @@
           locations.push(x);
         }
         let specialRequest = document.getElementById("specialRequest").value;
+
+        colRef.add({
+          submitted_by: 'test',
+          reason: reason,
+          size: size,
+          postDate: postDate,
+          takeDownDate: takeDownDate,
+          locations: locations,
+          specialRequest: specialRequest,
+          appDate: Date.now(),
+          approved: "",
+          comment: ""
+        }).then(function(docRef) {
+          let storageRef = st.ref('Posters/' + docRef.id);
+          storageRef.put(posterIMG);
+        });
+
+
+
       }
     </script>
     <script src="../staff/sidebar.js"></script>
