@@ -69,6 +69,18 @@
           <hr />
           <div class="float-left">
             <div class="form-group">
+              <label for="name"><strong>Name</strong></label>
+              <input class="form-control" type="text" id="name" placeholder="e.g John Doe" required>
+            </div>
+            <div class="form-group">
+              <label for="club"><strong>Organisation</strong></label>
+              <input class="form-control" type="text" id="club" placeholder="e.g SUNY Korea Startup Club or Student" required>
+            </div>
+            <div class="form-group">
+              <label for="email"><strong>Email</strong></label>
+              <input class="form-control" type="email" id="email" placeholder="e.g John.Doe@stonybrook.edu" required>
+            </div>
+            <div class="form-group">
               <label for="purpose"
                 ><strong>What is the purpose of the poster?</strong></label
               >
@@ -80,7 +92,6 @@
                 cols="60"
                 rows="3"
                 required
-                autofocus
               ></textarea>
             </div>
             <div class="form-group">
@@ -115,6 +126,7 @@
                   value="other"
                 />
                 <label class="form-check-label" for="size3">Other: </label>
+                &nbsp
                 <input
                   class="form-control form-control-sm"
                   type="text"
@@ -437,9 +449,11 @@
       }
 
       function submitApp(e) {
+        let name = document.getElementById("name").value;
+        let club = document.getElementById("club").value;
+        let email = document.getElementById("email").value;
         let reason = document.getElementById("purpose").value;
-        let size = document.querySelector('input[name="sizeOptions"]:checked')
-          .value;
+        let size = document.querySelector('input[name="sizeOptions"]:checked').value;
         if (size == "other") {
           size = document.getElementById("size3Other").value;
         }
@@ -458,8 +472,14 @@
         }
         let specialRequest = document.getElementById("specialRequest").value;
 
+        var metadata = {
+          contentType: posterIMG.type,
+        };
+
         colRef.add({
-          submitted_by: 'test',
+          submitted_by: name,
+          club: club,
+          email: email,
           reason: reason,
           size: size,
           postDate: postDate,
@@ -469,13 +489,10 @@
           appDate: Date.now(),
           approved: "",
           comment: ""
-        }).then(function(docRef) {
-          let storageRef = st.ref('Posters/' + docRef.id);
+        }).then(function (docRef) {
+          let storageRef = st.ref("Posters/" + docRef.id);
           storageRef.put(posterIMG);
         });
-
-
-
       }
     </script>
     <script src="../staff/sidebar.js"></script>
