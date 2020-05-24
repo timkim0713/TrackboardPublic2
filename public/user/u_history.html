@@ -104,14 +104,20 @@
               cell1.innerText = application.appDate;
               if (application.approved === true) {
                 cell2.innerText = "Application was approved";
+                cell4.innerHTML =
+                  "<button type='button' class='btn btn-success' onclick='viewRow()'>View</button>";
               } else if (application.approved === false) {
                 cell2.innerText = "Application was rejected";
+                cell4.innerHTML =
+                  "<button type='button' class='btn btn-danger' onclick='viewRow()'>View</button>";
               } else {
                 cell2.innerText = "Application is pending";
+                cell4.innerHTML =
+                  "<button type='button' class='btn btn-primary' onclick='viewRow()'>View</button>";
               }
               cell3.innerText = application.comment;
-              cell4.innerHTML =
-                "<button type='button' class='btn btn-primary' onclick='viewRow()'>View</button>";
+              // cell4.innerHTML =
+              //   "<button type='button' class='btn btn-primary' onclick='viewRow()'>View</button>";
             });
           });
       });

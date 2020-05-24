@@ -66,7 +66,13 @@
       <div class="container" style="background: rgba(227, 229, 216, 0.21);">
         <form action="u_history.html">
           <h1 class="page-header text-center">Poster Application</h1>
+          <small style="color: cornflowerblue;"
+            >* Please check all the requirements of the poster before submitting
+            the application. Poster rules can be at View Campus Rules in the
+            sidebar.
+          </small>
           <hr />
+
           <div class="float-left">
             <div class="form-group">
               <label for="purpose"
@@ -188,36 +194,41 @@
           <div class="float-right">
             <div class="container text-center">
               <div class="custom-file">
-
-                  <input
-                    type="file"
-                    accept="image/*"
-                    name="image"
-                    id="file"
-                    onchange="readURL(this);"
-                    hidden
-                  />
-                  <label
-                    class="btn btn-primary"
-                    for="file"
-                    style="cursor: pointer;"
-                    >Upload Poster</label
-                  >
+                <input
+                  type="file"
+                  accept="image/*"
+                  name="image"
+                  id="file"
+                  onchange="readURL(this);"
+                  hidden
+                />
+                <label
+                  class="btn btn-primary"
+                  for="file"
+                  style="cursor: pointer;"
+                  >Upload Poster</label
+                >
 
                 <p><img id="outputIMG" width="450" /></p>
               </div>
             </div>
           </div>
+
           <div class="clearfix"></div>
+
           <button
-            class="btn btn-primary"
+            class="btn btn-success"
             id="submit"
             type="submit"
+            style="float: right;"
             onclick="submitApp(event)"
           >
             Submit Application
           </button>
+          <br />
+          <br />
         </form>
+        <br />
       </div>
     </div>
     <div id="footer"></div>
@@ -351,10 +362,8 @@
     <script src="https://www.gstatic.com/firebasejs/7.14.4/firebase-firestore.js"></script>
     <script src="https://www.gstatic.com/firebasejs/7.14.4/firebase-storage.js"></script>
 
-
     <!-- <script src="../include/init_firebase.js"></script> -->
     <script>
-
       // Your web app's Firebase configuration
       var firebaseConfig = {
         apiKey: "AIzaSyBveio8IuFGOMymSnwNgAWqc14BVliUwHY",
@@ -378,9 +387,7 @@
       const colRef = db.collection("applications");
       var posterIMG;
 
-      $(document).ready(function () {
-
-      });
+      $(document).ready(function () {});
 
       $(".dropdown").each(function (key, dropdown) {
         var $dropdown = $(dropdown);
@@ -458,24 +465,23 @@
         }
         let specialRequest = document.getElementById("specialRequest").value;
 
-        colRef.add({
-          submitted_by: 'test',
-          reason: reason,
-          size: size,
-          postDate: postDate,
-          takeDownDate: takeDownDate,
-          locations: locations,
-          specialRequest: specialRequest,
-          appDate: Date.now(),
-          approved: "",
-          comment: ""
-        }).then(function(docRef) {
-          let storageRef = st.ref('Posters/' + docRef.id);
-          storageRef.put(posterIMG);
-        });
-
-
-
+        colRef
+          .add({
+            submitted_by: "test",
+            reason: reason,
+            size: size,
+            postDate: postDate,
+            takeDownDate: takeDownDate,
+            locations: locations,
+            specialRequest: specialRequest,
+            appDate: Date.now(),
+            approved: "",
+            comment: "",
+          })
+          .then(function (docRef) {
+            let storageRef = st.ref("Posters/" + docRef.id);
+            storageRef.put(posterIMG);
+          });
       }
     </script>
     <script src="../staff/sidebar.js"></script>
