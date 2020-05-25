@@ -59,13 +59,18 @@
       <a href="u_apply.html">Apply</a>
       <a href="u_in_progress.html?id=1">In Progress</a>
       <a href="u_history.html">History</a>
-      <a href="u_rules.html">View Campus Rules</a>
+      <a href="u_rules.html">Poster Rules</a>
     </div>
     <br />
     <div id="main_content">
       <div class="container" style="background: rgba(227, 229, 216, 0.21);">
         <form action="u_history.html">
-          <h1 class="page-header text-center">Poster Application</h1>
+          <div class="section-title">
+            <br />
+
+            <h2>POSTER APPLICATION</h2>
+          </div>
+          <!-- <h1 class="page-header text-center">Poster Application</h1> -->
           <small style="color: cornflowerblue;"
             >* Please check all the requirements of the poster before submitting
             the application. Poster rules can be at View Campus Rules in the
@@ -76,15 +81,33 @@
           <div class="float-left">
             <div class="form-group">
               <label for="name"><strong>Name</strong></label>
-              <input class="form-control" type="text" id="name" placeholder="e.g John Doe" required>
+              <input
+                class="form-control"
+                type="text"
+                id="name"
+                placeholder="e.g John Doe"
+                required
+              />
             </div>
             <div class="form-group">
               <label for="club"><strong>Organisation</strong></label>
-              <input class="form-control" type="text" id="club" placeholder="e.g SUNY Korea Startup Club or Student" required>
+              <input
+                class="form-control"
+                type="text"
+                id="club"
+                placeholder="e.g SUNY Korea Startup Club or Student"
+                required
+              />
             </div>
             <div class="form-group">
               <label for="email"><strong>Email</strong></label>
-              <input class="form-control" type="email" id="email" placeholder="e.g John.Doe@stonybrook.edu" required>
+              <input
+                class="form-control"
+                type="email"
+                id="email"
+                placeholder="e.g John.Doe@stonybrook.edu"
+                required
+              />
             </div>
             <div class="form-group">
               <label for="purpose"
@@ -460,7 +483,8 @@
         let club = document.getElementById("club").value;
         let email = document.getElementById("email").value;
         let reason = document.getElementById("purpose").value;
-        let size = document.querySelector('input[name="sizeOptions"]:checked').value;
+        let size = document.querySelector('input[name="sizeOptions"]:checked')
+          .value;
         if (size == "other") {
           size = document.getElementById("size3Other").value;
         }
@@ -483,23 +507,25 @@
           contentType: posterIMG.type,
         };
 
-        colRef.add({
-          submitted_by: name,
-          club: club,
-          email: email,
-          reason: reason,
-          size: size,
-          postDate: postDate,
-          takeDownDate: takeDownDate,
-          locations: locations,
-          specialRequest: specialRequest,
-          appDate: Date.now(),
-          approved: "",
-          comment: ""
-        }).then(function (docRef) {
-          let storageRef = st.ref("Posters/" + docRef.id);
-          storageRef.put(posterIMG);
-        });
+        colRef
+          .add({
+            submitted_by: name,
+            club: club,
+            email: email,
+            reason: reason,
+            size: size,
+            postDate: postDate,
+            takeDownDate: takeDownDate,
+            locations: locations,
+            specialRequest: specialRequest,
+            appDate: Date.now(),
+            approved: "",
+            comment: "",
+          })
+          .then(function (docRef) {
+            let storageRef = st.ref("Posters/" + docRef.id);
+            storageRef.put(posterIMG);
+          });
       }
     </script>
     <script src="../staff/sidebar.js"></script>
