@@ -479,6 +479,7 @@
       }
 
       function submitApp(e) {
+        e.preventDefault();
         let name = document.getElementById("name").value;
         let club = document.getElementById("club").value;
         let email = document.getElementById("email").value;
@@ -507,8 +508,7 @@
           contentType: posterIMG.type,
         };
 
-        colRef
-          .add({
+        colRef.add({
             submitted_by: name,
             club: club,
             email: email,
@@ -521,11 +521,22 @@
             appDate: Date.now(),
             approved: "",
             comment: "",
-          })
-          .then(function (docRef) {
-            let storageRef = st.ref("Posters/" + docRef.id);
-            storageRef.put(posterIMG);
-          });
+          }).then(function (docRef) {
+            let storageRef = st.ref().child("Posters/" + docRef.id);
+            var task = storageRef.put(posterIMG, metadata);
+
+          // Listen for state changes, errors, and completion of the upload.
+          task.on('state_changed',
+                  function progress(snapshot) {
+                    $('main_content').hide(); //supposed to hide the main content div while img is being uploaded but doesn't
+
+                  },
+                  function err(error) {
+                  },
+                  function completed() {
+                    window.location.href = "u_history.html";
+                  });
+        });
       }
     </script>
     <script src="../staff/sidebar.js"></script>
