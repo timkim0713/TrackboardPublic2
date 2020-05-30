@@ -73,86 +73,117 @@
         >*Please review the posters requested by the students.</small
       >
 
-      <table class="table">
+      <table class="table" id="posterApplications">
         <thead class="thead-light">
           <tr>
-            <th scope="col">Poster Name</th>
-            <th scope="col">Student Name</th>
-            <th scope="col">Email</th>
-            <th scope="col">Request Date</th>
-            <th scope="col">Status</th>
-            <th scope="col">View</th>
+            <th class="text-center" scope="col">Club</th>
+            <th class="text-center" scope="col">Student Name</th>
+            <th class="text-center" scope="col">Email</th>
+            <th class="text-center" scope="col">Request Date</th>
+            <th class="text-center" scope="col">Status</th>
+            <th class="text-center" scope="col">View</th>
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <td scope="row">SUNY Computing Society</td>
-            <td>Tim Kim</td>
-            <td>daekyung.kim@stonybrook.edu</td>
-            <td>5/18/2020</td>
-            <td>New</td>
-            <td>
-              <a href="./s_authorization_details.html">
-                <button type="button" class="btn btn-success">View</button>
-              </a>
-            </td>
-          </tr>
-          <tr>
-            <td scope="row">SUNY Fishing Club</td>
-            <td>John Park</td>
-            <td>john.park@stonybrook.edu</td>
-            <td>5/18/2020</td>
-            <td>New</td>
 
-            <td>
-              <a href="./s_authorization_details.html">
-                <button type="button" class="btn btn-success">View</button>
-              </a>
-            </td>
-          </tr>
-          <tr>
-            <td scope="row">SUNY Basketball</td>
-            <td>Lebron James</td>
-            <td>Lebron.J@stonybrook.edu</td>
-            <td>5/16/2020</td>
-            <td>Rejected</td>
-
-            <td>
-              <a href="./s_authorization_details.html">
-                <button type="button" class="btn btn-primary">View</button>
-              </a>
-            </td>
-          </tr>
-          <tr>
-            <td scope="row">SUNY Movie Review Club</td>
-            <td>Jimym Kim</td>
-            <td>jimmy.kim@stonybrook.edu</td>
-            <td>5/8/2020</td>
-            <td>Approved</td>
-
-            <td>
-              <a href="./s_authorization_details.html">
-                <button type="button" class="btn btn-primary">View</button>
-              </a>
-            </td>
-          </tr>
-          <tr>
-            <td scope="row">SUNY Dance Club</td>
-            <td>Catherine Hommes</td>
-            <td>cat.hommes@stonybrook.edu</td>
-            <td>5/1/2020</td>
-            <td>Approved</td>
-
-            <td>
-              <a href="./s_authorization_details.html">
-                <button type="button" class="btn btn-primary">View</button>
-              </a>
-            </td>
-          </tr>
         </tbody>
       </table>
       <div id="footer"></div>
     </div>
+
+    <script src="https://www.gstatic.com/firebasejs/7.14.4/firebase-app.js"></script>
+
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+        https://firebase.google.com/docs/web/setup#available-libraries -->
+    <script src="https://www.gstatic.com/firebasejs/7.14.4/firebase-analytics.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.14.4/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.14.4/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.14.4/firebase-storage.js"></script>
+
+    <!-- <script src="../include/init_firebase.js"></script> -->
+    <script>
+      // Your web app's Firebase configuration
+      var firebaseConfig = {
+        apiKey: "AIzaSyBveio8IuFGOMymSnwNgAWqc14BVliUwHY",
+        authDomain: "trackboard-d41a2.firebaseapp.com",
+        databaseURL: "https://trackboard-d41a2.firebaseio.com",
+        projectId: "trackboard-d41a2",
+        storageBucket: "trackboard-d41a2.appspot.com",
+        messagingSenderId: "880705427344",
+        appId: "1:880705427344:web:43e253a149143cc9218515",
+        measurementId: "G-5GLK0MX33D",
+      };
+      // Initialize Firebase
+      firebase.initializeApp(firebaseConfig);
+      firebase.analytics();
+
+      var st = firebase.storage();
+      var db = firebase.firestore();
+    </script>
+    <script>
+      var firestore = firebase.firestore();
+      const docRef = firestore.collection("applications");
+
+      $(document).ready(function () {
+        docRef.orderBy('appDate').get().then(snapshot => {
+          snapshot.forEach(doc => {
+            addRow(doc.data(), doc.id);
+          });
+        }).catch(err => {
+          console.log('Error getting documents', err);
+        });
+      });
+
+      function viewRow() {
+        var td = event.target.parentNode;
+        var tr = td.parentNode;
+        const id = tr.id;
+        window.location.href = "s_authorization_details.html?id=" + id;
+      }
+
+      function addRow(application, id) {
+        let table = document.getElementById("posterApplications");
+        var row = table.insertRow();
+        var cell1 = row.insertCell(0);
+        var cell2 = row.insertCell(1);
+        var cell3 = row.insertCell(2);
+        var cell4 = row.insertCell(3);
+        var cell5 = row.insertCell(4);
+        var cell6 = row.insertCell(5);
+
+
+        cell1.className = "text-center";
+        cell2.className = "text-center";
+        cell3.className = "text-center";
+        cell4.className = "text-center";
+        cell5.className = "text-center";
+        cell6.className = "text-center";
+
+        row.id = id;
+        //row.className = ""; //set row class
+
+        cell1.innerText = application.club;
+        cell2.innerText = application.submitted_by;
+        cell3.innerText = application.email;
+
+        let date = new Date(application.appDate).toLocaleDateString("en-US");
+
+        cell4.innerText = date;
+        if (application.approved === true) {
+          cell5.innerText = "Application was approved";
+          cell6.innerHTML =
+                  "<button type='button' class='btn btn-success' onclick='viewRow()'>View</button>";
+        } else if (application.approved === false) {
+          cell5.innerText = "Application was rejected";
+          cell6.innerHTML =
+                  "<button type='button' class='btn btn-danger' onclick='viewRow()'>View</button>";
+        } else {
+          cell5.innerText = "Application is pending";
+          cell6.innerHTML =
+                  "<button type='button' class='btn btn-primary' onclick='viewRow()'>View</button>";
+        }
+      }
+    </script>
 
     <script src="sidebar.js"></script>
 
