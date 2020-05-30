@@ -528,7 +528,7 @@
           // Listen for state changes, errors, and completion of the upload.
           task.on('state_changed',
                   function progress(snapshot) {
-                    $('main_content').hide(); //supposed to hide the main content div while img is being uploaded but doesn't
+                    $('main_content').hide(); //supposed to hide the main content div while img is being uploaded to storage but doesn't
 
                   },
                   function err(error) {
