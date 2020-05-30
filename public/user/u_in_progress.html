@@ -67,7 +67,7 @@
         <form>
           <div class="section-title">
             <br />
-            <h2>CURRENTLY PROGRESSING APPLICATION</h2>
+            <h2>Currently Progressing Application</h2>
           </div>
           <div class="float-left">
             <div class="form-group">
@@ -242,45 +242,98 @@
       </div>
     </div>
     <div id="footer"></div>
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/7.14.4/firebase-app.js"></script>
+
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+        https://firebase.google.com/docs/web/setup#available-libraries -->
+    <script src="https://www.gstatic.com/firebasejs/7.14.4/firebase-analytics.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.14.4/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.14.4/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.14.4/firebase-storage.js"></script>
 
     <script>
-      // var firestore = firebase.firestore();
-      // const docRef = firestore.collection("test");
+      // Your web app's Firebase configuration
+      var firebaseConfig = {
+        apiKey: "AIzaSyBveio8IuFGOMymSnwNgAWqc14BVliUwHY",
+        authDomain: "trackboard-d41a2.firebaseapp.com",
+        databaseURL: "https://trackboard-d41a2.firebaseio.com",
+        projectId: "trackboard-d41a2",
+        storageBucket: "trackboard-d41a2.appspot.com",
+        messagingSenderId: "880705427344",
+        appId: "1:880705427344:web:43e253a149143cc9218515",
+        measurementId: "G-5GLK0MX33D",
+      };
+      // Initialize Firebase
+      firebase.initializeApp(firebaseConfig);
+      firebase.analytics();
+
+    </script>
+    <script>
+      var firestore = firebase.firestore();
+      var st = firebase.storage();
+      const docRef = firestore.collection("applications");
+
       $(document).ready(function () {
         var parameters = location.search.substring(1).split("&");
-        var id = 1;
+        var id;
         var temp = parameters[0].split("=");
         var tempId = unescape(temp[1]);
-        if (tempId != undefined || tempId != "") {
+
+        if (typeof(tempId) !== 'undefined'){
           id = tempId;
+
+          docRef.doc(id).get().then(function(doc) {
+            if (doc.exists) {
+              showStuff(doc.data(), doc.id);
+            } else {
+              // doc.data() will be undefined in this case
+              console.log("No such document!");
+            }
+          }).catch(function(error) {
+            console.log("Error getting document:", error);
+          });
         }
-        processUser(id);
+        else{
+          docRef.orderBy('appDate').limit(1).get().then(snapshot => {
+            snapshot.forEach(doc => {
+              showStuff(doc.data(), doc.id);
+            });
+          }).catch(err => {
+            console.log('Error getting documents', err);
+          });
+        }
       });
 
-      function processUser(id) {
-        fetch("data/test.json")
-          .then((res) => res.json())
-          .then((data) => {
-            data.forEach(function (application) {
-              if (application.id == id) {
-                showStuff(application);
-                document.getElementById("outputIMG").src =
-                  "data/" + id + ".jpg";
-              }
-            });
-          });
-      }
 
-      function showStuff(data) {
-        console.log(data);
+      function showStuff(data, id) {
+        st.ref().child('Posters/' + id).getDownloadURL().then(function(url) {
+          // `url` is the download URL for 'images/stars.jpg'
+
+          // This can be downloaded directly:
+          var xhr = new XMLHttpRequest();
+          xhr.responseType = 'blob';
+          xhr.onload = function(event) {
+            var blob = xhr.response;
+          };
+          xhr.open('GET', url);
+          xhr.send();
+
+          // Or inserted into an <img> element:
+          var img = document.getElementById('outputIMG');
+          img.src = url;
+        }).catch(function(error) {
+          // Handle any errors
+        });
+
 
         if (data.approved === false || data.approved === true) {
           document.getElementById("pageHeader").innerText =
             "Completed Application";
         }
-        // document.getElementById("name").value = data.name;
-        // document.getElementById("email").value = data.email;
-        // document.getElementById("club").value = data.club;
+        document.getElementById("name").value = data.submitted_by;
+        document.getElementById("email").value = data.email;
+        document.getElementById("club").value = data.club;
 
         document.getElementById("purpose").value = data.reason;
         if (data.size != "A3" || data.size != "A4") {
