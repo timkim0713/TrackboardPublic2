@@ -107,9 +107,7 @@
         </tbody>
       </table>
       <br>
-      <a href="./s_authorization_location.html">
-        <button style="float: right;" type="button" class="btn btn-success" >Next</button>
-      </a>
+        <button style="float: right;" type="button" class="btn btn-success" onclick="openLocations('./s_authorization_location.html')">Next</button>
       <br>
       <br>
 
@@ -149,9 +147,10 @@
       var st = firebase.storage();
       const docRef = firestore.collection("applications");
 
+      var id;
+
       $(document).ready(function () {
         var parameters = location.search.substring(1).split("&");
-        var id;
         var temp = parameters[0].split("=");
         var tempId = unescape(temp[1]);
 
@@ -180,6 +179,9 @@
         }
       });
 
+      function openLocations(path) {
+        window.location.href = path + "?id=" + id;
+      }
 
       function showStuff(data, id) {
         st.ref().child('Posters/' + id).getDownloadURL().then(function(url) {

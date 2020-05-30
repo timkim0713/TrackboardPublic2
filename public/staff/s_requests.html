@@ -125,7 +125,7 @@
       const docRef = firestore.collection("applications");
 
       $(document).ready(function () {
-        docRef.orderBy('appDate').get().then(snapshot => {
+        docRef.orderBy('appDate', 'desc').get().then(snapshot => {
           snapshot.forEach(doc => {
             addRow(doc.data(), doc.id);
           });

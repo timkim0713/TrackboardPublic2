@@ -57,7 +57,7 @@
     <div id="mySidebar" class="sidebar">
       <a href="javascript:void(0)" class="closebtn" onclick="closeNav()"> x </a>
       <a href="u_apply.html">Apply</a>
-      <a href="u_in_progress.html?id=1">In Progress</a>
+      <a href="u_in_progress.html">In Progress</a>
       <a href="u_history.html">History</a>
       <a href="u_rules.html">Poster Rules</a>
     </div>
@@ -117,7 +117,7 @@
       const docRef = firestore.collection("applications");
 
       $(document).ready(function () {
-        docRef.orderBy('appDate').get().then(snapshot => {
+        docRef.orderBy('appDate', 'desc').get().then(snapshot => {
           snapshot.forEach(doc => {
             addRow(doc.data(), doc.id);
           });

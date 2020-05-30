@@ -84,83 +84,160 @@
           >
      
          
-<table class="table">
-  <thead class="thead-light">
-    <tr>
-      <th scope="col">Campus</th>
-      <th scope="col">Building</th>
-      <th scope="col">Floor</th>
-      <th scope="col">Bulletin Board</th>
-      <th scope="col">View </th>
-
-
-    </tr>
-  </thead>
-  <tbody >
-    <div id="bv1">
-    <tr >
-      <td scope="row" >SUNY Korea</td>
-      <td>Academic Bldg. A</td>
-      <td>2nd</td>
-      <td>Library Bulletin Board</td>
-      <td>    
-
-          <button type="button" class="btn btn-primary" onclick="openBVPosters('bd1','fl2','lc3')"> View </button>
-
-      </td>
-    </tr>
-    <tr>
-      <td scope="row">SUNY Korea</td>
-      <td>Academic Bldg. A</td>
-      <td>2nd</td>
-      <td>Computer Lab Bulletin Board</td>
-      <td>        
-        
-        <button type="button" class="btn btn-primary" id="bv1" onclick="openBVPosters('bd3','fl5','lc10')"> View </button>       
-      
-      </td>
-    </tr>
-    <tr>
-      <td scope="row">SUNY Korea</td>
-      <td>Academic Bldg. A</td>
-      <td>2nd</td>
-      <td>Student Affairs Bulletin Board</td>
-      <td>
-            <button type="button" class="btn btn-primary" id="bv1" onclick="openBVPosters('bd3','fl5','lc10')"> View </button>       
-
-      
-      </td>
-    </tr>
-    <tr>
-      <td scope="row">SUNY Korea</td>
-      <td>Academic Bldg. B</td>
-      <td>4th</td>
-      <td>CS Commons Bulletin Board</td>
-      <td>          <button type="button" class="btn btn-primary" id="bv1" onclick="openBVPosters('bd3','fl5','lc10')"> View </button>       
-      </td>
-    </tr>
-    <tr>
-      <td scope="row">SUNY Korea</td>
-      <td>Academic Bldg. B</td>
-      <td>5th</td>
-      <td>AMS Dept. Lounge Bulletin Board</td>
-      <td>          <button type="button" class="btn btn-primary" id="bv1" onclick="openBVPosters('bd3','fl5','lc10')"> View </button>       
-      
-      </td>
-    </tr>
-  </div>
-  </tbody>
-</table>
-<br>
-<a href="./s_authorization_approval.html">
-  <button style="float: right; " type="button" class="btn btn-success" >Next</button>
-</a>
-<br>
-<br>
+        <table class="table" id="locationsTable">
+          <thead class="thead-light">
+            <tr>
+              <th scope="col">Campus</th>
+              <th scope="col">Building</th>
+              <th scope="col">Floor</th>
+              <th scope="col">Bulletin Board</th>
+              <th scope="col">View </th>
+            </tr>
+          </thead>
+          <tbody >
+            <div id="bv1">
+<!--            <tr >-->
+<!--              <td scope="row" >SUNY Korea</td>-->
+<!--              <td>Academic Bldg. A</td>-->
+<!--              <td>2nd</td>-->
+<!--              <td>Library Bulletin Board</td>-->
+<!--              <td>    -->
+<!--        -->
+<!--                  <button type="button" class="btn btn-primary" onclick="openBVPosters('bd1','fl2','lc3')"> View </button>-->
+<!--        -->
+<!--              </td>-->
+<!--            </tr>-->
+<!--            <tr>-->
+<!--              <td scope="row">SUNY Korea</td>-->
+<!--              <td>Academic Bldg. A</td>-->
+<!--              <td>2nd</td>-->
+<!--              <td>Computer Lab Bulletin Board</td>-->
+<!--              <td>        -->
+<!--                -->
+<!--                <button type="button" class="btn btn-primary" id="bv1" onclick="openBVPosters('bd3','fl5','lc10')"> View </button>       -->
+<!--              -->
+<!--              </td>-->
+<!--            </tr>-->
+<!--            <tr>-->
+<!--              <td scope="row">SUNY Korea</td>-->
+<!--              <td>Academic Bldg. A</td>-->
+<!--              <td>2nd</td>-->
+<!--              <td>Student Affairs Bulletin Board</td>-->
+<!--              <td>-->
+<!--                    <button type="button" class="btn btn-primary" id="bv1" onclick="openBVPosters('bd3','fl5','lc10')"> View </button>       -->
+<!--        -->
+<!--              -->
+<!--              </td>-->
+<!--            </tr>-->
+<!--            <tr>-->
+<!--              <td scope="row">SUNY Korea</td>-->
+<!--              <td>Academic Bldg. B</td>-->
+<!--              <td>4th</td>-->
+<!--              <td>CS Commons Bulletin Board</td>-->
+<!--              <td>          <button type="button" class="btn btn-primary" id="bv1" onclick="openBVPosters('bd3','fl5','lc10')"> View </button>       -->
+<!--              </td>-->
+<!--            </tr>-->
+<!--            <tr>-->
+<!--              <td scope="row">SUNY Korea</td>-->
+<!--              <td>Academic Bldg. B</td>-->
+<!--              <td>5th</td>-->
+<!--              <td>AMS Dept. Lounge Bulletin Board</td>-->
+<!--              <td>          <button type="button" class="btn btn-primary" id="bv1" onclick="openBVPosters('bd3','fl5','lc10')"> View </button>       -->
+<!--              -->
+<!--              </td>-->
+<!--            </tr>-->
+          </div>
+          </tbody>
+        </table>
+        <br>
+          <button style="float: right; " type="button" class="btn btn-success" onclick="openLocations('./s_authorization_approval.html')">Next</button>
+        <br>
+        <br>
 
       </div>
     </div>
     <div id="footer"></div>
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/7.14.4/firebase-app.js"></script>
+
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+        https://firebase.google.com/docs/web/setup#available-libraries -->
+    <script src="https://www.gstatic.com/firebasejs/7.14.4/firebase-analytics.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.14.4/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.14.4/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.14.4/firebase-storage.js"></script>
+
+    <script>
+      // Your web app's Firebase configuration
+      var firebaseConfig = {
+        apiKey: "AIzaSyBveio8IuFGOMymSnwNgAWqc14BVliUwHY",
+        authDomain: "trackboard-d41a2.firebaseapp.com",
+        databaseURL: "https://trackboard-d41a2.firebaseio.com",
+        projectId: "trackboard-d41a2",
+        storageBucket: "trackboard-d41a2.appspot.com",
+        messagingSenderId: "880705427344",
+        appId: "1:880705427344:web:43e253a149143cc9218515",
+        measurementId: "G-5GLK0MX33D",
+      };
+      // Initialize Firebase
+      firebase.initializeApp(firebaseConfig);
+      firebase.analytics();
+
+    </script>
+    <script>
+      var firestore = firebase.firestore();
+      var st = firebase.storage();
+      const docRef = firestore.collection("applications");
+      var id;
+
+      $(document).ready(function () {
+        var parameters = location.search.substring(1).split("&");
+        var temp = parameters[0].split("=");
+        var tempId = unescape(temp[1]);
+        id  = tempId;
+
+        docRef.doc(id).get().then(function(doc) {
+          if (doc.exists) {
+            showLocations(doc.data(), doc.id);
+          } else {
+            // doc.data() will be undefined in this case
+            console.log("No such document!");
+          }
+        }).catch(function(error) {
+          console.log("Error getting document:", error);
+        });
+      });
+
+      function showLocations(data, id) {
+        data.locations.forEach(function (loc) {
+          addlocation(loc.campus, loc.building, loc.floor, loc.board);
+        });
+      }
+
+      function addlocation(campus, build, floor, board) {
+        var table = document.getElementById("locationsTable");
+        var row = table.insertRow();
+        var cell1 = row.insertCell(0);
+        var cell2 = row.insertCell(1);
+        var cell3 = row.insertCell(2);
+        var cell4 = row.insertCell(3);
+        var cell5 = row.insertCell(4);
+
+
+        row.setAttribute("scope", "row");
+
+        cell1.innerText = campus.trim();
+        cell2.innerText = build.trim();
+        cell3.innerText = floor.trim();
+        cell4.innerText = board.trim();
+        cell5.innerHTML = "<button type=\"button\" class=\"btn btn-primary\" id=\"bv1\" onclick=\"openBVPosters('bd3','fl5','lc10')\"> View </button>";
+      }
+
+      function openLocations(path) {
+        window.location.href = path + "?id=" + id;
+      }
+    </script>
+
 
     <script src="sidebar.js"></script>
     
