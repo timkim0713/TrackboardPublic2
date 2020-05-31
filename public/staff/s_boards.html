@@ -124,276 +124,7 @@
 
     <script>
 
-      // var bfl = [];
-      var bfl = [
-        { building_id: "bd1", building_name: "Building A",
-          floors: [
-            { floor_id: "fl1", floor_name: "Main Floor",
-              locations: [
-                { location_id: "lc1", location_name: "Lounge" },
-                { location_id: "lc2", location_name: "Student Service Office" },
-              ]
-            },
-            { floor_id: "fl2", floor_name: "4th Floor",
-              locations: [
-                { location_id: "lc3", location_name: "Main Board" },
-                { location_id: "lc4", location_name: "President Office" },
-              ]
-            }
-          ]
-        },
-        { building_id: "bd2", building_name: "Building B",
-          floors: [
-            { floor_id: "fl3", floor_name: "MEOW Floor",
-              locations: [
-                { location_id: "lc5", location_name: "Lazy pool" },
-                { location_id: "lc6", location_name: "Jacuzzi" },
-              ]
-            },
-            { floor_id: "fl4", floor_name: "BLUB Floor",
-              locations: [
-                { location_id: "lc7", location_name: "Everland" },
-                { location_id: "lc8", location_name: "Lotte World" },
-              ]
-            }
-          ]
-        },
-        { building_id: "bd3", building_name: "Building C",
-          floors: [
-            { floor_id: "fl5", floor_name: "Main Floor",
-              locations: [
-                { location_id: "lc9", location_name: "Sleeping Spot" },
-                { location_id: "lc10", location_name: "Tired Corner" },
-              ]
-            },
-            { floor_id: "fl6", floor_name: "4th Floor",
-              locations: [
-                { location_id: "lc11", location_name: "Wall1" },
-                { location_id: "lc12", location_name: "Wall2" },
-              ]
-            }
-          ]
-        }
-      ];
-      // var myPosters = [];
-      var myPosters = [
-        { building_id: "bd1", floor_id: "fl1", location_id: "lc1",
-          image_link: "../assets/img/posters/poster-1.jpg"
-        },
-        { building_id: "bd1", floor_id: "fl1", location_id: "lc1",
-          image_link: "../assets/img/posters/poster-2.jpg"
-        },
-        { building_id: "bd1", floor_id: "fl1", location_id: "lc1",
-          image_link: "../assets/img/posters/poster-3.jpg"
-        },
-        { building_id: "bd1", floor_id: "fl1", location_id: "lc1",
-          image_link: "../assets/img/posters/poster-4.jpg"
-        },
-        { building_id: "bd1", floor_id: "fl1", location_id: "lc1",
-          image_link: "../assets/img/posters/poster-5.jpg"
-        },
-        { building_id: "bd1", floor_id: "fl1", location_id: "lc1",
-          image_link: "../assets/img/posters/poster-6.jpg"
-        },
-        { building_id: "bd1", floor_id: "fl1", location_id: "lc2",
-          image_link: "../assets/img/posters/poster-7.jpeg"
-        },
-        { building_id: "bd1", floor_id: "fl1", location_id: "lc2",
-          image_link: "../assets/img/posters/poster-8.jpg"
-        },
-        { building_id: "bd1", floor_id: "fl1", location_id: "lc2",
-          image_link: "../assets/img/posters/poster-9.jpg"
-        },
-        { building_id: "bd1", floor_id: "fl1", location_id: "lc2",
-          image_link: "../assets/img/posters/poster-10.jpg"
-        },
-        { building_id: "bd1", floor_id: "fl1", location_id: "lc2",
-          image_link: "../assets/img/posters/poster-11.jpg"
-        },
-        { building_id: "bd1", floor_id: "fl1", location_id: "lc2",
-          image_link: "../assets/img/posters/poster-12.jpg"
-        },
-        { building_id: "bd1", floor_id: "fl2", location_id: "lc3",
-          image_link: "../assets/img/posters/poster-13.jpg"
-        },
-        { building_id: "bd1", floor_id: "fl2", location_id: "lc3",
-          image_link: "../assets/img/posters/poster-14.jpg"
-        },
-        { building_id: "bd1", floor_id: "fl2", location_id: "lc3",
-          image_link: "../assets/img/posters/poster-15.jpg"
-        },
-        { building_id: "bd1", floor_id: "fl2", location_id: "lc3",
-          image_link: "../assets/img/posters/poster-16.jpg"
-        },
-        { building_id: "bd1", floor_id: "fl2", location_id: "lc3",
-          image_link: "../assets/img/posters/poster-17.jpg"
-        },
-        { building_id: "bd1", floor_id: "fl2", location_id: "lc3",
-          image_link: "../assets/img/posters/poster-18.jpg"
-        },
-        { building_id: "bd1", floor_id: "fl2", location_id: "lc4",
-          image_link: "../assets/img/posters/poster-19.jpg"
-        },
-        { building_id: "bd1", floor_id: "fl2", location_id: "lc4",
-          image_link: "../assets/img/posters/poster-20.jpg"
-        },
-        { building_id: "bd1", floor_id: "fl2", location_id: "lc4",
-          image_link: "../assets/img/posters/poster-21.jpg"
-        },
-        { building_id: "bd1", floor_id: "fl2", location_id: "lc4",
-          image_link: "../assets/img/posters/poster-22.jpg"
-        },
-        { building_id: "bd1", floor_id: "fl2", location_id: "lc4",
-          image_link: "../assets/img/posters/poster-23.jpg"
-        },
-        { building_id: "bd1", floor_id: "fl2", location_id: "lc4",
-          image_link: "../assets/img/posters/poster-24.jpg"
-        },
-        { building_id: "bd2", floor_id: "fl3", location_id: "lc5",
-          image_link: "../assets/img/posters/poster-25.jpg"
-        },
-        { building_id: "bd2", floor_id: "fl3", location_id: "lc5",
-          image_link: "../assets/img/posters/poster-26.jpg"
-        },
-        { building_id: "bd2", floor_id: "fl3", location_id: "lc5",
-          image_link: "../assets/img/posters/poster-27.jpg"
-        },
-        { building_id: "bd2", floor_id: "fl3", location_id: "lc5",
-          image_link: "../assets/img/posters/poster-28.jpg"
-        },
-        { building_id: "bd2", floor_id: "fl3", location_id: "lc5",
-          image_link: "../assets/img/posters/poster-29.jpg"
-        },
-        { building_id: "bd2", floor_id: "fl3", location_id: "lc5",
-          image_link: "../assets/img/posters/poster-30.jpg"
-        },
-        { building_id: "bd2", floor_id: "fl3", location_id: "lc6",
-          image_link: "../assets/img/posters/poster-31.jpg"
-        },
-        { building_id: "bd2", floor_id: "fl3", location_id: "lc6",
-          image_link: "../assets/img/posters/poster-32.jpg"
-        },
-        { building_id: "bd2", floor_id: "fl3", location_id: "lc6",
-          image_link: "../assets/img/posters/poster-33.jpg"
-        },
-        { building_id: "bd2", floor_id: "fl3", location_id: "lc6",
-          image_link: "../assets/img/posters/poster-34.png"
-        },
-        { building_id: "bd2", floor_id: "fl3", location_id: "lc6",
-          image_link: "../assets/img/posters/poster-35.png"
-        },
-        { building_id: "bd2", floor_id: "fl3", location_id: "lc6",
-          image_link: "../assets/img/posters/poster-36.jpg"
-        },
-        { building_id: "bd2", floor_id: "fl4", location_id: "lc7",
-          image_link: "../assets/img/posters/poster-37.jpg"
-        },
-        { building_id: "bd2", floor_id: "fl4", location_id: "lc7",
-          image_link: "../assets/img/posters/poster-38.jpg"
-        },
-        { building_id: "bd2", floor_id: "fl4", location_id: "lc7",
-          image_link: "../assets/img/posters/poster-39.jpg"
-        },
-        { building_id: "bd2", floor_id: "fl4", location_id: "lc7",
-          image_link: "../assets/img/posters/poster-40.jpg"
-        },
-        { building_id: "bd2", floor_id: "fl4", location_id: "lc7",
-          image_link: "../assets/img/posters/poster-1.jpg"
-        },
-        { building_id: "bd2", floor_id: "fl4", location_id: "lc7",
-          image_link: "../assets/img/posters/poster-3.jpg"
-        },
-        { building_id: "bd2", floor_id: "fl4", location_id: "lc8",
-          image_link: "../assets/img/posters/poster-5.jpg"
-        },
-        { building_id: "bd2", floor_id: "fl4", location_id: "lc8",
-          image_link: "../assets/img/posters/poster-7.jpeg"
-        },
-        { building_id: "bd2", floor_id: "fl4", location_id: "lc8",
-          image_link: "../assets/img/posters/poster-9.jpg"
-        },
-        { building_id: "bd2", floor_id: "fl4", location_id: "lc8",
-          image_link: "../assets/img/posters/poster-11.jpg"
-        },
-        { building_id: "bd2", floor_id: "fl4", location_id: "lc8",
-          image_link: "../assets/img/posters/poster-13.jpg"
-        },
-        { building_id: "bd2", floor_id: "fl4", location_id: "lc8",
-          image_link: "../assets/img/posters/poster-15.jpg"
-        },
-        { building_id: "bd3", floor_id: "fl5", location_id: "lc9",
-          image_link: "../assets/img/posters/poster-17.jpg"
-        },
-        { building_id: "bd3", floor_id: "fl5", location_id: "lc9",
-          image_link: "../assets/img/posters/poster-19.jpg"
-        },
-        { building_id: "bd3", floor_id: "fl5", location_id: "lc9",
-          image_link: "../assets/img/posters/poster-21.jpg"
-        },
-        { building_id: "bd3", floor_id: "fl5", location_id: "lc9",
-          image_link: "../assets/img/posters/poster-23.jpg"
-        },
-        { building_id: "bd3", floor_id: "fl5", location_id: "lc9",
-          image_link: "../assets/img/posters/poster-25.jpg"
-        },
-        { building_id: "bd3", floor_id: "fl5", location_id: "lc9",
-          image_link: "../assets/img/posters/poster-27.jpg"
-        },
-        { building_id: "bd3", floor_id: "fl5", location_id: "lc10",
-          image_link: "../assets/img/posters/poster-29.jpg"
-        },
-        { building_id: "bd3", floor_id: "fl5", location_id: "lc10",
-          image_link: "../assets/img/posters/poster-31.jpg"
-        },
-        { building_id: "bd3", floor_id: "fl5", location_id: "lc10",
-          image_link: "../assets/img/posters/poster-33.jpg"
-        },
-        { building_id: "bd3", floor_id: "fl5", location_id: "lc10",
-          image_link: "../assets/img/posters/poster-35.png"
-        },
-        { building_id: "bd3", floor_id: "fl5", location_id: "lc10",
-          image_link: "../assets/img/posters/poster-37.jpg"
-        },
-        { building_id: "bd3", floor_id: "fl5", location_id: "lc10",
-          image_link: "../assets/img/posters/poster-39.jpg"
-        },
-        { building_id: "bd3", floor_id: "fl6", location_id: "lc11",
-          image_link: "../assets/img/posters/poster-2.jpg"
-        },
-        { building_id: "bd3", floor_id: "fl6", location_id: "lc11",
-          image_link: "../assets/img/posters/poster-4.jpg"
-        },
-        { building_id: "bd3", floor_id: "fl6", location_id: "lc11",
-          image_link: "../assets/img/posters/poster-6.jpg"
-        },
-        { building_id: "bd3", floor_id: "fl6", location_id: "lc11",
-          image_link: "../assets/img/posters/poster-8.jpg"
-        },
-        { building_id: "bd3", floor_id: "fl6", location_id: "lc11",
-          image_link: "../assets/img/posters/poster-10.jpg"
-        },
-        { building_id: "bd3", floor_id: "fl6", location_id: "lc11",
-          image_link: "../assets/img/posters/poster-12.jpg"
-        },
-        { building_id: "bd3", floor_id: "fl6", location_id: "lc12",
-          image_link: "../assets/img/posters/poster-14.jpg"
-        },
-        { building_id: "bd3", floor_id: "fl6", location_id: "lc12",
-          image_link: "../assets/img/posters/poster-16.jpg"
-        },
-        { building_id: "bd3", floor_id: "fl6", location_id: "lc12",
-          image_link: "../assets/img/posters/poster-18.jpg"
-        },
-        { building_id: "bd3", floor_id: "fl6", location_id: "lc12",
-          image_link: "../assets/img/posters/poster-20.jpg"
-        },
-        { building_id: "bd3", floor_id: "fl6", location_id: "lc12",
-          image_link: "../assets/img/posters/poster-22.jpg"
-        },
-        { building_id: "bd3", floor_id: "fl6", location_id: "lc12",
-          image_link: "../assets/img/posters/poster-24.jpg"
-        },
-      ]
+      var bfl = [];
         
       var pos_0 = "";
       var pos_1 = "<div class=\"portfolio-item filter-x wow fadeInUp\" style=\"display: inline; width: 250px;\"> <div class=\"portfolio-wrap\"> <figure> <img src=\"";
@@ -402,13 +133,121 @@
       var pos_4 = "";
 
       $( document ).ready(function() {
-        // TODO call API and get full list of posters and bfl
-        // this.bfl = [];
-        // this.myPosters = [];
-        console.log(bfl);
-        // console.log(db);
-        // console.log(db.collection("buildings").get());
+        
+        let myParams = getParams(window.location.href);
+        let eid = "";
+        // console.log(db.collection("establishment").where("staff", "array-contains", "staff1@sunykorea.ac.kr").get());
+        db.collection("establishment").where("staff", "array-contains", "staff1@sunykorea.ac.kr").get()
+          .then((data) => { 
+            // There should only be one isntance of doc
+            data.forEach(doc => { eid = doc.id });
+          })
+          .then(() => {
+            db.collection("buildings").where("belongs_to", "==", eid).get()
+              .then((bdData) => {
+                bdData.forEach(bdDoc =>{
+                  bfl.push({ bid: bdDoc.id, belongs_to: bdDoc.belongs_to, name: bdDoc.name, floors: [] });
+                });
+              })
+              .then(() => {
+                if (  myParams.bid === undefined ){
+                  setDropdowns("*","*","*");
+                } else {
+                  db.collection("floors").where("belongs_to", "==", myParams.bid).get()
+                    .then((flData) => {
+                      let bidx = -1;
+                      for( let i = 0; i < bfl.length; i++ ){
+                        if( bfl[i].bid === myParams.bid ){
+                          bdix = i;
+                          break;
+                        }
+                      }
+                      flData.forEach(flDoc => {
+                        
+                      })
+                    })
+                    .then(() => {
 
+                    })
+                    .catch(err => {console.log(err);});
+
+                }
+              })
+              .catch(err => { console.log(err); })
+          })
+          .catch(err => { console.log(err); })
+        /*
+        db.collection("establishment")
+          .where("staff", "array-contains", "staff1@sunykorea.ac.kr") //get proper email later
+          .get()
+          .then((querySnapshot) => { 
+            // console.log(querySnapshot);
+            querySnapshot.forEach((doc) => {
+              // console.log("Establishment", doc.id, doc.data());
+              db.collection("buildings")
+                .where("belongs_to", "==", doc.id)
+                .get()
+                .then((bdQuerySnapshot) => {
+                  bdQuerySnapshot.forEach((bdDoc) => {
+                    // console.log("Building", bdDoc.id, bdDoc.data());
+                    bfl.push({
+                      bid: bdDoc.id,
+                      belongs_to: bdDoc.belongs_to,
+                      name: bdDoc.name,
+                      floors: []
+                    });
+                  });
+                  if( myParams.bid !== undefined ){
+
+                    db.collection("floors")
+                      .where("belongs_to", "==", myParams.bid)
+                      .get()
+                      .then((flQuerySnapshot) => {
+                        flQuerySnapshot.forEach((flDoc) => {
+                          // console.log("Floors", flDoc.id, flDoc.data());
+                          bfl[bfl.length-1].floors.push({
+                            fid: flDoc.id,
+                            belongs_to: flDoc.belongs_to,
+                            name: flDoc.name,
+                            locations: []
+                          });
+                          db.collection("bulletin_boards")
+                            .where("belongs_to", "==", flDoc.id)
+                            .get()
+                            .then((bbQuerySnapshot) => {
+                              bbQuerySnapshot.forEach((bbDoc) => {
+                                // console.log("Bulletin Board", bbDoc.id, bbDoc.data());
+                                console.log(bfl);
+                                blast = bfl.length-1;
+                                flast = bfl[blast].floors.length-1;
+                                bfl[blast].floors[flast].locations.push({
+                                  lid: bbDoc.id,
+                                  belongs_to: bbDoc.belongs_to,
+                                  name: bbDoc.name,
+                                  maxPosters: bbDoc.max_posters,
+                                  posters: bbDoc.posters
+                                });
+                              })
+                            })
+                            .catch(function(error) { console.log(error); });
+                        })
+                      })
+                      .catch(function(error) { console.log(error); });
+                  }
+                })
+                .catch(function(error) { console.log(error); });
+            });
+          })
+          .catch(function(error) {
+            console.error("Error: Could not get data", error);
+          });
+*/
+
+      });
+      
+      function afterBflSetup(){
+        console.log(bfl);
+        console.log(this.bfl);
         let myParams = getParams(window.location.href);
         if( getBuildingName(myParams.bid) !== "All Buildings"  ){
           selectedBuilding = myParams.bid;
@@ -425,49 +264,9 @@
         } else {
           selectedLocation = "*";
         }
-        setDropdowns(selectedBuilding, selectedFloor, selectedLocation);
-      });
-      /*
-      db.collection("establishment")
-        .where("staff", "array-contains", "staff1@sunykorea.ac.kr") //get proper email later
-        .get()
-        .then((querySnapshot) => { 
-          // console.log(querySnapshot);
-          querySnapshot.forEach((doc) => {
-            console.log("Establishment", doc.id, doc.data());
-            db.collection("buildings")
-              .where("belongs_to", "==", doc.id)
-              .get()
-              .then((bdQuerySnapshot) => {
-                bdQuerySnapshot.forEach((bdDoc) => {
-                  console.log("Building", bdDoc.id, bdDoc.data());
-                  db.collection("floors")
-                    .where("belongs_to", "==", bdDoc.id)
-                    .get()
-                    .then((flQuerySnapshot) => {
-                      flQuerySnapshot.forEach((flDoc) => {
-                        console.log("Floors", flDoc.id, flDoc.data());
-                        db.collection("bulletin_boards")
-                          .where("belongs_to", "==", flDoc.id)
-                          .get()
-                          .then((bbQuerySnapshot) => {
-                            bbQuerySnapshot.forEach((bbDoc) => {
-                              console.log("Bulletin Board", bbDoc.id, bbDoc.data());
-                            })
-                          })
-                          .catch(function(error) { console.log(error); });
-                      })
-                    })
-                    .catch(function(error) { console.log(error); });
-                });
-              })
-              .catch(function(error) { console.log(error); });
-          });
-        })
-        .catch(function(error) {
-          console.error("Error: Could not get data", error);
-        });
-    */
+        setDropdowns(selectedBuilding, selectedFloor, selectedLocation); 
+      }
+    
       function setDropdowns(selB, selF, selL){
         let myBuildings = "";
         let myFloors = "";
@@ -480,13 +279,13 @@
           myLocations = "<div id=\"locationropdownBtn\" class=\"dropdown\" style=\"display: inline-block;\"> <button type=\"button\" class=\"btn btn-primary dropdown-toggle\" data-toggle=\"dropdown\">" + getLocationName(selL) + "</button> <div class=\"dropdown-menu\"> <a class=\"dropdown-item\" href=\"javascript:setDropdowns('" + selB + "', '" + selF + "', '*');\">All Locations</a>";
         }
         this.bfl.forEach(b => {
-          myBuildings = myBuildings + "<a class=\"dropdown-item\" href=\"javascript:setDropdowns('" + b.building_id+ "',  '*',  '*');\">" + b.building_name+"</a>";
-          if( selB === b.building_id ){
+          myBuildings = myBuildings + "<a class=\"dropdown-item\" href=\"javascript:setDropdowns('" + b.bid+ "',  '*',  '*');\">" + b.name+"</a>";
+          if( selB === b.bid ){
             b.floors.forEach(f => {
-              myFloors = myFloors + "<a class=\"dropdown-item\" href=\"javascript:setDropdowns('"+selB+"', '" + f.floor_id + "',  '*');\">" + f.floor_name + "</a>";
-              if( selF === f.floor_id ){
+              myFloors = myFloors + "<a class=\"dropdown-item\" href=\"javascript:setDropdowns('"+selB+"', '" + f.fid + "',  '*');\">" + f.name + "</a>";
+              if( selF === f.fid ){
                 f.locations.forEach(l => {
-                  myLocations = myLocations + "<a class=\"dropdown-item\" href=\"javascript:setDropdowns('"+selB+"', '"+selF+"', '" + l.location_id + "');\">" + l.location_name + "</a>";
+                  myLocations = myLocations + "<a class=\"dropdown-item\" href=\"javascript:setDropdowns('"+selB+"', '"+selF+"', '" + l.lid + "');\">" + l.name + "</a>";
                 });
               }
             });
@@ -501,7 +300,7 @@
         }
         var ddl = $('#dropdownList');
         ddl.html( myBuildings + myFloors + myLocations );
-        updatePosterItems(selB, selF, selL);
+        // updatePosterItems(selB, selF, selL);
       }
 
       function updatePosterItems(bid, fid, lid){
@@ -524,8 +323,8 @@
       function getBuildingName(bid){ 
         if( bid === '*' ){ return "All Buildings"; }
         for( let b of this.bfl ){
-          if(bid === b.building_id){
-            return b.building_name;
+          if(bid === b.bid){
+            return b.name;
           }
         }
         return "All Buildings";
@@ -534,8 +333,8 @@
         if( fid === '*' ){ return "All Floors"; }
         for( let b of this.bfl ){
           for( let f of b.floors ){
-            if(fid === f.floor_id){
-              return f.floor_name;
+            if(fid === f.fid){
+              return f.name;
             }
           }
         }
@@ -546,8 +345,8 @@
         for( let b of this.bfl ){
           for( let f of b.floors ){
             for( let l of f.locations ){
-              if(lid === l.location_id){
-                return l.location_name;
+              if(lid === l.lid){
+                return l.name;
               }
             }
           }
@@ -557,7 +356,7 @@
 
       function buildingNameExists(bname){
         for( let b of this.bfl ){
-          if(bname === b.building_name){
+          if(bname === b.name){
             return true;
           }
         }
@@ -565,9 +364,9 @@
       }
       function floorNameExists(inBid, fname){
         for( let b of this.bfl ){
-          if( inBid === b.building_id ){
+          if( inBid === b.bid ){
             for( let f of b.floors ){
-              if(fname === f.floor_name){
+              if(fname === f.name){
                 return true;
               }
             }
@@ -577,11 +376,11 @@
       }
       function locationNameExists(inBid, inFid, lname){
         for( let b of this.bfl ){
-          if( inBid === b.building_id ){
+          if( inBid === b.bid ){
             for( let f of b.floors ){
-              if( inFid === f.floor_id ){
+              if( inFid === f.fid ){
                 for( let l of f.locations ){
-                  if(lname === l.location_name){
+                  if(lname === l.name){
                     return true;
                   }
                 }
