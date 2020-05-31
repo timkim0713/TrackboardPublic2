@@ -91,7 +91,8 @@ h6 {
 }
 
 #header .logo img {
-  max-height: 40px;
+  max-height: 65px;
+  max-width: 1000px;
 }
 
 /*--------------------------------------------------------------
@@ -138,10 +139,10 @@ h6 {
 .nav-menu a {
   display: block;
   position: relative;
-  color: #3c6786;
+  color: #656666;
   padding: 12px 15px;
   transition: 0.3s;
-  font-size: 16px;
+  font-size: 14px;
   font-weight: 500;
   font-family: "Poppins", sans-serif;
 }
@@ -150,9 +151,9 @@ h6 {
 .nav-menu .active > a,
 .nav-menu li:hover > a {
   font-style: italic;
-  font-size: 14px;
+  font-size: 16px;
 
-  color: #656666;
+  color: #3c6786;
   text-decoration: none;
 }
 

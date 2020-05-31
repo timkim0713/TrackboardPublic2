@@ -50,6 +50,7 @@
         $("#submitAlert").append(
           "<div class='alert alert-success alert-dismissable' id='submitAlert'>Success! message sent successfully.</div>"
         );
+        setTimeout(function(){ window.location.href = "s_main.html"; }, 1000);
       }
       // $("#myAlert").css("display", "");
     </script>
@@ -63,9 +64,9 @@
     </button>
     <div id="mySidebar" class="sidebar">
       <a href="javascript:void(0)" class="closebtn" onclick="closeNav()"> x </a>
-      <a href="./s_authorization_details.html">Poster Details</a>
-      <a href="./s_authorization_location.html">Requested Locations</a>
-      <a href="./s_authorization_approval.html">Approval</a>
+      <a id="sidebarPosterDetails">Poster Details</a>
+      <a id="sidebarRequestedLocations">Requested Locations</a>
+      <a id="sidebarApproval">Approval</a>
       <a id="goBackToRequestPage" href="./s_requests.html">
         ⇐ Go Back to Requests Page
       </a>
@@ -149,7 +150,7 @@
             >*Please send a message to the student for a next instrution with
             details.</small
           >
-          <textarea class="form-control" rows="3"></textarea>
+          <textarea class="form-control" id="comment" rows="3" required></textarea>
         </div>
 
         <br />
@@ -157,19 +158,19 @@
           <label
             class="radio-inline"
             style="color: white; background-color: red; padding: 5px;"
-            ><input type="radio" name="optradio" /> Reject</label
+            ><input type="radio" name="optradio" value="reject"/> Reject</label
           >&nbsp; &nbsp;
           <label
             class="radio-inline"
             style="color: white; background-color: green; padding: 5px;"
-            ><input type="radio" name="optradio" /> Approve</label
+            ><input type="radio" name="optradio" value="approve"/> Approve</label
           >
         </div>
         <button
           style="float: right;"
           type="button"
           class="btn btn-success"
-          onclick="showAlert()"
+          onclick="updateApp()"
         >
           Send
         </button>
@@ -180,6 +181,78 @@
       </form>
     </div>
     <div id="footer"></div>
+
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/7.14.4/firebase-app.js"></script>
+
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+        https://firebase.google.com/docs/web/setup#available-libraries -->
+    <script src="https://www.gstatic.com/firebasejs/7.14.4/firebase-analytics.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.14.4/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.14.4/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.14.4/firebase-storage.js"></script>
+
+    <script>
+      // Your web app's Firebase configuration
+      var firebaseConfig = {
+        apiKey: "AIzaSyBveio8IuFGOMymSnwNgAWqc14BVliUwHY",
+        authDomain: "trackboard-d41a2.firebaseapp.com",
+        databaseURL: "https://trackboard-d41a2.firebaseio.com",
+        projectId: "trackboard-d41a2",
+        storageBucket: "trackboard-d41a2.appspot.com",
+        messagingSenderId: "880705427344",
+        appId: "1:880705427344:web:43e253a149143cc9218515",
+        measurementId: "G-5GLK0MX33D",
+      };
+      // Initialize Firebase
+      firebase.initializeApp(firebaseConfig);
+      firebase.analytics();
+
+    </script>
+    <script>
+      var firestore = firebase.firestore();
+      var st = firebase.storage();
+      const docRef = firestore.collection("applications");
+      var id;
+
+      $(document).ready(function () {
+        var parameters = location.search.substring(1).split("&");
+        var temp = parameters[0].split("=");
+        var tempId = unescape(temp[1]);
+        id  = tempId;
+
+        //sidebar links
+        var detailsHref = document.getElementById("sidebarPosterDetails");
+        detailsHref.href = './s_authorization_details.html?id=' + id;
+
+        var locationsHref = document.getElementById("sidebarRequestedLocations");
+        locationsHref.href = './s_authorization_location.html?id=' + id;
+
+        var approvalHref = document.getElementById("sidebarApproval");
+        approvalHref.href = './s_authorization_approval.html?id=' + id;
+
+      });
+
+      function updateApp(){
+
+        let comment = document.getElementById('comment').value;
+        let status = document.querySelector('input[name="optradio"]:checked').value;
+        let appStatus;
+
+        if (status == 'approve'){
+          appStatus = true;
+        }
+        else {
+          appStatus= false;
+        }
+
+        docRef.doc(id).update({
+          approved: appStatus,
+          comment: comment
+        }).then(showAlert());
+      }
+
+    </script>
 
     <script src="sidebar.js"></script>
 
