@@ -56,9 +56,9 @@
     </button>
     <div id="mySidebar" class="sidebar">
       <a href="javascript:void(0)" class="closebtn" onclick="closeNav()"> x </a>
-      <a href="./s_authorization_details.html">Poster Details</a>
-      <a href="./s_authorization_location.html">Requested Locations</a>
-      <a href="./s_authorization_approval.html">Approval</a>
+      <a id="sidebarPosterDetails">Poster Details</a>
+      <a id="sidebarRequestedLocations">Requested Locations</a>
+      <a id="sidebarApproval">Approval</a>
       <a id="goBackToRequestPage" href="./s_requests.html">
         ⇐ Go Back to Requests Page
       </a>
@@ -157,6 +157,17 @@
         if (typeof(tempId) !== 'undefined'){
           id = tempId;
 
+          //sidebar links
+          var detailsHref = document.getElementById("sidebarPosterDetails");
+          detailsHref.href = './s_authorization_details.html?id=' + id;
+
+          var locationsHref = document.getElementById("sidebarRequestedLocations");
+          locationsHref.href = './s_authorization_location.html?id=' + id;
+
+          var approvalHref = document.getElementById("sidebarApproval");
+          approvalHref.href = './s_authorization_approval.html?id=' + id;
+
+
           docRef.doc(id).get().then(function(doc) {
             if (doc.exists) {
               showStuff(doc.data(), doc.id);
@@ -218,12 +229,7 @@
         document.getElementById("duration").innerText = start + " - " + end;
 
         document.getElementById("numberLocations").innerText = data.locations.length;
-
-        if (data.specialRequest == "") {
-          document.getElementById("specialRequest").innerText = "  ";
-        } else {
-          document.getElementById("specialRequest").innerText = data.specialRequest;
-        }
+        
       }
 
 
