@@ -62,7 +62,10 @@
     </div>
     <br />
     <div id="main_content">
-      <div class="container" style="background: rgba(227, 229, 216, 0.21);">
+      <div
+        class="container"
+        style="background: rgba(226, 226, 226, 0.21); padding: 40px;"
+      >
         <form action="u_history.html">
           <div class="section-title">
             <br />
@@ -76,157 +79,156 @@
             sidebar.
           </small>
           <hr />
-
-          <div class="float-left">
-            <div class="form-group">
-              <label for="name"><strong>Name</strong></label>
-              <input
-                class="form-control"
-                type="text"
-                id="name"
-                placeholder="e.g John Doe"
-                required
-              />
-            </div>
-            <div class="form-group">
-              <label for="club"><strong>Organisation</strong></label>
-              <input
-                class="form-control"
-                type="text"
-                id="club"
-                placeholder="e.g SUNY Korea Startup Club or Student"
-                required
-              />
-            </div>
-            <div class="form-group">
-              <label for="email"><strong>Email</strong></label>
-              <input
-                class="form-control"
-                type="email"
-                id="email"
-                placeholder="e.g John.Doe@stonybrook.edu"
-                required
-              />
-            </div>
-            <div class="form-group">
-              <label for="purpose"
-                ><strong>What is the purpose of the poster?</strong></label
-              >
-              <textarea
-                class="form-control"
-                id="purpose"
-                placeholder="Eg. To recruit new members"
-                name="purpose"
-                cols="60"
-                rows="3"
-                required
-              ></textarea>
-            </div>
-            <div class="form-group">
-              <label><strong>Select Poster Size:</strong></label>
-              <br />
-              <div class="form-check form-check-inline">
-                <input
-                  class="form-check-input"
-                  type="radio"
-                  name="sizeOptions"
-                  id="size1"
-                  value="A3"
-                />
-                <label class="form-check-label" for="size1">A3</label>
-              </div>
-              <div class="form-check form-check-inline">
-                <input
-                  class="form-check-input"
-                  type="radio"
-                  name="sizeOptions"
-                  id="size2"
-                  value="A4"
-                />
-                <label class="form-check-label" for="size2">A4</label>
-              </div>
-              <div class="form-check form-check-inline">
-                <input
-                  class="form-check-input"
-                  type="radio"
-                  name="sizeOptions"
-                  id="size3"
-                  value="other"
-                />
-                <label class="form-check-label" for="size3">Other: </label>
-                &nbsp
-                <input
-                  class="form-control form-control-sm"
-                  type="text"
-                  name="sizeOptions"
-                  id="size3Other"
-                  placeholder="Eg. 400mmx300mm"
-                />
-              </div>
-            </div>
-            <div class="form-group row">
-              <label for="postDate" class="col-sm-4 col-form-label"
-                ><strong>Post Date:</strong></label
-              >
-              <div class="col-sm-8">
-                <input
-                  type="date"
-                  class="form-control-plaintext"
-                  id="postDate"
-                  required
-                />
-              </div>
-            </div>
-            <div class="form-group row">
-              <label for="takeDownDate" class="col-sm-4 col-form-label"
-                ><strong>Take Down Date:</strong></label
-              >
-              <div class="col-sm-8">
-                <input
-                  type="date"
-                  class="form-control-plaintext"
-                  id="takeDownDate"
-                  required
-                />
-              </div>
-            </div>
-            <div>
+          <div class="row">
+            <div class="col-5">
               <div class="form-group">
-                <label><strong>Select Poster Locations: </strong></label>
-                <div class="form control">
-                  <div>
-                    <table class="table" id="tableLocations"></table>
-                  </div>
-                  <button
-                    class="btn btn-primary"
-                    type="button"
-                    data-toggle="modal"
-                    data-target="#locationModal"
-                    aria-hidden="true"
-                  >
-                    Add Location
-                  </button>
+                <label for="name"><strong>Name</strong></label>
+                <input
+                  class="form-control"
+                  type="text"
+                  id="name"
+                  placeholder="e.g. John Doe"
+                  required
+                />
+              </div>
+              <div class="form-group">
+                <label for="club"><strong>Organisation</strong></label>
+                <input
+                  class="form-control"
+                  type="text"
+                  id="club"
+                  placeholder="e.g. SUNY Korea Startup Club or Student"
+                  required
+                />
+              </div>
+              <div class="form-group">
+                <label for="email"><strong>Email</strong></label>
+                <input
+                  class="form-control"
+                  type="email"
+                  id="email"
+                  placeholder="e.g. John.Doe@stonybrook.edu"
+                  required
+                />
+              </div>
+              <div class="form-group">
+                <label for="purpose"
+                  ><strong>What is the purpose of the poster?</strong></label
+                >
+                <textarea
+                  class="form-control"
+                  id="purpose"
+                  placeholder="e.g. To recruit new members"
+                  name="purpose"
+                  cols="60"
+                  rows="3"
+                  required
+                ></textarea>
+              </div>
+              <div class="form-group">
+                <label><strong>Select Poster Size:</strong></label>
+                <br />
+                <div class="form-check form-check-inline">
+                  <input
+                    class="form-check-input"
+                    type="radio"
+                    name="sizeOptions"
+                    id="size1"
+                    value="A3"
+                  />
+                  <label class="form-check-label" for="size1">A3</label>
+                </div>
+                <div class="form-check form-check-inline">
+                  <input
+                    class="form-check-input"
+                    type="radio"
+                    name="sizeOptions"
+                    id="size2"
+                    value="A4"
+                  />
+                  <label class="form-check-label" for="size2">A4</label>
+                </div>
+                <div class="form-check form-check-inline">
+                  <input
+                    class="form-check-input"
+                    type="radio"
+                    name="sizeOptions"
+                    id="size3"
+                    value="other"
+                  />
+                  <label class="form-check-label" for="size3">Other: </label>
+                  &nbsp
+                  <input
+                    class="form-control form-control-sm"
+                    type="text"
+                    name="sizeOptions"
+                    id="size3Other"
+                    placeholder="e.g. 400mmx300mm"
+                  />
                 </div>
               </div>
+              <div class="form-group row">
+                <label for="postDate" class="col-sm-4 col-form-label"
+                  ><strong>Post Date:</strong></label
+                >
+                <div class="col-sm-8">
+                  <input
+                    type="date"
+                    class="form-control-plaintext"
+                    id="postDate"
+                    required
+                  />
+                </div>
+              </div>
+              <div class="form-group row">
+                <label for="takeDownDate" class="col-sm-4 col-form-label"
+                  ><strong>Take Down Date:</strong></label
+                >
+                <div class="col-sm-8">
+                  <input
+                    type="date"
+                    class="form-control-plaintext"
+                    id="takeDownDate"
+                    required
+                  />
+                </div>
+              </div>
+              <div>
+                <div class="form-group">
+                  <label><strong>Select Poster Locations: </strong></label>
+                  <div class="form control">
+                    <div>
+                      <table class="table" id="tableLocations"></table>
+                    </div>
+                    <button
+                      class="btn btn-info"
+                      type="button"
+                      data-toggle="modal"
+                      data-target="#locationModal"
+                      aria-hidden="true"
+                    >
+                      Add Location
+                    </button>
+                  </div>
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="specialRequest"
+                  ><strong
+                    >Do you have any special location request?</strong
+                  ></label
+                >
+                <textarea
+                  class="form-control"
+                  id="specialRequest"
+                  placeholder="e.g. C202 Door when the event is happening"
+                  name="specialRequest"
+                  cols="60"
+                  rows="3"
+                ></textarea>
+              </div>
             </div>
-            <div class="form-group">
-              <label for="specialRequest"
-                ><strong
-                  >Do you have any special location request?</strong
-                ></label
-              >
-              <textarea
-                class="form-control"
-                id="specialRequest"
-                placeholder="Eg. C202 Door when the event is happening"
-                name="specialRequest"
-                cols="60"
-                rows="3"
-              ></textarea>
-            </div>
-          </div>
-          <div class="float-right">
-            <div class="container text-center">
+            <div class="col 5">
               <div class="custom-file">
                 <input
                   type="file"
@@ -236,19 +238,20 @@
                   onchange="readURL(this);"
                   hidden
                 />
-                <label
-                  class="btn btn-primary"
-                  for="file"
-                  style="cursor: pointer;"
-                  >Upload Poster</label
-                >
-
-                <p><img id="outputIMG" width="450" /></p>
+                <br />
+                <div class="container text-center">
+                  <label
+                    class="btn btn-info"
+                    for="file"
+                    style="cursor: pointer;"
+                    >Upload Poster</label
+                  >
+                  <br />
+                  <p><br /><img id="outputIMG" width="450" /></p>
+                </div>
               </div>
             </div>
           </div>
-
-          <div class="clearfix"></div>
 
           <button
             class="btn btn-success"
@@ -507,7 +510,8 @@
           contentType: posterIMG.type,
         };
 
-        colRef.add({
+        colRef
+          .add({
             submitted_by: name,
             club: club,
             email: email,
@@ -520,22 +524,23 @@
             appDate: Date.now(),
             approved: "",
             comment: "",
-          }).then(function (docRef) {
+          })
+          .then(function (docRef) {
             let storageRef = st.ref().child("Posters/" + docRef.id);
             var task = storageRef.put(posterIMG, metadata);
 
-          // Listen for state changes, errors, and completion of the upload.
-          task.on('state_changed',
-                  function progress(snapshot) {
-                    $('main_content').hide(); //supposed to hide the main content div while img is being uploaded to storage but doesn't
-
-                  },
-                  function err(error) {
-                  },
-                  function completed() {
-                    window.location.href = "u_history.html";
-                  });
-        });
+            // Listen for state changes, errors, and completion of the upload.
+            task.on(
+              "state_changed",
+              function progress(snapshot) {
+                $("main_content").hide(); //supposed to hide the main content div while img is being uploaded to storage but doesn't
+              },
+              function err(error) {},
+              function completed() {
+                window.location.href = "u_history.html";
+              }
+            );
+          });
       }
     </script>
     <script src="../staff/sidebar.js"></script>
