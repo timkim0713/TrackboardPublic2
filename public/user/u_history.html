@@ -62,7 +62,10 @@
     </div>
     <br />
     <div id="main_content">
-      <div class="container" style="background: rgba(227, 229, 216, 0.21);">
+      <div
+        class="container"
+        style="background: rgba(226, 226, 226, 0.21); padding: 40px;"
+      >
         <div class="section-title">
           <br />
 
@@ -116,13 +119,17 @@
       const docRef = firestore.collection("applications");
 
       $(document).ready(function () {
-        docRef.orderBy('appDate', 'desc').get().then(snapshot => {
-          snapshot.forEach(doc => {
-            addRow(doc.data(), doc.id);
+        docRef
+          .orderBy("appDate", "desc")
+          .get()
+          .then((snapshot) => {
+            snapshot.forEach((doc) => {
+              addRow(doc.data(), doc.id);
+            });
+          })
+          .catch((err) => {
+            console.log("Error getting documents", err);
           });
-        }).catch(err => {
-          console.log('Error getting documents', err);
-        });
       });
 
       function viewRow() {
@@ -154,20 +161,19 @@
         if (application.approved === true) {
           cell2.innerText = "Application was approved";
           cell4.innerHTML =
-                  "<button type='button' class='btn btn-success' onclick='viewRow()'>View</button>";
+            "<button type='button' class='btn btn-success' onclick='viewRow()'>View</button>";
         } else if (application.approved === false) {
           cell2.innerText = "Application was rejected";
           cell4.innerHTML =
-                  "<button type='button' class='btn btn-danger' onclick='viewRow()'>View</button>";
+            "<button type='button' class='btn btn-danger' onclick='viewRow()'>View</button>";
         } else {
           cell2.innerText = "Application is pending";
           cell4.innerHTML =
-                  "<button type='button' class='btn btn-primary' onclick='viewRow()'>View</button>";
+            "<button type='button' class='btn btn-primary' onclick='viewRow()'>View</button>";
         }
-        if (application.comment == undefined){
+        if (application.comment == undefined) {
           cell3.innerText = "";
-        }
-        else{
+        } else {
           cell3.innerText = application.comment;
         }
         // cell4.innerHTML =

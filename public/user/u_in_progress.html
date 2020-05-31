@@ -62,7 +62,10 @@
     </div>
     <br />
     <div id="main_content">
-      <div class="container" style="background: rgba(227, 229, 216, 0.21);">
+      <div
+        class="container"
+        style="background: rgba(226, 226, 226, 0.21); padding: 40px;"
+      >
         <form>
           <div class="section-title">
             <br />
@@ -266,7 +269,6 @@
       // Initialize Firebase
       firebase.initializeApp(firebaseConfig);
       firebase.analytics();
-
     </script>
     <script>
       var firestore = firebase.firestore();
@@ -279,52 +281,62 @@
         var temp = parameters[0].split("=");
         var tempId = unescape(temp[1]);
 
-        if (typeof(tempId) !== 'undefined'){
+        if (typeof tempId !== "undefined") {
           id = tempId;
 
-          docRef.doc(id).get().then(function(doc) {
-            if (doc.exists) {
-              showStuff(doc.data(), doc.id);
-            } else {
-              // doc.data() will be undefined in this case
-              console.log("No such document!");
-            }
-          }).catch(function(error) {
-            console.log("Error getting document:", error);
-          });
-        }
-        else{
-          docRef.orderBy('appDate', 'desc').limit(1).get().then(snapshot => {
-            snapshot.forEach(doc => {
-              showStuff(doc.data(), doc.id);
+          docRef
+            .doc(id)
+            .get()
+            .then(function (doc) {
+              if (doc.exists) {
+                showStuff(doc.data(), doc.id);
+              } else {
+                // doc.data() will be undefined in this case
+                console.log("No such document!");
+              }
+            })
+            .catch(function (error) {
+              console.log("Error getting document:", error);
             });
-          }).catch(err => {
-            console.log('Error getting documents', err);
-          });
+        } else {
+          docRef
+            .orderBy("appDate", "desc")
+            .limit(1)
+            .get()
+            .then((snapshot) => {
+              snapshot.forEach((doc) => {
+                showStuff(doc.data(), doc.id);
+              });
+            })
+            .catch((err) => {
+              console.log("Error getting documents", err);
+            });
         }
       });
 
-
       function showStuff(data, id) {
-        st.ref().child('Posters/' + id).getDownloadURL().then(function(url) {
-          // `url` is the download URL for 'images/stars.jpg'
+        st.ref()
+          .child("Posters/" + id)
+          .getDownloadURL()
+          .then(function (url) {
+            // `url` is the download URL for 'images/stars.jpg'
 
-          // This can be downloaded directly:
-          var xhr = new XMLHttpRequest();
-          xhr.responseType = 'blob';
-          xhr.onload = function(event) {
-            var blob = xhr.response;
-          };
-          xhr.open('GET', url);
-          xhr.send();
+            // This can be downloaded directly:
+            var xhr = new XMLHttpRequest();
+            xhr.responseType = "blob";
+            xhr.onload = function (event) {
+              var blob = xhr.response;
+            };
+            xhr.open("GET", url);
+            xhr.send();
 
-          // Or inserted into an <img> element:
-          var img = document.getElementById('outputIMG');
-          img.src = url;
-        }).catch(function(error) {
-          // Handle any errors
-        });
-
+            // Or inserted into an <img> element:
+            var img = document.getElementById("outputIMG");
+            img.src = url;
+          })
+          .catch(function (error) {
+            // Handle any errors
+          });
 
         if (data.approved === false || data.approved === true) {
           document.getElementById("pageHeader").innerText =
