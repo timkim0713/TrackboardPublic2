@@ -472,12 +472,12 @@
         let myBuildings = "";
         let myFloors = "";
         let myLocations = "";
-        myBuildings = "<div id=\"buildingDropdownBtn\" class=\"dropdown\" style=\"display: inline-block;\"> <button type=\"button\" class=\"btn btn-primary dropdown-toggle\" data-toggle=\"dropdown\">" + getBuildingName(selB) + " </button> <div class=\"dropdown-menu\"> <a class=\"dropdown-item\" href=\"javascript:setDropdowns('*', '*', '*');\">All Buildings</a>";
+        myBuildings = "<div id=\"buildingDropdownBtn\" class=\"dropdown\" style=\"display: inline-block;\"> <button type=\"button\" class=\"btn btn-info dropdown-toggle\" data-toggle=\"dropdown\">" + getBuildingName(selB) + " </button> <div class=\"dropdown-menu\"> <a class=\"dropdown-item\" href=\"javascript:setDropdowns('*', '*', '*');\">All Buildings</a>";
         if( selB !== '*' ){
-          myFloors = "<div id=\"floorDropdownBtn\" class=\"dropdown\" style=\"display: inline-block;\"> <button type=\"button\" class=\"btn btn-primary dropdown-toggle\" data-toggle=\"dropdown\">" + getFloorName(selF) + "</button> <div class=\"dropdown-menu\"> <a class=\"dropdown-item\" href=\"javascript:setDropdowns('" + selB + "', '*', '*');\">All Floors</a>";
+          myFloors = "<div id=\"floorDropdownBtn\" class=\"dropdown\" style=\"display: inline-block;\"> <button type=\"button\" class=\"btn btn-info dropdown-toggle\" data-toggle=\"dropdown\">" + getFloorName(selF) + "</button> <div class=\"dropdown-menu\"> <a class=\"dropdown-item\" href=\"javascript:setDropdowns('" + selB + "', '*', '*');\">All Floors</a>";
         }
         if( selF !== '*' ){
-          myLocations = "<div id=\"locationropdownBtn\" class=\"dropdown\" style=\"display: inline-block;\"> <button type=\"button\" class=\"btn btn-primary dropdown-toggle\" data-toggle=\"dropdown\">" + getLocationName(selL) + "</button> <div class=\"dropdown-menu\"> <a class=\"dropdown-item\" href=\"javascript:setDropdowns('" + selB + "', '" + selF + "', '*');\">All Locations</a>";
+          myLocations = "<div id=\"locationropdownBtn\" class=\"dropdown\" style=\"display: inline-block;\"> <button type=\"button\" class=\"btn btn-info dropdown-toggle\" data-toggle=\"dropdown\">" + getLocationName(selL) + "</button> <div class=\"dropdown-menu\"> <a class=\"dropdown-item\" href=\"javascript:setDropdowns('" + selB + "', '" + selF + "', '*');\">All Locations</a>";
         }
         this.bfl.forEach(b => {
           myBuildings = myBuildings + "<a class=\"dropdown-item\" href=\"javascript:setDropdowns('" + b.building_id+ "',  '*',  '*');\">" + b.building_name+"</a>";
