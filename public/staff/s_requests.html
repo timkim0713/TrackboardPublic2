@@ -59,19 +59,18 @@
       <a href="./s_requests.html">Poster Requests</a>
       <!-- <a href="./s_map.html">Campus Map</a> -->
       <a href="./s_boards.html">Bulletin Boards</a>
-      <a href="./s_rules.html">Edit Poster Rules</a>
+      <a href="./s_rules.html">Poster Rules</a>
     </div>
 
     <div id="main_content">
-      <br /><br />
-
       <div class="section-title">
-        <h2>POSTER REQUESTS</h2>
-      </div>
+        <br /><br />
 
-      <small style="color: cornflowerblue;"
-        >*Please review the posters requested by the students.</small
-      >
+        <h2>POSTER REQUESTS</h2>
+        <small style="color: cornflowerblue;"
+          >*Please review the posters requested by the students.</small
+        >
+      </div>
 
       <table class="table" id="posterApplications">
         <thead class="thead-light">
@@ -84,9 +83,7 @@
             <th class="text-center" scope="col">View</th>
           </tr>
         </thead>
-        <tbody>
-
-        </tbody>
+        <tbody></tbody>
       </table>
       <div id="footer"></div>
     </div>
@@ -125,13 +122,17 @@
       const docRef = firestore.collection("applications");
 
       $(document).ready(function () {
-        docRef.orderBy('appDate', 'desc').get().then(snapshot => {
-          snapshot.forEach(doc => {
-            addRow(doc.data(), doc.id);
+        docRef
+          .orderBy("appDate", "desc")
+          .get()
+          .then((snapshot) => {
+            snapshot.forEach((doc) => {
+              addRow(doc.data(), doc.id);
+            });
+          })
+          .catch((err) => {
+            console.log("Error getting documents", err);
           });
-        }).catch(err => {
-          console.log('Error getting documents', err);
-        });
       });
 
       function viewRow() {
@@ -150,7 +151,6 @@
         var cell4 = row.insertCell(3);
         var cell5 = row.insertCell(4);
         var cell6 = row.insertCell(5);
-
 
         cell1.className = "text-center";
         cell2.className = "text-center";
@@ -172,15 +172,15 @@
         if (application.approved === true) {
           cell5.innerText = "Application was approved";
           cell6.innerHTML =
-                  "<button type='button' class='btn btn-success' onclick='viewRow()'>View</button>";
+            "<button type='button' class='btn btn-success' onclick='viewRow()'>View</button>";
         } else if (application.approved === false) {
           cell5.innerText = "Application was rejected";
           cell6.innerHTML =
-                  "<button type='button' class='btn btn-danger' onclick='viewRow()'>View</button>";
+            "<button type='button' class='btn btn-danger' onclick='viewRow()'>View</button>";
         } else {
           cell5.innerText = "Application is pending";
           cell6.innerHTML =
-                  "<button type='button' class='btn btn-primary' onclick='viewRow()'>View</button>";
+            "<button type='button' class='btn btn-primary' onclick='viewRow()'>View</button>";
         }
       }
     </script>

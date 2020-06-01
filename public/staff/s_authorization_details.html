@@ -67,50 +67,64 @@
 
     <div id="main_content">
       <div class="section-title">
-      <h2>POSTER DETAILS</h2>
+        <h2>POSTER DETAILS</h2>
       </div>
-
-      <table class="table">
-        <tbody>
-          <tr>
-            <th>Club</th>
-            <td id="club"></td>
-          </tr>
-          <tr>
-            <th>Purpose</th>
-            <td id="purpose"></td>
-          </tr>
-          <tr>
-            <th>Student Name</th>
-            <td id="submitted_by"></td>
-          </tr>
-          <tr>
-            <th>Email</th>
-            <td id="email"></td>
-          </tr>
-          <tr>
-            <th>Poster Duration</th>
-            <td id="duration"></td>
-          </tr>
-          <tr>
-            <th>Paper Size</th>
-            <td id="size"></td>
-          </tr>
-          <tr>
-            <th>Total Number of Locations</th>
-            <td id="numberLocations"></td>
-          </tr>
-          <tr>
-            <th>Poster Image</th>
-            <th><img id="showIMG" width="450" height="600" /></th>
-          </tr>
-        </tbody>
-      </table>
+      <div class="row">
+        <div class = "col-6">
+        <table class="table">
+          <tbody>
+            <tr>
+              <th>Club</th>
+              <td id="club"></td>
+            </tr>
+            <tr>
+              <th>Purpose</th>
+              <td id="purpose"></td>
+            </tr>
+            <tr>
+              <th>Student Name</th>
+              <td id="submitted_by"></td>
+            </tr>
+            <tr>
+              <th>Email</th>
+              <td id="email"></td>
+            </tr>
+            <tr>
+              <th>Poster Duration</th>
+              <td id="duration"></td>
+            </tr>
+            <tr>
+              <th>Paper Size</th>
+              <td id="size"></td>
+            </tr>
+            <tr>
+              <th>Total Number of Locations</th>
+              <td id="numberLocations"></td>
+            </tr>
+           
+          </tbody>
+        </table>
+      </div>
+        <div class= "col-5">
+          <img id="showIMG" 
+          width="450" height="auto";/>
+           <br />
+         
+        </div>
+      </div>
       <br>
-        <button style="float: right;" type="button" class="btn btn-success" onclick="openLocations('./s_authorization_location.html')">Next</button>
-      <br>
-      <br>
-
+      <button
+      style="float: right;"
+      type="button"
+      class="btn btn-success"
+      onclick="openLocations('./s_authorization_location.html')"
+    >
+      Next
+    </button>
+      </div>
+     
+      <br />
+      <br />
     </div>
     <div id="footer"></div>
     <script src="sidebar.js"></script>
@@ -140,7 +154,6 @@
       // Initialize Firebase
       firebase.initializeApp(firebaseConfig);
       firebase.analytics();
-
     </script>
     <script>
       var firestore = firebase.firestore();
@@ -154,39 +167,48 @@
         var temp = parameters[0].split("=");
         var tempId = unescape(temp[1]);
 
-        if (typeof(tempId) !== 'undefined'){
+        if (typeof tempId !== "undefined") {
           id = tempId;
 
           //sidebar links
           var detailsHref = document.getElementById("sidebarPosterDetails");
-          detailsHref.href = './s_authorization_details.html?id=' + id;
+          detailsHref.href = "./s_authorization_details.html?id=" + id;
 
-          var locationsHref = document.getElementById("sidebarRequestedLocations");
-          locationsHref.href = './s_authorization_location.html?id=' + id;
+          var locationsHref = document.getElementById(
+            "sidebarRequestedLocations"
+          );
+          locationsHref.href = "./s_authorization_location.html?id=" + id;
 
           var approvalHref = document.getElementById("sidebarApproval");
-          approvalHref.href = './s_authorization_approval.html?id=' + id;
+          approvalHref.href = "./s_authorization_approval.html?id=" + id;
 
-
-          docRef.doc(id).get().then(function(doc) {
-            if (doc.exists) {
-              showStuff(doc.data(), doc.id);
-            } else {
-              // doc.data() will be undefined in this case
-              console.log("No such document!");
-            }
-          }).catch(function(error) {
-            console.log("Error getting document:", error);
-          });
-        }
-        else{
-          docRef.orderBy('appDate').limit(1).get().then(snapshot => {
-            snapshot.forEach(doc => {
-              showStuff(doc.data(), doc.id);
+          docRef
+            .doc(id)
+            .get()
+            .then(function (doc) {
+              if (doc.exists) {
+                showStuff(doc.data(), doc.id);
+              } else {
+                // doc.data() will be undefined in this case
+                console.log("No such document!");
+              }
+            })
+            .catch(function (error) {
+              console.log("Error getting document:", error);
             });
-          }).catch(err => {
-            console.log('Error getting documents', err);
-          });
+        } else {
+          docRef
+            .orderBy("appDate")
+            .limit(1)
+            .get()
+            .then((snapshot) => {
+              snapshot.forEach((doc) => {
+                showStuff(doc.data(), doc.id);
+              });
+            })
+            .catch((err) => {
+              console.log("Error getting documents", err);
+            });
         }
       });
 
@@ -195,24 +217,28 @@
       }
 
       function showStuff(data, id) {
-        st.ref().child('Posters/' + id).getDownloadURL().then(function(url) {
-          // `url` is the download URL for 'images/stars.jpg'
+        st.ref()
+          .child("Posters/" + id)
+          .getDownloadURL()
+          .then(function (url) {
+            // `url` is the download URL for 'images/stars.jpg'
 
-          // This can be downloaded directly:
-          var xhr = new XMLHttpRequest();
-          xhr.responseType = 'blob';
-          xhr.onload = function(event) {
-            var blob = xhr.response;
-          };
-          xhr.open('GET', url);
-          xhr.send();
+            // This can be downloaded directly:
+            var xhr = new XMLHttpRequest();
+            xhr.responseType = "blob";
+            xhr.onload = function (event) {
+              var blob = xhr.response;
+            };
+            xhr.open("GET", url);
+            xhr.send();
 
-          // Or inserted into an <img> element:
-          var img = document.getElementById('showIMG');
-          img.src = url;
-        }).catch(function(error) {
-          // Handle any errors
-        });
+            // Or inserted into an <img> element:
+            var img = document.getElementById("showIMG");
+            img.src = url;
+          })
+          .catch(function (error) {
+            // Handle any errors
+          });
 
         document.getElementById("submitted_by").innerText = data.submitted_by;
         document.getElementById("email").innerText = data.email;
@@ -222,17 +248,15 @@
 
         document.getElementById("size").innerText = data.size;
 
-
         let start = data.postDate;
         let end = data.takeDownDate;
 
         document.getElementById("duration").innerText = start + " - " + end;
+        document.getElementById("numberLocations").innerText = data.locations.length;
 
         document.getElementById("numberLocations").innerText = data.locations.length;
 
       }
-
-
     </script>
 
     <script src="../assets/vendor/jquery/jquery.min.js"></script>
