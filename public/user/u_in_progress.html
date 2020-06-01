@@ -66,7 +66,7 @@
         <form>
           <div class="section-title">
             <br />
-            <h2>Currently Progressing Application</h2>
+            <h2 id="pageHeader">Currently Progressing Application</h2>
           </div>
           <div class="float-left">
             <div class="form-group">
@@ -327,8 +327,7 @@
 
 
         if (data.approved === false || data.approved === true) {
-          document.getElementById("pageHeader").innerText =
-            "Completed Application";
+          document.getElementById("pageHeader").innerText = "Completed Application";  //Page title when the application has been approved
         }
         document.getElementById("name").value = data.submitted_by;
         document.getElementById("email").value = data.email;
