@@ -79,9 +79,9 @@
             <a
               style="
                 font-size: 14px;
-                color: rgb(121, 34, 34);
+                color: rgb(26, 168, 156);
                 font-weight: bold;
-                font-style: italic;
+                font-style: oblique;
               "
               href="u_rules.html"
             >
@@ -91,7 +91,7 @@
           </small>
           <hr />
           <div class="row">
-            <div class="col-5">
+            <div class="col-6">
               <div class="form-group">
                 <label for="name"><strong>Name</strong></label>
                 <input
@@ -174,7 +174,7 @@
                     type="text"
                     name="sizeOptions"
                     id="size3Other"
-                    placeholder="e.g. 400mmx300mm"
+                    placeholder="e.g. 400mm x 300mm"
                   />
                 </div>
               </div>
@@ -240,17 +240,17 @@
               </div>
             </div>
             <div class="col 5">
-              <div class="custom-file">
-                <input
-                  type="file"
-                  accept="image/*"
-                  name="image"
-                  id="file"
-                  onchange="readURL(this);"
-                  hidden
-                />
-                <br />
-                <div class="container text-center">
+              <div class="container text-center">
+                <div class="custom-file">
+                  <input
+                    type="file"
+                    accept="image/*"
+                    name="image"
+                    id="file"
+                    onchange="readURL(this);"
+                    hidden
+                  />
+                  <br />
                   <label
                     class="btn btn-info"
                     for="file"
@@ -258,7 +258,9 @@
                     >Upload Poster</label
                   >
                   <br />
-                  <p><br /><img id="outputIMG" width="450" /></p>
+                  <p>
+                    <br /><img id="outputIMG" width="450" height="auto" ; />
+                  </p>
                 </div>
               </div>
             </div>
