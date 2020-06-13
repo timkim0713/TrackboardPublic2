@@ -76,7 +76,7 @@
           </div>
 
             <!-- TODO DYNAMICALLY LOAD CONTENT !! Below is an example -->
-          <div id="posterBoardViewer" class="row portfolio-container" style="width: 1040px; min-height: 720px; max-height: 720px; padding: 11px; margin: 1px; background-color: rgb(180, 203, 204); overflow-y:scroll; display: flex; justify-content: flex-start;"> 
+          <div id="posterBoardViewer" class="row portfolio-container" style="min-width: 1040px; min-height: 720px; max-height: 720px; padding: 11px; margin: 1px; background-color: rgb(180, 203, 204); overflow-y:scroll; display: flex; justify-content: flex-start;"> 
           </div>
 
           </div>
@@ -90,6 +90,7 @@
 
     <!-- Template Main JS File -->
     <!-- <script src="../assets/js/main.js"></script> -->
+    <script src="../include/firebase_service.js"></script>    
 
     
     <!-- The core Firebase JS SDK is always required and must be listed first -->
@@ -100,6 +101,7 @@
     <script src="https://www.gstatic.com/firebasejs/7.14.4/firebase-analytics.js"></script>
     <script src="https://www.gstatic.com/firebasejs/7.14.4/firebase-auth.js"></script>
     <script src="https://www.gstatic.com/firebasejs/7.14.4/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.14.4/firebase-storage.js"></script>
 
     <!-- <script src="../include/init_firebase.js"></script> -->
     <script>
@@ -118,8 +120,9 @@
       firebase.initializeApp(firebaseConfig);
       firebase.analytics();
 
-      // var st = firebase.storage();
+      var st = firebase.storage().ref();
       var db = firebase.firestore();
+
     </script>
 
     <script>
@@ -127,128 +130,33 @@
       var bfl = [];
         
       var pos_0 = "";
-      var pos_1 = "<div class=\"portfolio-item filter-x wow fadeInUp\" style=\"display: inline; width: 250px;\"> <div class=\"portfolio-wrap\"> <figure> <img src=\"";
+      var pos_1 = "<div class=\"portfolio-item filter-x wow fadeInUp\" style=\"display: inline; max-width: 50px;\"> <div class=\"portfolio-wrap\"> <figure> <img src=\"";
       var pos_2 = "\" class=\"img-fluid\" alt=\"\"> <a href=\"" ;
       var pos_3 = "\" data-gall=\"portfolioGallery\" class=\"link-preview venobox\" title=\"Preview\"><i class=\"bx bx-plus\"></i></a> <a href=\"\" class=\"link-details\" title=\"More Details\"><i class=\"bx bx-link\"></i></a> </figure><div class=\"portfolio-info\"> <h4><a href=\"\">Uploader</a></h4> <p>Poster Info(?)</p> </div></div>  </div>";
       var pos_4 = "";
 
-      $( document ).ready(function() {
+      $( document ).ready(getPageData());
+      async function getPageData() {
         
         let myParams = getParams(window.location.href);
-        let eid = "";
-        // console.log(db.collection("establishment").where("staff", "array-contains", "staff1@sunykorea.ac.kr").get());
-        db.collection("establishment").where("staff", "array-contains", "staff1@sunykorea.ac.kr").get()
-          .then((data) => { 
-            // There should only be one isntance of doc
-            data.forEach(doc => { eid = doc.id });
-          })
-          .then(() => {
-            db.collection("buildings").where("belongs_to", "==", eid).get()
-              .then((bdData) => {
-                bdData.forEach(bdDoc =>{
-                  bfl.push({ bid: bdDoc.id, belongs_to: bdDoc.belongs_to, name: bdDoc.name, floors: [] });
-                });
-              })
-              .then(() => {
-                if (  myParams.bid === undefined ){
-                  setDropdowns("*","*","*");
-                } else {
-                  db.collection("floors").where("belongs_to", "==", myParams.bid).get()
-                    .then((flData) => {
-                      let bidx = -1;
-                      for( let i = 0; i < bfl.length; i++ ){
-                        if( bfl[i].bid === myParams.bid ){
-                          bdix = i;
-                          break;
-                        }
-                      }
-                      flData.forEach(flDoc => {
-                        
-                      })
-                    })
-                    .then(() => {
 
-                    })
-                    .catch(err => {console.log(err);});
+        // TODO properly get eid from firebase
+        let eid = "hI4YnwT1hV8moVbc1Xhc";
+        bfl = await getBuildings(eid);
 
-                }
-              })
-              .catch(err => { console.log(err); })
-          })
-          .catch(err => { console.log(err); })
-        /*
-        db.collection("establishment")
-          .where("staff", "array-contains", "staff1@sunykorea.ac.kr") //get proper email later
-          .get()
-          .then((querySnapshot) => { 
-            // console.log(querySnapshot);
-            querySnapshot.forEach((doc) => {
-              // console.log("Establishment", doc.id, doc.data());
-              db.collection("buildings")
-                .where("belongs_to", "==", doc.id)
-                .get()
-                .then((bdQuerySnapshot) => {
-                  bdQuerySnapshot.forEach((bdDoc) => {
-                    // console.log("Building", bdDoc.id, bdDoc.data());
-                    bfl.push({
-                      bid: bdDoc.id,
-                      belongs_to: bdDoc.belongs_to,
-                      name: bdDoc.name,
-                      floors: []
-                    });
-                  });
-                  if( myParams.bid !== undefined ){
+        bfl.forEach( async b => {
+          b.floors = await getFloors(b.bid);
+          if( b.floors.length > 0 ){
+            b.floors.forEach( async f => {
+              f.locations = await getLocations(f.fid);
+              // if( f.locations.length > 0 ){
 
-                    db.collection("floors")
-                      .where("belongs_to", "==", myParams.bid)
-                      .get()
-                      .then((flQuerySnapshot) => {
-                        flQuerySnapshot.forEach((flDoc) => {
-                          // console.log("Floors", flDoc.id, flDoc.data());
-                          bfl[bfl.length-1].floors.push({
-                            fid: flDoc.id,
-                            belongs_to: flDoc.belongs_to,
-                            name: flDoc.name,
-                            locations: []
-                          });
-                          db.collection("bulletin_boards")
-                            .where("belongs_to", "==", flDoc.id)
-                            .get()
-                            .then((bbQuerySnapshot) => {
-                              bbQuerySnapshot.forEach((bbDoc) => {
-                                // console.log("Bulletin Board", bbDoc.id, bbDoc.data());
-                                console.log(bfl);
-                                blast = bfl.length-1;
-                                flast = bfl[blast].floors.length-1;
-                                bfl[blast].floors[flast].locations.push({
-                                  lid: bbDoc.id,
-                                  belongs_to: bbDoc.belongs_to,
-                                  name: bbDoc.name,
-                                  maxPosters: bbDoc.max_posters,
-                                  posters: bbDoc.posters
-                                });
-                              })
-                            })
-                            .catch(function(error) { console.log(error); });
-                        })
-                      })
-                      .catch(function(error) { console.log(error); });
-                  }
-                })
-                .catch(function(error) { console.log(error); });
-            });
-          })
-          .catch(function(error) {
-            console.error("Error: Could not get data", error);
-          });
-*/
+              // }
+            })
+          }
+        });
 
-      });
-      
-      function afterBflSetup(){
         console.log(bfl);
-        console.log(this.bfl);
-        let myParams = getParams(window.location.href);
         if( getBuildingName(myParams.bid) !== "All Buildings"  ){
           selectedBuilding = myParams.bid;
         } else {
@@ -266,7 +174,8 @@
         }
         setDropdowns(selectedBuilding, selectedFloor, selectedLocation); 
       }
-    
+
+        
       function setDropdowns(selB, selF, selL){
         let myBuildings = "";
         let myFloors = "";
@@ -300,24 +209,52 @@
         }
         var ddl = $('#dropdownList');
         ddl.html( myBuildings + myFloors + myLocations );
-        // updatePosterItems(selB, selF, selL);
+        updatePosterItems(selB, selF, selL);
       }
 
-      function updatePosterItems(bid, fid, lid){
-        
-        var loadPosters = this.pos_0;
-        for( let p of this.myPosters ){
-          if( !(   (bid === '*') 
-                || (bid === p.building_id && fid === '*') 
-                || (bid === p.building_id && fid === p.floor_id && lid === '*') 
-                || (bid === p.building_id && fid === p.floor_id && lid === p.location_id) ) ){
-            continue;
-          }
-          loadPosters = loadPosters + this.pos_1 + p.image_link + this.pos_2 + p.image_link + this.pos_3;
-        }
-        loadPosters = loadPosters + this.pos_4;
+      async function updatePosterItems(bid, fid, lid){
         var pbv = $('#posterBoardViewer');
-        pbv.html(loadPosters);
+        // var loadPosters = this.pos_0;
+        var loadPosters = "";
+        let img_link = "";
+        for( let b of this.bfl ){
+          if( bid === '*' || bid === b.bid ){
+            for( let f of b.floors ){
+              if( fid === '*' || fid === f.fid ){
+                for( let l of f.locations ){
+                  if( lid === '*' || lid === l.lid ){
+                    if( l.posters.length > 0 ){
+                      loadPosters = loadPosters + `<h5>` + b.name + ` > ` + f.name + `>` + l.name + `<br><br>`;
+                      for( let p of l.posters ){
+                        if( !(   (bid === '*') 
+                              || (bid === b.bid && fid === '*') 
+                              || (bid === b.bid && fid === f.fid && lid === '*') 
+                              || (bid === b.bid && fid === f.fid && lid === l.lid) ) ){
+                          continue;
+                        } else {
+                          if( p === null ){
+                            // TODO set default 'available spot' poster
+                            img_link = "../assets/img/posters/available.jpg";
+                          } else {
+                            img_link = await getPosterByName(p);
+                          }
+                          loadPosters = loadPosters + this.pos_1 + img_link + this.pos_2 + img_link + this.pos_3;
+                          pbv.html(loadPosters);
+                        }
+                      }
+                      loadPosters = loadPosters + `<br>`;
+                      pbv.html(loadPosters);
+
+                    }
+                    
+                  }
+                }
+              }
+            }
+          }
+        }
+        // pbv.html(loadPosters);
+        // loadPosters = loadPosters + this.pos_4;
       }
 
       function getBuildingName(bid){ 
@@ -463,7 +400,19 @@
       * @param  {String} url The URL
       * @return {Object}     The URL parameters
       */
-      var getParams = function (url) {
+      // var getParams = function (url) {
+      //   var params = {};
+      //   var parser = document.createElement('a');
+      //   parser.href = url;
+      //   var query = parser.search.substring(1);
+      //   var vars = query.split('&');
+      //   for (var i = 0; i < vars.length; i++) {
+      //     var pair = vars[i].split('=');
+      //     params[pair[0]] = decodeURIComponent(pair[1]);
+      //   }
+      //   return params;
+      // };
+      function getParams(url) {
         var params = {};
         var parser = document.createElement('a');
         parser.href = url;
