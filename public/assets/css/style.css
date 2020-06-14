@@ -166,7 +166,7 @@ h6 {
   opacity: 0;
   visibility: hidden;
   padding: 10px 0;
-  background: #fff;
+  background: rgb(180, 203, 204);
   box-shadow: 0px 0px 30px rgba(127, 137, 161, 0.25);
 
   transition: ease all 0.3s;
@@ -176,8 +176,9 @@ h6 {
   opacity: 1;
   top: 100%;
   font-style: bold;
-  background: rgb(247, 247, 247);
+  background: rgb(180, 203, 204);
   visibility: visible;
+  transition: 0.5s;
 }
 
 .nav-menu .drop-down li {
@@ -190,17 +191,19 @@ h6 {
   padding: 10px 20px;
   font-size: 14px;
   text-transform: none;
-  color: #669eaf;
-  background: rgb(247, 247, 247);
+  color: #808080;
+  background: rgb(180, 203, 204);
 
   font-weight: 400;
+  transition: 0.5s;
 }
 
 .nav-menu .drop-down ul a:hover,
 .nav-menu .drop-down ul .active > a,
 .nav-menu .drop-down ul li:hover > a {
-  font-weight: bold;
-  color: #204e4e;
+  font-weight: bolder;
+
+  color: #000000;
   transition: 0.5s;
 }
 
