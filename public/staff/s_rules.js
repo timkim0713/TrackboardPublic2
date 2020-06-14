@@ -46,26 +46,28 @@ $('.table-add').on('click', 'i', () => {
 });
 
 $tableID.on('click', '.table-remove', function () {
+  if( confirm("Are you sure you want to delete a rule? This action cannot be undone.") ){
+    // if api call on success
+    var tr = $(this).parents('tr');
+    // else
+    // alert() an error message
 
-  // if api call on success
-  var tr = $(this).parents('tr');
-  // else
-  // alert() an error message
+    var title = tr.find('td')[0].innerText;
+    var text = tr.find('td')[1].innerText;
 
-  var title = tr.find('td')[0].innerText;
-  var text = tr.find('td')[1].innerText;
+    tr.detach();
 
-  tr.detach();
+    rules = rules.filter(rule => (rule['title'] != title && rule['text'] != text));
 
-  rules = rules.filter(rule => (rule['title'] != title && rule['text'] != text));
+    docRef.doc('sunykorea')
+        .update({
+          rules: rules
+        })
+        .catch(function (error) {
+          console.log("Error getting document:", error);
+        });
 
-  docRef.doc('sunykorea')
-      .update({
-        rules: rules
-      })
-      .catch(function (error) {
-        console.log("Error getting document:", error);
-      });
+  }
 });
 
 $tableID.on('click', '.table-up', function () {
