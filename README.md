@@ -30,4 +30,8 @@ Everyone mentioned can be reached in person, though email, or on Kakaotalk.
 
 **Link to Prototype on Figma:** https://www.figma.com/proto/HmNYGlS3hcwMyxQGwkh9xJ/Trackboard?node-id=0%3A1&scaling=min-zoom
 
+**Link to Prototype on Figma Video:** https://drive.google.com/file/d/1xo0M_NCYO23rQD5WKPuatNUN1Xb4umxv/view
+
 **Link to deployed Prototype:** https://trackboard-d41a2.web.app
+
+**Link to deployed Prototype Video:** N/A
