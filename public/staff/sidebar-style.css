@@ -28,6 +28,7 @@
 
 .sidebar .currentPage {
   color: rgb(255, 193, 7);
+
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
 }
 
