@@ -158,148 +158,8 @@
                 </th>
               </tr>
             </thead>
-            <tbody>
-              <tr>
-                <td class="pt-3-half" style="display: none;">pr1</td>
-                <td class="pt-3-half" contenteditable="true">
-                  SUNY Korea Logo
-                </td>
-                <td class="pt-3-half" contenteditable="true">
-                  Must have SUNY Korea logo in the poster. Unedited and Upright.
-                  (A4-3cm high, A3-4cm high)
-                </td>
-                <td class="pt-3-half">
-                  <span class="table-up"
-                    ><a href="#!" class="indigo-text"
-                      ><i
-                        class="fas fa-long-arrow-alt-up"
-                        aria-hidden="true"
-                      ></i></a
-                  ></span>
-                  <span class="table-down"
-                    ><a href="#!" class="indigo-text"
-                      ><i
-                        class="fas fa-long-arrow-alt-down"
-                        aria-hidden="true"
-                      ></i></a
-                  ></span>
-                </td>
-                <td>
-                  <span class="table-remove"
-                    ><button
-                      type="button"
-                      class="btn btn-danger btn-rounded btn-sm my-0"
-                    >
-                      Remove
-                    </button></span
-                  >
-                </td>
-              </tr>
-              <tr>
-                <td class="pt-3-half" style="display: none;">pr2</td>
-                <td class="pt-3-half" contenteditable="true">
-                  Appropriateness
-                </td>
-                <td class="pt-3-half" contenteditable="true">
-                  The content of the poster must not include anything
-                  inappropriate.
-                </td>
-                <td class="pt-3-half">
-                  <span class="table-up"
-                    ><a href="#!" class="indigo-text"
-                      ><i
-                        class="fas fa-long-arrow-alt-up"
-                        aria-hidden="true"
-                      ></i></a
-                  ></span>
-                  <span class="table-down"
-                    ><a href="#!" class="indigo-text"
-                      ><i
-                        class="fas fa-long-arrow-alt-down"
-                        aria-hidden="true"
-                      ></i></a
-                  ></span>
-                </td>
-                <td>
-                  <span class="table-remove"
-                    ><button
-                      type="button"
-                      class="btn btn-danger btn-rounded btn-sm my-0"
-                    >
-                      Remove
-                    </button></span
-                  >
-                </td>
-              </tr>
-              <tr>
-                <td class="pt-3-half" style="display: none;">pr2</td>
-                <td class="pt-3-half" contenteditable="true">Poster Size</td>
-                <td class="pt-3-half" contenteditable="true">
-                  The poster dimension must not be larger than A3
-                </td>
-                <td class="pt-3-half">
-                  <span class="table-up"
-                    ><a href="#!" class="indigo-text"
-                      ><i
-                        class="fas fa-long-arrow-alt-up"
-                        aria-hidden="true"
-                      ></i></a
-                  ></span>
-                  <span class="table-down"
-                    ><a href="#!" class="indigo-text"
-                      ><i
-                        class="fas fa-long-arrow-alt-down"
-                        aria-hidden="true"
-                      ></i></a
-                  ></span>
-                </td>
-                <td>
-                  <span class="table-remove"
-                    ><button
-                      type="button"
-                      class="btn btn-danger btn-rounded btn-sm my-0"
-                    >
-                      Remove
-                    </button></span
-                  >
-                </td>
-              </tr>
-              <tr>
-                <td class="pt-3-half" style="display: none;">pr2</td>
-                <td class="pt-3-half" contenteditable="true">
-                  Location Requests
-                </td>
-                <td class="pt-3-half" contenteditable="true">
-                  Must list number of posters, the locations, and the duration
-                  of posting.
-                </td>
-                <td class="pt-3-half">
-                  <span class="table-up"
-                    ><a href="#!" class="indigo-text"
-                      ><i
-                        class="fas fa-long-arrow-alt-up"
-                        aria-hidden="true"
-                      ></i></a
-                  ></span>
-                  <span class="table-down"
-                    ><a href="#!" class="indigo-text"
-                      ><i
-                        class="fas fa-long-arrow-alt-down"
-                        aria-hidden="true"
-                      ></i></a
-                  ></span>
-                </td>
-                <td>
-                  <span class="table-remove"
-                    ><button
-                      type="button"
-                      class="btn btn-danger btn-rounded btn-sm my-0"
-                    >
-                      Remove
-                    </button></span
-                  >
-                </td>
-              </tr>
+            <tbody id="rulesTable">
+
             </tbody>
           </table>
           <h6 id="savingText"></h6>
@@ -309,6 +169,33 @@
 
       <div id="footer"></div>
     </div>
+
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/7.14.4/firebase-app.js"></script>
+
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+        https://firebase.google.com/docs/web/setup#available-libraries -->
+    <script src="https://www.gstatic.com/firebasejs/7.14.4/firebase-analytics.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.14.4/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.14.4/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.14.4/firebase-storage.js"></script>
+
+    <script>
+      // Your web app's Firebase configuration
+      var firebaseConfig = {
+        apiKey: "AIzaSyBveio8IuFGOMymSnwNgAWqc14BVliUwHY",
+        authDomain: "trackboard-d41a2.firebaseapp.com",
+        databaseURL: "https://trackboard-d41a2.firebaseio.com",
+        projectId: "trackboard-d41a2",
+        storageBucket: "trackboard-d41a2.appspot.com",
+        messagingSenderId: "880705427344",
+        appId: "1:880705427344:web:43e253a149143cc9218515",
+        measurementId: "G-5GLK0MX33D",
+      };
+      // Initialize Firebase
+      firebase.initializeApp(firebaseConfig);
+      firebase.analytics();
+    </script>
 
     <script></script>
     <script src="s_rules.js"></script>

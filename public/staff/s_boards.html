@@ -130,130 +130,437 @@
 
     <script>
 
-      var bfl = [];
+      // var bfl = [];
+      var bfl = [
+        { building_id: "bd1", building_name: "Building A",
+          floors: [
+            { floor_id: "fl1", floor_name: "Main Floor",
+              locations: [
+                { location_id: "lc1", location_name: "Lounge" },
+                { location_id: "lc2", location_name: "Student Service Office" },
+              ]
+            },
+            { floor_id: "fl2", floor_name: "4th Floor",
+              locations: [
+                { location_id: "lc3", location_name: "Main Board" },
+                { location_id: "lc4", location_name: "President Office" },
+              ]
+            }
+          ]
+        },
+        { building_id: "bd2", building_name: "Building B",
+          floors: [
+            { floor_id: "fl3", floor_name: "MEOW Floor",
+              locations: [
+                { location_id: "lc5", location_name: "Lazy pool" },
+                { location_id: "lc6", location_name: "Jacuzzi" },
+              ]
+            },
+            { floor_id: "fl4", floor_name: "BLUB Floor",
+              locations: [
+                { location_id: "lc7", location_name: "Everland" },
+                { location_id: "lc8", location_name: "Lotte World" },
+              ]
+            }
+          ]
+        },
+        { building_id: "bd3", building_name: "Building C",
+          floors: [
+            { floor_id: "fl5", floor_name: "Main Floor",
+              locations: [
+                { location_id: "lc9", location_name: "Sleeping Spot" },
+                { location_id: "lc10", location_name: "Tired Corner" },
+              ]
+            },
+            { floor_id: "fl6", floor_name: "4th Floor",
+              locations: [
+                { location_id: "lc11", location_name: "Wall1" },
+                { location_id: "lc12", location_name: "Wall2" },
+              ]
+            }
+          ]
+        }
+      ];
+      // var myPosters = [];
+      var myPosters = [
+        { building_id: "bd1", floor_id: "fl1", location_id: "lc1",
+          image_link: "../assets/img/posters/poster-1.jpg", 
+          uploader: "Albert Zhang", email: "albert.zhang@stonybrook.edu", 
+          sday: "", eday: "",
+        },
+        { building_id: "bd1", floor_id: "fl1", location_id: "lc1",
+          image_link: "../assets/img/posters/poster-2.jpg", 
+          uploader: "Patrick Daniels", email: "patrick.daniels@stonybrook.edu", 
+          sday: "", eday: "",
+        },
+        { building_id: "bd1", floor_id: "fl1", location_id: "lc1",
+          image_link: "../assets/img/posters/poster-3.jpg", 
+          uploader: "Chaya Connell", email: "chaya.connell@stonybrook.edu", 
+          sday: "", eday: "",
+        },
+        { building_id: "bd1", floor_id: "fl1", location_id: "lc1",
+          image_link: "../assets/img/posters/poster-4.jpg", 
+          uploader: "Walter Mack", email: "walter.mack@stonybrook.edu", 
+          sday: "", eday: "",
+        },
+        { building_id: "bd1", floor_id: "fl1", location_id: "lc1",
+          image_link: "../assets/img/posters/poster-5.jpg", 
+          uploader: "Grover Higgs", email: "grover.higgs@stonybrook.edu", 
+          sday: "", eday: "",
+        },
+        { building_id: "bd1", floor_id: "fl1", location_id: "lc1",
+          image_link: "../assets/img/posters/poster-6.jpg", 
+          uploader: "Austin Ashton", email: "austin.ashton@stonybrook.edu", 
+          sday: "", eday: "",
+        },
+        { building_id: "bd1", floor_id: "fl1", location_id: "lc2",
+          image_link: "../assets/img/posters/poster-7.jpeg", 
+          uploader: "Jazmyn Millar", email: "jazom.millar@stonybrook.edu", 
+          sday: "", eday: "",
+        },
+        { building_id: "bd1", floor_id: "fl1", location_id: "lc2",
+          image_link: "../assets/img/posters/poster-8.jpg", 
+          uploader: "Kailum hough", email: "kailum.hough@stonybrook.edu", 
+          sday: "", eday: "",
+        },
+        { building_id: "bd1", floor_id: "fl1", location_id: "lc2",
+          image_link: "../assets/img/posters/poster-9.jpg", 
+          uploader: "Atticus Villanueva", email: "atticus.villanueva@stonybrook.edu", 
+          sday: "", eday: "",
+        },
+        { building_id: "bd1", floor_id: "fl1", location_id: "lc2",
+          image_link: "../assets/img/posters/poster-10.jpg", 
+          uploader: "Dilara Mclaughlin", email: "dilara.mclaughlin@stonybrook.edu", 
+          sday: "", eday: "",
+        },
+        { building_id: "bd1", floor_id: "fl1", location_id: "lc2",
+          image_link: "../assets/img/posters/poster-11.jpg", 
+          uploader: "Cory Gordon", email: "cory.gordon@stonybrook.edu", 
+          sday: "", eday: "",
+        },
+        { building_id: "bd1", floor_id: "fl1", location_id: "lc2",
+          image_link: "../assets/img/posters/poster-12.jpg", 
+          uploader: "Briana Ahmed", email: "briana.ahmed@stonybrook.edu", 
+          sday: "", eday: "",
+        },
+        { building_id: "bd1", floor_id: "fl2", location_id: "lc3",
+          image_link: "../assets/img/posters/poster-13.jpg", 
+          uploader: "Luci Doyle", email: "luci.doyle@stonybrook.edu", 
+          sday: "", eday: "",
+        },
+        { building_id: "bd1", floor_id: "fl2", location_id: "lc3",
+          image_link: "../assets/img/posters/poster-14.jpg", 
+          uploader: "Eden Ryan", email: "eden.ryan@stonybrook.edu", 
+          sday: "", eday: "",
+        },
+        { building_id: "bd1", floor_id: "fl2", location_id: "lc3",
+          image_link: "../assets/img/posters/poster-15.jpg", 
+          uploader: "Zahara Palmer", email: "zahara.palmer@stonybrook.edu", 
+          sday: "", eday: "",
+        },
+        { building_id: "bd1", floor_id: "fl2", location_id: "lc3",
+          image_link: "../assets/img/posters/poster-16.jpg", 
+          uploader: "Kalum Blevins", email: "kalum.Blevins@stonybrook.edu", 
+          sday: "", eday: "",
+        },
+        { building_id: "bd1", floor_id: "fl2", location_id: "lc3",
+          image_link: "../assets/img/posters/poster-17.jpg", 
+          uploader: "Emmmie Morley", email: "emmie.morley@stonybrook.edu", 
+          sday: "", eday: "",
+        },
+        { building_id: "bd1", floor_id: "fl2", location_id: "lc3",
+          image_link: "../assets/img/posters/poster-18.jpg", 
+          uploader: "Muhamed Robbins", email: "muhamen.robbins@stonybrook.edu", 
+          sday: "", eday: "",
+        },
+        { building_id: "bd1", floor_id: "fl2", location_id: "lc4",
+          image_link: "../assets/img/posters/poster-19.jpg", 
+          uploader: "Asiya Harvir", email: "asiya.harvir@stonybrook.edu", 
+          sday: "", eday: "",
+        },
+        { building_id: "bd1", floor_id: "fl2", location_id: "lc4",
+          image_link: "../assets/img/posters/poster-20.jpg", 
+          uploader: "Mary Johnson", email: "mary.johnson@stonybrook.edu", 
+          sday: "", eday: "",
+        },
+        { building_id: "bd1", floor_id: "fl2", location_id: "lc4",
+          image_link: "../assets/img/posters/poster-21.jpg", 
+          uploader: "Dannielle Mcneill", email: "dannielle Mcneill", 
+          sday: "", eday: "",
+        },
+        { building_id: "bd1", floor_id: "fl2", location_id: "lc4",
+          image_link: "../assets/img/posters/poster-22.jpg", 
+          uploader: "Eddie Cook", email: "eddie.cook@stonybrook.edu", 
+          sday: "", eday: "",
+        },
+        { building_id: "bd1", floor_id: "fl2", location_id: "lc4",
+          image_link: "../assets/img/posters/poster-23.jpg", 
+          uploader: "Amiee Thornton", email: "amiee.thorton@stonybrook.edu", 
+          sday: "", eday: "",
+        },
+        { building_id: "bd1", floor_id: "fl2", location_id: "lc4",
+          image_link: "../assets/img/posters/poster-24.jpg", 
+          uploader: "Harlee Sutherland", email: "harlee.sutherland@stonybrook.edu", 
+          sday: "", eday: "",
+        },
+        { building_id: "bd2", floor_id: "fl3", location_id: "lc5",
+          image_link: "../assets/img/posters/poster-25.jpg", 
+          uploader: "Chelsey Carver", email: "chelsey.carver@stonybrook.edu", 
+          sday: "", eday: "",
+        },
+        { building_id: "bd2", floor_id: "fl3", location_id: "lc5",
+          image_link: "../assets/img/posters/poster-26.jpg", 
+          uploader: "Hamish Goulding", email: "hamish.goulding@stonybrook.edu", 
+          sday: "", eday: "",
+        },
+        { building_id: "bd2", floor_id: "fl3", location_id: "lc5",
+          image_link: "../assets/img/posters/poster-27.jpg", 
+          uploader: "Hadi Weiler", email: "hadi.weiler@stonybrook.edu", 
+          sday: "", eday: "",
+        },
+        { building_id: "bd2", floor_id: "fl3", location_id: "lc5",
+          image_link: "../assets/img/posters/poster-28.jpg", 
+          uploader: "Firatt Kay", email: "firatt.kay@stonybrook.edu", 
+          sday: "", eday: "",
+        },
+        { building_id: "bd2", floor_id: "fl3", location_id: "lc5",
+          image_link: "../assets/img/posters/poster-29.jpg", 
+          uploader: "Riccardo Frame", email: "riccardo.frame@stonybrook.edu", 
+          sday: "", eday: "",
+        },
+        { building_id: "bd2", floor_id: "fl3", location_id: "lc5",
+          image_link: "../assets/img/posters/poster-30.jpg", 
+          uploader: "Neil Stephens", email: "Neil Stephens", 
+          sday: "", eday: "",
+        },
+        { building_id: "bd2", floor_id: "fl3", location_id: "lc6",
+          image_link: "../assets/img/posters/poster-31.jpg", 
+          uploader: "Yousif Lowe", email: "yousif.lower@stonybrook.edu", 
+          sday: "", eday: "",
+        },
+        { building_id: "bd2", floor_id: "fl3", location_id: "lc6",
+          image_link: "../assets/img/posters/poster-32.jpg", 
+          uploader: "Aaisha Harris", email: "aaisha.harris@stonybrook.edu", 
+          sday: "", eday: "",
+        },
+        { building_id: "bd2", floor_id: "fl3", location_id: "lc6",
+          image_link: "../assets/img/posters/poster-33.jpg", 
+          uploader: "Maiya Croft", email: "maiya.croft@stonybrook.edu", 
+          sday: "", eday: "",
+        },
+        { building_id: "bd2", floor_id: "fl3", location_id: "lc6",
+          image_link: "../assets/img/posters/poster-34.png", 
+          uploader: "Federico Solomon", email: "f.solomon@gmail.com", 
+          sday: "", eday: "",
+        },
+        { building_id: "bd2", floor_id: "fl3", location_id: "lc6",
+          image_link: "../assets/img/posters/poster-35.png", 
+          uploader: "Monty Sykes", email: "monty.sykes@stonybrook.edu", 
+          sday: "", eday: "",
+        },
+        { building_id: "bd2", floor_id: "fl3", location_id: "lc6",
+          image_link: "../assets/img/posters/poster-36.jpg", 
+          uploader: "Nikodem.Hubbard", email: "nikodem.hubbard@stonybrook.edu", 
+          sday: "", eday: "",
+        },
+        { building_id: "bd2", floor_id: "fl4", location_id: "lc7",
+          image_link: "../assets/img/posters/poster-37.jpg", 
+          uploader: "Tyric Bucker", email: "tyric.bucker@stonybrook.edu", 
+          sday: "", eday: "",
+        },
+        { building_id: "bd2", floor_id: "fl4", location_id: "lc7",
+          image_link: "../assets/img/posters/poster-38.jpg", 
+          uploader: "Irka Jibbe", email: "irka.jibbe@stonybrook.edu", 
+          sday: "", eday: "",
+        },
+        { building_id: "bd2", floor_id: "fl4", location_id: "lc7",
+          image_link: "../assets/img/posters/poster-39.jpg", 
+          uploader: "Tobias Lee", email: "tobias.lee@stonybrook.edu", 
+          sday: "", eday: "",
+        },
+        { building_id: "bd2", floor_id: "fl4", location_id: "lc7",
+          image_link: "../assets/img/posters/poster-40.jpg", 
+          uploader: "Kailey Hefer", email: "kailey.hefer@stonybrook.edu", 
+          sday: "", eday: "",
+        },
+        { building_id: "bd2", floor_id: "fl4", location_id: "lc7",
+          image_link: "../assets/img/posters/poster-1.jpg", 
+          uploader: "Jarrad Duffy", email: "jarrad.duffy@stonybrook.edu", 
+          sday: "", eday: "",
+        },
+        { building_id: "bd2", floor_id: "fl4", location_id: "lc7",
+          image_link: "../assets/img/posters/poster-3.jpg", 
+          uploader: "Aislinn Suarez", email: "aislinn.suarez@stonybrook.edu", 
+          sday: "", eday: "",
+        },
+        { building_id: "bd2", floor_id: "fl4", location_id: "lc8",
+          image_link: "../assets/img/posters/poster-5.jpg", 
+          uploader: "Zubair Mitch", email: "zubair.mitch@stonybrook.edu", 
+          sday: "", eday: "",
+        },
+        { building_id: "bd2", floor_id: "fl4", location_id: "lc8",
+          image_link: "../assets/img/posters/poster-7.jpeg", 
+          uploader: "Aydin Berry", email: "aydin.berry@stonybrook.edu", 
+          sday: "", eday: "",
+        },
+        { building_id: "bd2", floor_id: "fl4", location_id: "lc8",
+          image_link: "../assets/img/posters/poster-9.jpg", 
+          uploader: "Matthew Wu", email: "matthew.wu@stonybrook.edu", 
+          sday: "", eday: "",
+        },
+        { building_id: "bd2", floor_id: "fl4", location_id: "lc8",
+          image_link: "../assets/img/posters/poster-11.jpg", 
+          uploader: "Stephen Benz", email: "stephen.benz@stonybrook.edu", 
+          sday: "", eday: "",
+        },
+        { building_id: "bd2", floor_id: "fl4", location_id: "lc8",
+          image_link: "../assets/img/posters/poster-13.jpg", 
+          uploader: "Elijah Caddy", email: "elijah.caddy@stonybrook.edu", 
+          sday: "", eday: "",
+        },
+        { building_id: "bd2", floor_id: "fl4", location_id: "lc8",
+          image_link: "../assets/img/posters/poster-15.jpg", 
+          uploader: "Deren Bucchy", email: "Deren Bucchy", 
+          sday: "", eday: "",
+        },
+        { building_id: "bd3", floor_id: "fl5", location_id: "lc9",
+          image_link: "../assets/img/posters/poster-17.jpg", 
+          uploader: "Jay Bowdy", email: "jb.sounds@gmail.com", 
+          sday: "", eday: "",
+        },
+        { building_id: "bd3", floor_id: "fl5", location_id: "lc9",
+          image_link: "../assets/img/posters/poster-19.jpg", 
+          uploader: "Anis Robbins", email: "anis.robbins@stonybrook.edu", 
+          sday: "", eday: "",
+        },
+        { building_id: "bd3", floor_id: "fl5", location_id: "lc9",
+          image_link: "../assets/img/posters/poster-21.jpg", 
+          uploader: "Byron Swanson", email: "byron Swanson", 
+          sday: "", eday: "",
+        },
+        { building_id: "bd3", floor_id: "fl5", location_id: "lc9",
+          image_link: "../assets/img/posters/poster-23.jpg", 
+          uploader: "Michelle Tung", email: "michelle.tung@stonybrook.edu", 
+          sday: "", eday: "",
+        },
+        { building_id: "bd3", floor_id: "fl5", location_id: "lc9",
+          image_link: "../assets/img/posters/poster-25.jpg", 
+          uploader: "Anna Thomas", email: "anna.thomas@stonybrook.edu", 
+          sday: "", eday: "",
+        },
+        { building_id: "bd3", floor_id: "fl5", location_id: "lc9",
+          image_link: "../assets/img/posters/poster-27.jpg", 
+          uploader: "Fionna Flowers", email: "fionna.flowers@stonybrook.edu", 
+          sday: "", eday: "",
+        },
+        { building_id: "bd3", floor_id: "fl5", location_id: "lc10",
+          image_link: "../assets/img/posters/poster-29.jpg", 
+          uploader: "Nathan Chan", email: "nathan.chan@stonybrook.edu", 
+          sday: "", eday: "",
+        },
+        { building_id: "bd3", floor_id: "fl5", location_id: "lc10",
+          image_link: "../assets/img/posters/poster-31.jpg", 
+          uploader: "Ethan Eve", email: "ethan.eve@stonybrook.edu", 
+          sday: "", eday: "",
+        },
+        { building_id: "bd3", floor_id: "fl5", location_id: "lc10",
+          image_link: "../assets/img/posters/poster-33.jpg", 
+          uploader: "Griffin Chire", email: "griffin.chire@stonybrook.edu", 
+          sday: "", eday: "",
+        },
+        { building_id: "bd3", floor_id: "fl5", location_id: "lc10",
+          image_link: "../assets/img/posters/poster-35.png", 
+          uploader: "Lucce Dowson", email: "lucce.dowson@stonybrook.edu", 
+          sday: "", eday: "",
+        },
+        { building_id: "bd3", floor_id: "fl5", location_id: "lc10",
+          image_link: "../assets/img/posters/poster-37.jpg", 
+          uploader: "Grace Kook", email: "grace.kook@stonybrook.edu", 
+          sday: "", eday: "",
+        },
+        { building_id: "bd3", floor_id: "fl5", location_id: "lc10",
+          image_link: "../assets/img/posters/poster-39.jpg", 
+          uploader: "Fatimah Giravera", email: "Fatimah Giravera", 
+          sday: "", eday: "",
+        },
+        { building_id: "bd3", floor_id: "fl6", location_id: "lc11",
+          image_link: "../assets/img/posters/poster-2.jpg", 
+          uploader: "Teemo Rocks", email: "teemo.rocks@stonybrook.edu", 
+          sday: "", eday: "",
+        },
+        { building_id: "bd3", floor_id: "fl6", location_id: "lc11",
+          image_link: "../assets/img/posters/poster-4.jpg", 
+          uploader: "Malph Gates", email: "malph.gates@stonybrook.edu", 
+          sday: "", eday: "",
+        },
+        { building_id: "bd3", floor_id: "fl6", location_id: "lc11",
+          image_link: "../assets/img/posters/poster-6.jpg", 
+          uploader: "Britney Cares", email: "britney.cares@stonybrook.edu", 
+          sday: "", eday: "",
+        },
+        { building_id: "bd3", floor_id: "fl6", location_id: "lc11",
+          image_link: "../assets/img/posters/poster-8.jpg", 
+          uploader: "Ama Chieere", email: "ama.chieere@stonybrook.edu", 
+          sday: "", eday: "",
+        },
+        { building_id: "bd3", floor_id: "fl6", location_id: "lc11",
+          image_link: "../assets/img/posters/poster-10.jpg", 
+          uploader: "Trixie Le", email: "trixie.le@stonybrook.edu", 
+          sday: "", eday: "",
+        },
+        { building_id: "bd3", floor_id: "fl6", location_id: "lc11",
+          image_link: "../assets/img/posters/poster-12.jpg", 
+          uploader: "Shannon Shirke", email: "shannon.shirke@stonybrook.edu", 
+          sday: "", eday: "",
+        },
+        { building_id: "bd3", floor_id: "fl6", location_id: "lc12",
+          image_link: "../assets/img/posters/poster-14.jpg", 
+          uploader: "Austin Torres", email: "austin.torres@stonybrook.edu", 
+          sday: "", eday: "",
+        },
+        { building_id: "bd3", floor_id: "fl6", location_id: "lc12",
+          image_link: "../assets/img/posters/poster-16.jpg", 
+          uploader: "Vivi En", email: "vivi.en@stonybrook.edu", 
+          sday: "", eday: "",
+        },
+        { building_id: "bd3", floor_id: "fl6", location_id: "lc12",
+          image_link: "../assets/img/posters/poster-18.jpg", 
+          uploader: "Kristy Derrick", email: "kristy.derrick@stonybrook.edu", 
+          sday: "", eday: "",
+        },
+        { building_id: "bd3", floor_id: "fl6", location_id: "lc12",
+          image_link: "../assets/img/posters/poster-20.jpg", 
+          uploader: "Mike Rockey", email: "mike.Rockey@stonybrook.edu", 
+          sday: "", eday: "",
+        },
+        { building_id: "bd3", floor_id: "fl6", location_id: "lc12",
+          image_link: "../assets/img/posters/poster-22.jpg", 
+          uploader: "Henna Klien", email: "henna.klien@stonybrook.edu", 
+          sday: "", eday: "",
+        },
+        { building_id: "bd3", floor_id: "fl6", location_id: "lc12",
+          image_link: "../assets/img/posters/poster-24.jpg", 
+          uploader: "Emily Dawkwon", email: "emily.dawkson@stonybrook.edu ", 
+          sday: "", eday: "",
+        },
+      ]
         
       var pos_0 = "";
       var pos_1 = "<div class=\"portfolio-item filter-x wow fadeInUp\" style=\"display: inline; width: 250px;\"> <div class=\"portfolio-wrap\"> <figure> <img src=\"";
       var pos_2 = "\" class=\"img-fluid\" alt=\"\"> <a href=\"" ;
-      var pos_3 = "\" data-gall=\"portfolioGallery\" class=\"link-preview venobox\" title=\"Preview\"><i class=\"bx bx-plus\"></i></a> <a href=\"\" class=\"link-details\" title=\"More Details\"><i class=\"bx bx-link\"></i></a> </figure><div class=\"portfolio-info\"> <h4><a href=\"\">Uploader</a></h4> <p>Poster Info(?)</p> </div></div>  </div>";
-      var pos_4 = "";
+      var pos_3 = "\" data-gall=\"portfolioGallery\" class=\"link-preview venobox\" title=\"Preview\"><i class=\"bx bx-plus\"></i></a> <a href=\"\" class=\"link-details\" title=\"More Details\"><i class=\"bx bx-link\"></i></a> </figure><div class=\"portfolio-info\"> <h4><a href=\"\">"
+      var pos_4 = "</a></h4> <p>"
+      var pos_5 = "</p> </div></div>  </div>";
+      var pos_end = "";
 
       $( document ).ready(function() {
-        
-        let myParams = getParams(window.location.href);
-        let eid = "";
-        // console.log(db.collection("establishment").where("staff", "array-contains", "staff1@sunykorea.ac.kr").get());
-        db.collection("establishment").where("staff", "array-contains", "staff1@sunykorea.ac.kr").get()
-          .then((data) => { 
-            // There should only be one isntance of doc
-            data.forEach(doc => { eid = doc.id });
-          })
-          .then(() => {
-            db.collection("buildings").where("belongs_to", "==", eid).get()
-              .then((bdData) => {
-                bdData.forEach(bdDoc =>{
-                  bfl.push({ bid: bdDoc.id, belongs_to: bdDoc.belongs_to, name: bdDoc.name, floors: [] });
-                });
-              })
-              .then(() => {
-                if (  myParams.bid === undefined ){
-                  setDropdowns("*","*","*");
-                } else {
-                  db.collection("floors").where("belongs_to", "==", myParams.bid).get()
-                    .then((flData) => {
-                      let bidx = -1;
-                      for( let i = 0; i < bfl.length; i++ ){
-                        if( bfl[i].bid === myParams.bid ){
-                          bdix = i;
-                          break;
-                        }
-                      }
-                      flData.forEach(flDoc => {
-                        
-                      })
-                    })
-                    .then(() => {
-
-                    })
-                    .catch(err => {console.log(err);});
-
-                }
-              })
-              .catch(err => { console.log(err); })
-          })
-          .catch(err => { console.log(err); })
-        /*
-        db.collection("establishment")
-          .where("staff", "array-contains", "staff1@sunykorea.ac.kr") //get proper email later
-          .get()
-          .then((querySnapshot) => { 
-            // console.log(querySnapshot);
-            querySnapshot.forEach((doc) => {
-              // console.log("Establishment", doc.id, doc.data());
-              db.collection("buildings")
-                .where("belongs_to", "==", doc.id)
-                .get()
-                .then((bdQuerySnapshot) => {
-                  bdQuerySnapshot.forEach((bdDoc) => {
-                    // console.log("Building", bdDoc.id, bdDoc.data());
-                    bfl.push({
-                      bid: bdDoc.id,
-                      belongs_to: bdDoc.belongs_to,
-                      name: bdDoc.name,
-                      floors: []
-                    });
-                  });
-                  if( myParams.bid !== undefined ){
-
-                    db.collection("floors")
-                      .where("belongs_to", "==", myParams.bid)
-                      .get()
-                      .then((flQuerySnapshot) => {
-                        flQuerySnapshot.forEach((flDoc) => {
-                          // console.log("Floors", flDoc.id, flDoc.data());
-                          bfl[bfl.length-1].floors.push({
-                            fid: flDoc.id,
-                            belongs_to: flDoc.belongs_to,
-                            name: flDoc.name,
-                            locations: []
-                          });
-                          db.collection("bulletin_boards")
-                            .where("belongs_to", "==", flDoc.id)
-                            .get()
-                            .then((bbQuerySnapshot) => {
-                              bbQuerySnapshot.forEach((bbDoc) => {
-                                // console.log("Bulletin Board", bbDoc.id, bbDoc.data());
-                                console.log(bfl);
-                                blast = bfl.length-1;
-                                flast = bfl[blast].floors.length-1;
-                                bfl[blast].floors[flast].locations.push({
-                                  lid: bbDoc.id,
-                                  belongs_to: bbDoc.belongs_to,
-                                  name: bbDoc.name,
-                                  maxPosters: bbDoc.max_posters,
-                                  posters: bbDoc.posters
-                                });
-                              })
-                            })
-                            .catch(function(error) { console.log(error); });
-                        })
-                      })
-                      .catch(function(error) { console.log(error); });
-                  }
-                })
-                .catch(function(error) { console.log(error); });
-            });
-          })
-          .catch(function(error) {
-            console.error("Error: Could not get data", error);
-          });
-*/
-
-      });
-      
-      function afterBflSetup(){
+        // TODO call API and get full list of posters and bfl
+        // this.bfl = [];
+        // this.myPosters = [];
         console.log(bfl);
-        console.log(this.bfl);
+        // console.log(db);
+        // console.log(db.collection("buildings").get());
+
         let myParams = getParams(window.location.href);
         if( getBuildingName(myParams.bid) !== "All Buildings"  ){
           selectedBuilding = myParams.bid;
@@ -270,28 +577,68 @@
         } else {
           selectedLocation = "*";
         }
-        setDropdowns(selectedBuilding, selectedFloor, selectedLocation); 
-      }
-    
+        setDropdowns(selectedBuilding, selectedFloor, selectedLocation);
+      });
+      /*
+      db.collection("establishment")
+        .where("staff", "array-contains", "staff1@sunykorea.ac.kr") //get proper email later
+        .get()
+        .then((querySnapshot) => { 
+          // console.log(querySnapshot);
+          querySnapshot.forEach((doc) => {
+            console.log("Establishment", doc.id, doc.data());
+            db.collection("buildings")
+              .where("belongs_to", "==", doc.id)
+              .get()
+              .then((bdQuerySnapshot) => {
+                bdQuerySnapshot.forEach((bdDoc) => {
+                  console.log("Building", bdDoc.id, bdDoc.data());
+                  db.collection("floors")
+                    .where("belongs_to", "==", bdDoc.id)
+                    .get()
+                    .then((flQuerySnapshot) => {
+                      flQuerySnapshot.forEach((flDoc) => {
+                        console.log("Floors", flDoc.id, flDoc.data());
+                        db.collection("bulletin_boards")
+                          .where("belongs_to", "==", flDoc.id)
+                          .get()
+                          .then((bbQuerySnapshot) => {
+                            bbQuerySnapshot.forEach((bbDoc) => {
+                              console.log("Bulletin Board", bbDoc.id, bbDoc.data());
+                            })
+                          })
+                          .catch(function(error) { console.log(error); });
+                      })
+                    })
+                    .catch(function(error) { console.log(error); });
+                });
+              })
+              .catch(function(error) { console.log(error); });
+          });
+        })
+        .catch(function(error) {
+          console.error("Error: Could not get data", error);
+        });
+    */
       function setDropdowns(selB, selF, selL){
         let myBuildings = "";
         let myFloors = "";
         let myLocations = "";
-        myBuildings = "<div id=\"buildingDropdownBtn\" class=\"dropdown\" style=\"display: inline-block;\"> <button type=\"button\" class=\"btn btn-info dropdown-toggle\" data-toggle=\"dropdown\">" + getBuildingName(selB) + " </button> <div class=\"dropdown-menu\"> <a class=\"dropdown-item\" href=\"javascript:setDropdowns('*', '*', '*');\">All Buildings</a>";
+        myBuildings = "<div id=\"buildingDropdownBtn\" class=\"dropdown\" style=\"display: inline-block;\"> <button type=\"button\" class=\"btn btn-primary dropdown-toggle\" data-toggle=\"dropdown\">" + getBuildingName(selB) + " </button> <div class=\"dropdown-menu\"> <a class=\"dropdown-item\" href=\"javascript:setDropdowns('*', '*', '*');\">All Buildings</a>";
         if( selB !== '*' ){
-          myFloors = "<div id=\"floorDropdownBtn\" class=\"dropdown\" style=\"display: inline-block;\"> <button type=\"button\" class=\"btn btn-info dropdown-toggle\" data-toggle=\"dropdown\">" + getFloorName(selF) + "</button> <div class=\"dropdown-menu\"> <a class=\"dropdown-item\" href=\"javascript:setDropdowns('" + selB + "', '*', '*');\">All Floors</a>";
+          myFloors = "<div id=\"floorDropdownBtn\" class=\"dropdown\" style=\"display: inline-block;\"> <button type=\"button\" class=\"btn btn-primary dropdown-toggle\" data-toggle=\"dropdown\">" + getFloorName(selF) + "</button> <div class=\"dropdown-menu\"> <a class=\"dropdown-item\" href=\"javascript:setDropdowns('" + selB + "', '*', '*');\">All Floors</a>";
         }
         if( selF !== '*' ){
-          myLocations = "<div id=\"locationropdownBtn\" class=\"dropdown\" style=\"display: inline-block;\"> <button type=\"button\" class=\"btn btn-info dropdown-toggle\" data-toggle=\"dropdown\">" + getLocationName(selL) + "</button> <div class=\"dropdown-menu\"> <a class=\"dropdown-item\" href=\"javascript:setDropdowns('" + selB + "', '" + selF + "', '*');\">All Locations</a>";
+          myLocations = "<div id=\"locationropdownBtn\" class=\"dropdown\" style=\"display: inline-block;\"> <button type=\"button\" class=\"btn btn-primary dropdown-toggle\" data-toggle=\"dropdown\">" + getLocationName(selL) + "</button> <div class=\"dropdown-menu\"> <a class=\"dropdown-item\" href=\"javascript:setDropdowns('" + selB + "', '" + selF + "', '*');\">All Locations</a>";
         }
         this.bfl.forEach(b => {
-          myBuildings = myBuildings + "<a class=\"dropdown-item\" href=\"javascript:setDropdowns('" + b.bid+ "',  '*',  '*');\">" + b.name+"</a>";
-          if( selB === b.bid ){
+          myBuildings = myBuildings + "<a class=\"dropdown-item\" href=\"javascript:setDropdowns('" + b.building_id+ "',  '*',  '*');\">" + b.building_name+"</a>";
+          if( selB === b.building_id ){
             b.floors.forEach(f => {
-              myFloors = myFloors + "<a class=\"dropdown-item\" href=\"javascript:setDropdowns('"+selB+"', '" + f.fid + "',  '*');\">" + f.name + "</a>";
-              if( selF === f.fid ){
+              myFloors = myFloors + "<a class=\"dropdown-item\" href=\"javascript:setDropdowns('"+selB+"', '" + f.floor_id + "',  '*');\">" + f.floor_name + "</a>";
+              if( selF === f.floor_id ){
                 f.locations.forEach(l => {
-                  myLocations = myLocations + "<a class=\"dropdown-item\" href=\"javascript:setDropdowns('"+selB+"', '"+selF+"', '" + l.lid + "');\">" + l.name + "</a>";
+                  myLocations = myLocations + "<a class=\"dropdown-item\" href=\"javascript:setDropdowns('"+selB+"', '"+selF+"', '" + l.location_id + "');\">" + l.location_name + "</a>";
                 });
               }
             });
@@ -306,7 +653,7 @@
         }
         var ddl = $('#dropdownList');
         ddl.html( myBuildings + myFloors + myLocations );
-        // updatePosterItems(selB, selF, selL);
+        updatePosterItems(selB, selF, selL);
       }
 
       function updatePosterItems(bid, fid, lid){
@@ -319,9 +666,9 @@
                 || (bid === p.building_id && fid === p.floor_id && lid === p.location_id) ) ){
             continue;
           }
-          loadPosters = loadPosters + this.pos_1 + p.image_link + this.pos_2 + p.image_link + this.pos_3;
+          loadPosters = loadPosters + this.pos_1 + p.image_link + this.pos_2 + p.image_link + this.pos_3 + p.uploader + this.pos_4 + p.email + this.pos_5;
         }
-        loadPosters = loadPosters + this.pos_4;
+        loadPosters = loadPosters + this.pos_end;
         var pbv = $('#posterBoardViewer');
         pbv.html(loadPosters);
       }
@@ -329,8 +676,8 @@
       function getBuildingName(bid){ 
         if( bid === '*' ){ return "All Buildings"; }
         for( let b of this.bfl ){
-          if(bid === b.bid){
-            return b.name;
+          if(bid === b.building_id){
+            return b.building_name;
           }
         }
         return "All Buildings";
@@ -339,8 +686,8 @@
         if( fid === '*' ){ return "All Floors"; }
         for( let b of this.bfl ){
           for( let f of b.floors ){
-            if(fid === f.fid){
-              return f.name;
+            if(fid === f.floor_id){
+              return f.floor_name;
             }
           }
         }
@@ -351,8 +698,8 @@
         for( let b of this.bfl ){
           for( let f of b.floors ){
             for( let l of f.locations ){
-              if(lid === l.lid){
-                return l.name;
+              if(lid === l.location_id){
+                return l.location_name;
               }
             }
           }
@@ -362,7 +709,7 @@
 
       function buildingNameExists(bname){
         for( let b of this.bfl ){
-          if(bname === b.name){
+          if(bname === b.building_name){
             return true;
           }
         }
@@ -370,9 +717,9 @@
       }
       function floorNameExists(inBid, fname){
         for( let b of this.bfl ){
-          if( inBid === b.bid ){
+          if( inBid === b.building_id ){
             for( let f of b.floors ){
-              if(fname === f.name){
+              if(fname === f.floor_name){
                 return true;
               }
             }
@@ -382,11 +729,11 @@
       }
       function locationNameExists(inBid, inFid, lname){
         for( let b of this.bfl ){
-          if( inBid === b.bid ){
+          if( inBid === b.building_id ){
             for( let f of b.floors ){
-              if( inFid === f.fid ){
+              if( inFid === f.floor_id ){
                 for( let l of f.locations ){
-                  if(lname === l.name){
+                  if(lname === l.location_name){
                     return true;
                   }
                 }
