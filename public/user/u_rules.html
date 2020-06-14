@@ -114,14 +114,14 @@
             </tr>
           </tbody>
         </table>
-        <table class="table table-bordered" id="suny" width="10">
+        <table class="table table-bordered" width="10">
           <thead class="thead-dark">
             <tr>
               <th class="text-center" scope="col" style="width: 10%;">#</th>
               <th class="text-center" scope="col" style="width: 90%;">Rules</th>
             </tr>
           </thead>
-          <tbody>
+          <tbody id="suny">
 
           </tbody>
         </table>
@@ -167,7 +167,7 @@
                 .get()
                 .then(function (doc) {
                   if (doc.exists) {
-                    makeTable(doc.data());
+                    makeRows(doc.data());
                   } else {
                     // doc.data() will be undefined in this case
                     console.log("No such document!");
@@ -179,7 +179,7 @@
 
       });
 
-      function makeTable(rules) {
+      function makeRows(rules) {
         var table = document.getElementById("suny");
         var count = 1;
 
