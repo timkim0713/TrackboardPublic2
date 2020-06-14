@@ -122,47 +122,81 @@
             </tr>
           </thead>
           <tbody>
-            <tr>
-              <td class="text-center">1</td>
-              <td class="text-center">
-                <strong>SUNY Korea Logo</strong> <br />
-                Must have SUNY Korea logo in the poster. Unedited and Upright.
-                (A4-3cm high, A3-4cm high)
-              </td>
-            </tr>
-            <tr>
-              <td class="text-center">2</td>
-              <td class="text-center">
-                <strong>Appropriate Poster</strong> <br />
-                The content of the poster must not inlcude anything
-                inappropriate.
-              </td>
-            </tr>
-            <tr>
-              <td class="text-center">3</td>
-              <td class="text-center">
-                <strong>Poster Size</strong> <br />
-                Poster dimensions must not be larger than A3
-              </td>
-            </tr>
-            <tr>
-              <td class="text-center">4</td>
-              <td class="text-center">
-                <strong>Location Requests</strong> <br />
-                Must list number of posters, the locations, and duration of
-                posting.
-              </td>
-            </tr>
+
           </tbody>
         </table>
       </div>
     </div>
     <div id="footer"></div>
 
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/7.14.4/firebase-app.js"></script>
+
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+        https://firebase.google.com/docs/web/setup#available-libraries -->
+    <script src="https://www.gstatic.com/firebasejs/7.14.4/firebase-analytics.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.14.4/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.14.4/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.14.4/firebase-storage.js"></script>
+
     <script>
+      // Your web app's Firebase configuration
+      var firebaseConfig = {
+        apiKey: "AIzaSyBveio8IuFGOMymSnwNgAWqc14BVliUwHY",
+        authDomain: "trackboard-d41a2.firebaseapp.com",
+        databaseURL: "https://trackboard-d41a2.firebaseio.com",
+        projectId: "trackboard-d41a2",
+        storageBucket: "trackboard-d41a2.appspot.com",
+        messagingSenderId: "880705427344",
+        appId: "1:880705427344:web:43e253a149143cc9218515",
+        measurementId: "G-5GLK0MX33D",
+      };
+      // Initialize Firebase
+      firebase.initializeApp(firebaseConfig);
+      firebase.analytics();
+    </script>
+
+    <script>
+      var firestore = firebase.firestore();
+      const docRef = firestore.collection("rules");
+
       $(document).ready(function () {
         $("#igc").hide();
+
+        docRef.doc('sunykorea') //get only suny korea data
+                .get()
+                .then(function (doc) {
+                  if (doc.exists) {
+                    makeTable(doc.data());
+                  } else {
+                    // doc.data() will be undefined in this case
+                    console.log("No such document!");
+                  }
+                })
+                .catch(function (error) {
+                  console.log("Error getting document:", error);
+                });
+
       });
+
+      function makeTable(rules) {
+        var table = document.getElementById("suny");
+        var count = 1;
+
+        for (rule of rules.rules){
+          var row = table.insertRow();
+          var cell1 = row.insertCell(0);
+          var cell2 = row.insertCell(1);
+
+          cell1.className = "text-center";
+          cell2.className = "text-center";
+
+          cell1.innerText =count;
+          count++;
+
+          cell2.innerHTML = "<strong>" + rule['title'] +"</strong> <br/>" + rule['text'];
+        }
+      }
 
       function showRules(e) {
         var campus = document.getElementById("campusSelect").value;
