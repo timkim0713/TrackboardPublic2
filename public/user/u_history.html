@@ -191,17 +191,17 @@
 
         cell1.innerText = date;
         if (application.approved === true) {
-          cell2.innerText = "Application was approved";
+          cell2.innerText = "Approved";
           cell4.innerHTML =
-            "<button type='button' class='btn btn-success' onclick='viewRow()'>View</button>";
+            "<button type='button' class='btn btn-info' onclick='viewRow()'>View</button>";
         } else if (application.approved === false) {
-          cell2.innerText = "Application was rejected";
+          cell2.innerText = "Rejected";
           cell4.innerHTML =
             "<button type='button' class='btn btn-danger' onclick='viewRow()'>View</button>";
         } else {
-          cell2.innerText = "Application is pending";
+          cell2.innerText = "Pending";
           cell4.innerHTML =
-            "<button type='button' class='btn btn-primary' onclick='viewRow()'>View</button>";
+            "<button type='button' class='btn btn-warning' onclick='viewRow()'>View</button>";
         }
         if (application.comment == undefined) {
           cell3.innerText = "";
