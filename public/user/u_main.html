@@ -75,7 +75,7 @@
           <thead>
             <tr>
               <th>Account Name</th>
-              <td>Tim Kim</td>
+              <td>Sample Name</td>
             </tr>
           </thead>
           <tbody>
@@ -85,11 +85,11 @@
             </tr>
             <tr>
               <th>Email</td>
-              <td>daekyung.kim@stonybrook.edu</td>
+              <td>student@stonybrook.edu</td>
             </tr>
             <tr>
               <th>Profile Picture</td>
-              <td>N/A</td>
+              <td>Default</td>
             </tr>
             <tr>
               <th>Campus</td>
@@ -102,10 +102,21 @@
            
           </tbody>
         </table>
-        <button type="button" class="btn btn-primary">Edit</button>
+        <button type="button" onclick="editInfo()" class="btn btn-info">Edit</button>
+        <br><br>  
+        <div id="edit"></div>
+
     </div>
     <div id="footer"></div>
+    <script>
+      function editInfo(){
+        $("#edit").append(
+         "<div class='alert alert-success alert-warning' id='submitAlert'>Sorry. The system has not  implemented proper log in system. Please contact the administrator.  </div>"
+       );
+       setTimeout(function(){ window.location.href = "u_main.html"; }, 3000);
+      }
 
+    </script>
     <script src="../staff/sidebar.js"></script>
 
     <script src="../assets/vendor/jquery/jquery.min.js"></script>
