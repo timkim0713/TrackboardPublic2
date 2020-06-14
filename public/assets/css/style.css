@@ -91,7 +91,7 @@ h6 {
 }
 
 #header .logo img {
-  max-height: 65px;
+  max-height: 75px;
   max-width: 1000px;
 }
 
@@ -167,7 +167,6 @@ h6 {
   visibility: hidden;
   padding: 10px 0;
   background: rgb(180, 203, 204);
-  box-shadow: 0px 0px 30px rgba(127, 137, 161, 0.25);
 
   transition: ease all 0.3s;
 }
@@ -178,6 +177,7 @@ h6 {
   font-style: bold;
   background: rgb(180, 203, 204);
   visibility: visible;
+
   transition: 0.5s;
 }
 
@@ -193,9 +193,12 @@ h6 {
   text-transform: none;
   color: #808080;
   background: rgb(180, 203, 204);
-
   font-weight: 400;
   transition: 0.5s;
+}
+
+#setting:hover {
+  color: red;
 }
 
 .nav-menu .drop-down ul a:hover,
@@ -203,7 +206,7 @@ h6 {
 .nav-menu .drop-down ul li:hover > a {
   font-weight: bolder;
 
-  color: #000000;
+  color: #204e4e;
   transition: 0.5s;
 }
 
