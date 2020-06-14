@@ -9,7 +9,7 @@ var rules = [];
 
 const newTr = `
 <tr class="hide">
-  <td class="pt-3-half" contenteditable="true">RULE TITLE</td>
+  <td class="pt-3-half" contenteditable="true"><strong>RULE TITLE</strong></td>
   <td class="pt-3-half" contenteditable="true">RULE DETAIL</td>
   <td class="pt-3-half">
     <span class="table-up"><a href="#!" class="indigo-text"><i class="fas fa-long-arrow-alt-up" aria-hidden="true"></i></a></span>
@@ -211,8 +211,9 @@ function makeRows(data) {
     rules.push(rule);
     row.id = count;
     count++;
-    row.innerHTML = `<td class="pt-3-half" contenteditable="true">
-                  ${rule['title']}
+    row.innerHTML = `<td class="pt-3-half" contenteditable="true"><strong>
+                        ${rule['title']}
+                        </strong>
                 </td>
                 <td class="pt-3-half" contenteditable="true">
                   ${rule['text']}
