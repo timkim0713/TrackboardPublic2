@@ -55,9 +55,21 @@
       ☰
     </button>
     <div id="mySidebar" class="sidebar">
-      <a href="javascript:void(0)" class="closebtn" onclick="closeNav()"> x </a>
+      <a
+        href="javascript:void(0)"
+        class="closebtn"
+        onclick="closeNav()"
+        style="
+          padding: 8px 8px 8px 32px;
+          text-decoration: none;
+          font-size: 25px;
+          box-shadow: 0px 0px 10px rgba(0, 0, 0, 0);
+        "
+      >
+        x
+      </a>
       <a href="u_apply.html">Apply</a>
-      <a href="u_history.html">History</a>
+      <a href="u_history.html" class="currentPage">History</a>
       <a href="u_rules.html">Poster Rules</a>
     </div>
     <br />
@@ -69,7 +81,6 @@
         <form>
           <div class="section-title">
             <br />
-            <h2 id="pageHeader">Currently Progressing Application</h2>
             <h2>Submitted Application</h2>
           </div>
           <div class="row">
@@ -343,7 +354,8 @@
           });
 
         if (data.approved === false || data.approved === true) {
-          document.getElementById("pageHeader").innerText = "Completed Application";  //Page title when the application has been approved
+          document.getElementById("pageHeader").innerText =
+            "Completed Application"; //Page title when the application has been approved
         }
         document.getElementById("name").value = data.submitted_by;
         document.getElementById("email").value = data.email;

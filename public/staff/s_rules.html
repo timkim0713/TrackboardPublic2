@@ -91,10 +91,29 @@
       ☰
     </button>
     <div id="mySidebar" class="sidebar">
-      <a href="javascript:void(0)" class="closebtn" onclick="closeNav()"> x </a>
+      <a
+        href="javascript:void(0)"
+        class="closebtn"
+        onclick="closeNav()"
+        style="
+          padding: 8px 8px 8px 32px;
+          text-decoration: none;
+          font-size: 25px;
+          box-shadow: 0px 0px 10px rgba(0, 0, 0, 0);
+        "
+      >
+        x
+      </a>
       <a href="./s_requests.html">Poster Requests</a>
       <a href="./s_boards.html">Bulletin Boards</a>
-      <a href="./s_rules.html">Poster Rules</a>
+      <a
+        href="./s_rules.html"
+        style="
+          color: rgb(209, 225, 226);
+          box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        "
+        >Poster Rules</a
+      >
     </div>
 
     <div id="main_content">
@@ -119,11 +138,24 @@
           >
             <thead>
               <tr>
-                <th class="text-center" style="display: none;">Rule Title</th>
-                <th class="text-center">Rule Title</th>
-                <th class="text-center">Rule Detail</th>
-                <th class="text-center">Sort</th>
-                <th class="text-center">Remove</th>
+                <th
+                  class="text-center bg-info p-3 mb-2 bg-info text-white"
+                  style="display: none;"
+                >
+                  Rule Title
+                </th>
+                <th class="text-center bg-info p-3 mb-2 bg-info text-white">
+                  Rule Title
+                </th>
+                <th class="text-center bg-info p-3 mb-2 bg-info text-white">
+                  Rule Detail
+                </th>
+                <th class="text-center bg-info p-3 mb-2 bg-info text-white">
+                  Sort
+                </th>
+                <th class="text-center bg-info p-3 mb-2 bg-info text-white">
+                  Remove
+                </th>
               </tr>
             </thead>
             <tbody>

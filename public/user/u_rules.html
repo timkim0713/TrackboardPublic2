@@ -55,10 +55,22 @@
       ☰
     </button>
     <div id="mySidebar" class="sidebar">
-      <a href="javascript:void(0)" class="closebtn" onclick="closeNav()"> x </a>
+      <a
+        href="javascript:void(0)"
+        class="closebtn"
+        onclick="closeNav()"
+        style="
+          padding: 8px 8px 8px 32px;
+          text-decoration: none;
+          font-size: 25px;
+          box-shadow: 0px 0px 10px rgba(0, 0, 0, 0);
+        "
+      >
+        x
+      </a>
       <a href="u_apply.html">Apply</a>
       <a href="u_history.html">History</a>
-      <a href="u_rules.html">Poster Rules</a>
+      <a href="u_rules.html" class="currentPage">Poster Rules</a>
     </div>
     <br />
     <div id="main_content">
@@ -72,7 +84,7 @@
         </div>
         <select
           id="campusSelect"
-          class="btn btn-info"
+          class="btn btn-warning"
           editable="true"
           searchable="Search and add here..."
           onchange="showRules(event)"
@@ -83,10 +95,22 @@
 
         <br />
         <table class="table table-bordered" id="igc" width="10">
-          <thead class="thead-dark">
+          <thead>
             <tr>
-              <th class="text-center" scope="col" style="width: 10%;">#</th>
-              <th class="text-center" scope="col" style="width: 90%;">Rules</th>
+              <th
+                class="text-center bg-info p-3 mb-2 bg-info text-white"
+                scope="col"
+                style="width: 10%;"
+              >
+                #
+              </th>
+              <th
+                class="text-center bg-info p-3 mb-2 bg-info text-white"
+                scope="col"
+                style="width: 90%;"
+              >
+                Rules
+              </th>
             </tr>
           </thead>
           <tbody>
@@ -115,15 +139,25 @@
           </tbody>
         </table>
         <table class="table table-bordered" id="suny" width="10">
-          <thead class="thead-dark">
+          <thead>
             <tr>
-              <th class="text-center" scope="col" style="width: 10%;">#</th>
-              <th class="text-center" scope="col" style="width: 90%;">Rules</th>
+              <th
+                class="text-center bg-info p-3 mb-2 bg-info text-white"
+                scope="col"
+                style="width: 10%;"
+              >
+                #
+              </th>
+              <th
+                class="text-center bg-info p-3 mb-2 bg-info text-white"
+                scope="col"
+                style="width: 90%;"
+              >
+                Rules
+              </th>
             </tr>
           </thead>
-          <tbody>
-
-          </tbody>
+          <tbody></tbody>
         </table>
       </div>
     </div>
@@ -163,27 +197,27 @@
       $(document).ready(function () {
         $("#igc").hide();
 
-        docRef.doc('sunykorea') //get only suny korea data
-                .get()
-                .then(function (doc) {
-                  if (doc.exists) {
-                    makeTable(doc.data());
-                  } else {
-                    // doc.data() will be undefined in this case
-                    console.log("No such document!");
-                  }
-                })
-                .catch(function (error) {
-                  console.log("Error getting document:", error);
-                });
-
+        docRef
+          .doc("sunykorea") //get only suny korea data
+          .get()
+          .then(function (doc) {
+            if (doc.exists) {
+              makeTable(doc.data());
+            } else {
+              // doc.data() will be undefined in this case
+              console.log("No such document!");
+            }
+          })
+          .catch(function (error) {
+            console.log("Error getting document:", error);
+          });
       });
 
       function makeTable(rules) {
         var table = document.getElementById("suny");
         var count = 1;
 
-        for (rule of rules.rules){
+        for (rule of rules.rules) {
           var row = table.insertRow();
           var cell1 = row.insertCell(0);
           var cell2 = row.insertCell(1);
@@ -191,10 +225,11 @@
           cell1.className = "text-center";
           cell2.className = "text-center";
 
-          cell1.innerText =count;
+          cell1.innerText = count;
           count++;
 
-          cell2.innerHTML = "<strong>" + rule['title'] +"</strong> <br/>" + rule['text'];
+          cell2.innerHTML =
+            "<strong>" + rule["title"] + "</strong> <br/>" + rule["text"];
         }
       }
 
