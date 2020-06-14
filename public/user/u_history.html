@@ -92,12 +92,7 @@
               >
                 Applied Date
               </th>
-              <th
-                class="text-center p-3 mb-2 bg-info text-white"
-                scope="col col-2"
-              >
-                Application Status
-              </th>
+
               <th
                 class="text-center p-3 mb-2 bg-info text-white"
                 scope="col col-6"
@@ -107,6 +102,12 @@
               <th
                 class="text-center p-3 mb-2 bg-info text-white"
                 scope="col col-2"
+              >
+                Application Status
+              </th>
+              <th
+                class="text-center p-3 mb-2 bg-info text-white"
+                scope="col col-"
               >
                 View
               </th>
@@ -191,22 +192,22 @@
 
         cell1.innerText = date;
         if (application.approved === true) {
-          cell2.innerText = "Approved";
+          cell3.innerText = "Approved";
           cell4.innerHTML =
             "<button type='button' class='btn btn-info' onclick='viewRow()'>View</button>";
         } else if (application.approved === false) {
-          cell2.innerText = "Rejected";
+          cell3.innerText = "Rejected";
           cell4.innerHTML =
             "<button type='button' class='btn btn-danger' onclick='viewRow()'>View</button>";
         } else {
-          cell2.innerText = "Pending";
+          cell3.innerText = "Pending";
           cell4.innerHTML =
             "<button type='button' class='btn btn-warning' onclick='viewRow()'>View</button>";
         }
         if (application.comment == undefined) {
-          cell3.innerText = "";
+          cell2.innerText = "";
         } else {
-          cell3.innerText = application.comment;
+          cell2.innerText = application.comment;
         }
         // cell4.innerHTML =
         //   "<button type='button' class='btn btn-primary' onclick='viewRow()'>View</button>";
