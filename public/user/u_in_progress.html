@@ -81,7 +81,7 @@
         <form>
           <div class="section-title">
             <br />
-            <h2>Submitted Application</h2>
+            <h2 id="pageHeader">Submitted Application</h2>
           </div>
           <div class="row">
             <div class="col-6">
@@ -353,10 +353,10 @@
             // Handle any errors
           });
 
-        if (data.approved === false || data.approved === true) {
-          document.getElementById("pageHeader").innerText =
-            "Completed Application"; //Page title when the application has been approved
-        }
+        // if (data.approved === false || data.approved === true) {
+        //   document.getElementById("pageHeader").innerText =
+        //     "Completed Application"; //Page title when the application has been approved
+        // }
         document.getElementById("name").value = data.submitted_by;
         document.getElementById("email").value = data.email;
         document.getElementById("club").value = data.club;
