@@ -34,7 +34,7 @@ Everyone mentioned can be reached in person, though email, or on Kakaotalk.
 
 **Link to Midfidelity Prototype Video :** https://drive.google.com/file/d/1xo0M_NCYO23rQD5WKPuatNUN1Xb4umxv/view?usp=sharing
 
-**Link to Trackboard Presentation Video:** https://trackboard-d41a2.web.app/index.html#
+**Link to Trackboard Presentation Video:** https://youtu.be/OzdJ0XOCiHo
 
 **Link to Trackboard:** https://trackboard-d41a2.web.app
 
