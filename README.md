@@ -26,8 +26,17 @@ We're sure that SUNY Korea student service team would be on board to find a solu
 We are also well connected with several club executives and other student learders like Residential Assistants and Student Ambassadors who need to put posters on bulletin board and would be more than willing to participate.  
 Everyone mentioned can be reached in person, though email, or on Kakaotalk. 
 
+**Link to Formative User Research:** https://drive.google.com/file/d/15GhbO8tm4JjqHlvgYfyj7VizbObbxxi2/view
+
 **Link to Paper Prototyping Video:** https://drive.google.com/file/d/1vgaT90er7t3Lxd4wXIYl1Rg-q31VX6d9/view?usp=sharing
 
-**Link to Prototype on Figma:** https://www.figma.com/proto/HmNYGlS3hcwMyxQGwkh9xJ/Trackboard?node-id=0%3A1&scaling=min-zoom
+**Link to Midfidelity Prototype:** https://www.figma.com/proto/HmNYGlS3hcwMyxQGwkh9xJ/Trackboard?node-id=0%3A1&scaling=min-zoom
 
-**Link to deployed Prototype:** https://trackboard-d41a2.web.app
+**Link to Midfidelity Prototype Video :** https://drive.google.com/file/d/1xo0M_NCYO23rQD5WKPuatNUN1Xb4umxv/view?usp=sharing
+
+**Link to Trackboard Presentation Video:** https://trackboard-d41a2.web.app/index.html#
+
+**Link to Trackboard:** https://trackboard-d41a2.web.app
+
+
+
