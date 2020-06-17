@@ -9,9 +9,9 @@ function logInMode() {
 
   $("#staffstudentsubmit").click(function () {
     if (staffstudent.localeCompare("Staff") == 0) {
-      location.href = "/Poster-Tracker/public/staff/s_main.html";
+      location.href = "../staff/s_main.html";
     } else if (staffstudent.localeCompare("Student") == 0) {
-      location.href = "/Poster-Tracker/public/user/u_main.html";
+      location.href = "../user/u_main.html";
     }
   });
 }
