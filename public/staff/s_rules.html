@@ -91,27 +91,38 @@
       ☰
     </button>
     <div id="mySidebar" class="sidebar">
-      <a href="javascript:void(0)" class="closebtn" onclick="closeNav()"> x </a>
+      <a
+        href="javascript:void(0)"
+        class="closebtn"
+        onclick="closeNav()"
+        style="
+          padding: 8px 8px 8px 32px;
+          text-decoration: none;
+          font-size: 25px;
+          box-shadow: 0px 0px 10px rgba(0, 0, 0, 0);
+        "
+      >
+        x
+      </a>
       <a href="./s_requests.html">Poster Requests</a>
       <a href="./s_boards.html">Bulletin Boards</a>
-      <a href="./s_rules.html">Poster Rules</a>
+      <a href="./s_rules.html" class="currentPage">Poster Rules</a>
     </div>
 
     <div id="main_content">
       <!-- Editable table -->
       <div class="section-title">
         <h2>
-          <br />
           POSTER RULES
         </h2>
         <small style="color: cornflowerblue;"
-          >*Please maintain the posters rules for your students.</small
+          >*Please maintain the poster rules for your students.</small
         >
       </div>
       <div class="card-body">
         <div id="table" class="table-editable">
           <span class="table-add float-right mb-3 mr-2"
-            ><a href="#!" class="text-success"
+            ><a href="#!" class="text-warning"
               ><i class="fas fa-plus fa-2x" aria-hidden="true"></i></a
           ></span>
           <table
@@ -119,156 +130,27 @@
           >
             <thead>
               <tr>
-                <th class="text-center" style="display: none;">Rule Title</th>
-                <th class="text-center">Rule Title</th>
-                <th class="text-center">Rule Detail</th>
-                <th class="text-center">Sort</th>
-                <th class="text-center">Remove</th>
+                <th
+                  class="text-center bg-info p-3 mb-2 bg-info text-white"
+                  style="display: none;"
+                >
+                  Rule Title
+                </th>
+                <th class="text-center bg-info p-3 mb-2 bg-info text-white">
+                  Rule Title
+                </th>
+                <th class="text-center bg-info p-3 mb-2 bg-info text-white">
+                  Rule Detail
+                </th>
+                <th class="text-center bg-info p-3 mb-2 bg-info text-white">
+                  Sort
+                </th>
+                <th class="text-center bg-info p-3 mb-2 bg-info text-white">
+                  Remove
+                </th>
               </tr>
             </thead>
-            <tbody>
-              <tr>
-                <td class="pt-3-half" style="display: none;">pr1</td>
-                <td class="pt-3-half" contenteditable="true">
-                  SUNY Korea Logo
-                </td>
-                <td class="pt-3-half" contenteditable="true">
-                  Must have SUNY Korea logo in the poster. Unedited and Upright.
-                  (A4-3cm high, A3-4cm high)
-                </td>
-                <td class="pt-3-half">
-                  <span class="table-up"
-                    ><a href="#!" class="indigo-text"
-                      ><i
-                        class="fas fa-long-arrow-alt-up"
-                        aria-hidden="true"
-                      ></i></a
-                  ></span>
-                  <span class="table-down"
-                    ><a href="#!" class="indigo-text"
-                      ><i
-                        class="fas fa-long-arrow-alt-down"
-                        aria-hidden="true"
-                      ></i></a
-                  ></span>
-                </td>
-                <td>
-                  <span class="table-remove"
-                    ><button
-                      type="button"
-                      class="btn btn-danger btn-rounded btn-sm my-0"
-                    >
-                      Remove
-                    </button></span
-                  >
-                </td>
-              </tr>
-              <tr>
-                <td class="pt-3-half" style="display: none;">pr2</td>
-                <td class="pt-3-half" contenteditable="true">
-                  Appropriateness
-                </td>
-                <td class="pt-3-half" contenteditable="true">
-                  The content of the poster must not include anything
-                  inappropriate.
-                </td>
-                <td class="pt-3-half">
-                  <span class="table-up"
-                    ><a href="#!" class="indigo-text"
-                      ><i
-                        class="fas fa-long-arrow-alt-up"
-                        aria-hidden="true"
-                      ></i></a
-                  ></span>
-                  <span class="table-down"
-                    ><a href="#!" class="indigo-text"
-                      ><i
-                        class="fas fa-long-arrow-alt-down"
-                        aria-hidden="true"
-                      ></i></a
-                  ></span>
-                </td>
-                <td>
-                  <span class="table-remove"
-                    ><button
-                      type="button"
-                      class="btn btn-danger btn-rounded btn-sm my-0"
-                    >
-                      Remove
-                    </button></span
-                  >
-                </td>
-              </tr>
-              <tr>
-                <td class="pt-3-half" style="display: none;">pr2</td>
-                <td class="pt-3-half" contenteditable="true">Poster Size</td>
-                <td class="pt-3-half" contenteditable="true">
-                  The poster dimension must not be larger than A3
-                </td>
-                <td class="pt-3-half">
-                  <span class="table-up"
-                    ><a href="#!" class="indigo-text"
-                      ><i
-                        class="fas fa-long-arrow-alt-up"
-                        aria-hidden="true"
-                      ></i></a
-                  ></span>
-                  <span class="table-down"
-                    ><a href="#!" class="indigo-text"
-                      ><i
-                        class="fas fa-long-arrow-alt-down"
-                        aria-hidden="true"
-                      ></i></a
-                  ></span>
-                </td>
-                <td>
-                  <span class="table-remove"
-                    ><button
-                      type="button"
-                      class="btn btn-danger btn-rounded btn-sm my-0"
-                    >
-                      Remove
-                    </button></span
-                  >
-                </td>
-              </tr>
-              <tr>
-                <td class="pt-3-half" style="display: none;">pr2</td>
-                <td class="pt-3-half" contenteditable="true">
-                  Location Requests
-                </td>
-                <td class="pt-3-half" contenteditable="true">
-                  Must list number of posters, the locations, and the duration
-                  of posting.
-                </td>
-                <td class="pt-3-half">
-                  <span class="table-up"
-                    ><a href="#!" class="indigo-text"
-                      ><i
-                        class="fas fa-long-arrow-alt-up"
-                        aria-hidden="true"
-                      ></i></a
-                  ></span>
-                  <span class="table-down"
-                    ><a href="#!" class="indigo-text"
-                      ><i
-                        class="fas fa-long-arrow-alt-down"
-                        aria-hidden="true"
-                      ></i></a
-                  ></span>
-                </td>
-                <td>
-                  <span class="table-remove"
-                    ><button
-                      type="button"
-                      class="btn btn-danger btn-rounded btn-sm my-0"
-                    >
-                      Remove
-                    </button></span
-                  >
-                </td>
-              </tr>
-            </tbody>
+            <tbody id="rulesTable"></tbody>
           </table>
           <h6 id="savingText"></h6>
         </div>
@@ -277,6 +159,33 @@
 
       <div id="footer"></div>
     </div>
+
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/7.14.4/firebase-app.js"></script>
+
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+        https://firebase.google.com/docs/web/setup#available-libraries -->
+    <script src="https://www.gstatic.com/firebasejs/7.14.4/firebase-analytics.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.14.4/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.14.4/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.14.4/firebase-storage.js"></script>
+
+    <script>
+      // Your web app's Firebase configuration
+      var firebaseConfig = {
+        apiKey: "AIzaSyBveio8IuFGOMymSnwNgAWqc14BVliUwHY",
+        authDomain: "trackboard-d41a2.firebaseapp.com",
+        databaseURL: "https://trackboard-d41a2.firebaseio.com",
+        projectId: "trackboard-d41a2",
+        storageBucket: "trackboard-d41a2.appspot.com",
+        messagingSenderId: "880705427344",
+        appId: "1:880705427344:web:43e253a149143cc9218515",
+        measurementId: "G-5GLK0MX33D",
+      };
+      // Initialize Firebase
+      firebase.initializeApp(firebaseConfig);
+      firebase.analytics();
+    </script>
 
     <script></script>
     <script src="s_rules.js"></script>

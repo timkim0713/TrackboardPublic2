@@ -91,7 +91,7 @@ h6 {
 }
 
 #header .logo img {
-  max-height: 65px;
+  max-height: 75px;
   max-width: 1000px;
 }
 
@@ -166,8 +166,7 @@ h6 {
   opacity: 0;
   visibility: hidden;
   padding: 10px 0;
-  background: #fff;
-  box-shadow: 0px 0px 30px rgba(127, 137, 161, 0.25);
+  background: rgb(180, 203, 204);
 
   transition: ease all 0.3s;
 }
@@ -176,8 +175,10 @@ h6 {
   opacity: 1;
   top: 100%;
   font-style: bold;
-  background: rgb(247, 247, 247);
+  background: rgb(180, 203, 204);
   visibility: visible;
+
+  transition: 0.5s;
 }
 
 .nav-menu .drop-down li {
@@ -190,16 +191,21 @@ h6 {
   padding: 10px 20px;
   font-size: 14px;
   text-transform: none;
-  color: #669eaf;
-  background: rgb(247, 247, 247);
-
+  color: #808080;
+  background: rgb(180, 203, 204);
   font-weight: 400;
+  transition: 0.5s;
+}
+
+#setting:hover {
+  color: red;
 }
 
 .nav-menu .drop-down ul a:hover,
 .nav-menu .drop-down ul .active > a,
 .nav-menu .drop-down ul li:hover > a {
-  font-weight: bold;
+  font-weight: bolder;
+
   color: #204e4e;
   transition: 0.5s;
 }
@@ -864,8 +870,9 @@ section {
   margin: 0;
   color: #b8b8b8;
   font-weight: 500;
-  font-size: 14px;
-  text-transform: uppercase;
+  font-size: 10px;
+  text-overflow: ellipsis;
+  /* text-transform: uppercase; */
 }
 
 /*--------------------------------------------------------------

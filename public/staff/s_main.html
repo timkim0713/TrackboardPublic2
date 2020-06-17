@@ -52,7 +52,12 @@
     </button>
 
     <div id="mySidebar" class="sidebar">
-      <a href="javascript:void(0)" class="closebtn" onclick="closeNav()"> x </a>
+      <a href="javascript:void(0)" class="closebtn" onclick="closeNav()"  style="
+      padding: 8px 8px 8px 32px;
+      text-decoration: none;
+      font-size: 25px;
+      box-shadow: 0px 0px 10px rgba(0, 0, 0, 0);
+    "> x </a>
       <a href="./s_requests.html">Poster Requests</a>
       <!-- <a href="./s_map.html">Campus Map</a> -->
       <a href="./s_boards.html">Bulletin Boards</a>
@@ -109,7 +114,7 @@
      <script>
        function editInfo(){
          $("#edit").append(
-          "<div class='alert alert-success alert-warning' id='submitAlert'>Sorry. The system has not  implemented proper log in system. Please contact the administrator.  </div>"
+          "<div class='alert alert-success alert-warning' id='submitAlert'>Sorry. The system has not implemented a proper log in system. Please contact the administrator.  </div>"
         );
         setTimeout(function(){ window.location.href = "s_main.html"; }, 3000);
        }

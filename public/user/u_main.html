@@ -55,7 +55,12 @@
       ☰
     </button>
     <div id="mySidebar" class="sidebar">
-      <a href="javascript:void(0)" class="closebtn" onclick="closeNav()"> x </a>
+      <a href="javascript:void(0)" class="closebtn" onclick="closeNav()"  style="
+      padding: 8px 8px 8px 32px;
+      text-decoration: none;
+      font-size: 25px;
+      box-shadow: 0px 0px 10px rgba(0, 0, 0, 0);
+    "> x </a>
       <a href="u_apply.html">Apply</a>
       <a href="u_history.html">History</a>
       <a href="u_rules.html">Poster Rules</a>
@@ -75,7 +80,7 @@
           <thead>
             <tr>
               <th>Account Name</th>
-              <td>Sample Name</td>
+              <td>Daekyung Kim</td>
             </tr>
           </thead>
           <tbody>
@@ -85,7 +90,7 @@
             </tr>
             <tr>
               <th>Email</td>
-              <td>student@stonybrook.edu</td>
+              <td>daekyung.kim@stonybrook.edu</td>
             </tr>
             <tr>
               <th>Profile Picture</td>
@@ -111,7 +116,7 @@
     <script>
       function editInfo(){
         $("#edit").append(
-         "<div class='alert alert-success alert-warning' id='submitAlert'>Sorry. The system has not  implemented proper log in system. Please contact the administrator.  </div>"
+         "<div class='alert alert-success alert-warning' id='submitAlert'>Sorry. The system has not implemented a proper log in system. Please contact the administrator.  </div>"
        );
        setTimeout(function(){ window.location.href = "u_main.html"; }, 3000);
       }

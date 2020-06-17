@@ -55,8 +55,20 @@
       ☰
     </button>
     <div id="mySidebar" class="sidebar">
-      <a href="javascript:void(0)" class="closebtn" onclick="closeNav()"> x </a>
-      <a href="u_apply.html">Apply</a>
+      <a
+        href="javascript:void(0)"
+        class="closebtn"
+        onclick="closeNav()"
+        style="
+          padding: 8px 8px 8px 32px;
+          text-decoration: none;
+          font-size: 25px;
+          box-shadow: 0px 0px 10px rgba(0, 0, 0, 0);
+        "
+      >
+        x
+      </a>
+      <a href="u_apply.html" class="currentPage">Apply</a>
       <a href="u_history.html">History</a>
       <a href="u_rules.html">Poster Rules</a>
     </div>
@@ -68,8 +80,6 @@
       >
         <form action="u_history.html">
           <div class="section-title">
-            <br />
-
             <h2>POSTER APPLICATION</h2>
           </div>
           <!-- <h1 class="page-header text-center">Poster Application</h1> -->
@@ -78,10 +88,9 @@
             the application. Poster rules can be at
             <a
               style="
-                font-size: 14px;
-                color: rgb(26, 168, 156);
+                font-size: 16px;
+                color: rgb(255, 193, 7);
                 font-weight: bold;
-                font-style: oblique;
               "
               href="u_rules.html"
             >
@@ -212,7 +221,7 @@
                       <table class="table" id="tableLocations"></table>
                     </div>
                     <button
-                      class="btn btn-info"
+                      class="btn btn-warning"
                       type="button"
                       data-toggle="modal"
                       data-target="#locationModal"
@@ -252,7 +261,7 @@
                   />
                   <br />
                   <label
-                    class="btn btn-info"
+                    class="btn btn-warning"
                     for="file"
                     style="cursor: pointer;"
                     >Upload Poster</label
@@ -267,7 +276,7 @@
           </div>
 
           <button
-            class="btn btn-success"
+            class="btn btn-info"
             id="submit"
             type="submit"
             style="float: right;"
@@ -306,7 +315,7 @@
             <br />
             <div class="dropdown" style="display: inline;">
               <button
-                class="btn btn-secondary dropdown-toggle"
+                class="btn btn-warning dropdown-toggle"
                 type="button"
                 id="locationCampus"
                 data-toggle="dropdown"
@@ -322,7 +331,7 @@
             </div>
             <div class="dropdown" style="display: inline;">
               <button
-                class="btn btn-secondary dropdown-toggle"
+                class="btn btn-info dropdown-toggle"
                 type="button"
                 id="locationBuilding"
                 data-toggle="dropdown"
@@ -345,7 +354,7 @@
             </div>
             <div class="dropdown" style="display: inline;">
               <button
-                class="btn btn-secondary dropdown-toggle"
+                class="btn btn-info dropdown-toggle"
                 type="button"
                 id="locationFloor"
                 data-toggle="dropdown"
@@ -362,7 +371,7 @@
             </div>
             <div class="dropdown" style="display: inline;">
               <button
-                class="btn btn-secondary dropdown-toggle"
+                class="btn btn-info dropdown-toggle"
                 type="button"
                 id="locationBoard"
                 data-toggle="dropdown"
@@ -383,7 +392,7 @@
           <div class="modal-footer">
             <button
               type="button"
-              class="btn btn-danger"
+              class="btn btn-secondary"
               data-dismiss="modal"
               aria-label="Cancel"
             >
@@ -391,7 +400,7 @@
             </button>
             <button
               type="button"
-              class="btn btn-success"
+              class="btn btn-info"
               data-dismiss="modal"
               aria-label="Add Location"
               onclick="addlocation()"
@@ -484,7 +493,7 @@
         cell3.innerText = floor.trim();
         cell4.innerText = board.trim();
         cell5.innerHTML =
-          "<button type='button' class='btn btn-danger' onclick='deleteRow()'>Delete</button>";
+          "<button type='button' class='btn btn-secondary' onclick='deleteRow()'>Delete</button>";
       }
 
       function deleteRow() {
