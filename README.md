@@ -6,7 +6,7 @@
 
 - Muhammad Bilal: muhammad.bilal@stonybrook.edu
 - Haseung Lee: haseung.lee@stonybrook.edu
-- Tim (Daekyung Kim): daekyung.kim@stonybrook.edu
+- Daekyung Kim: daekyung.kim@stonybrook.edu
 
 **Tentive User Population**  
 Suny Korea's Student Services Team  
@@ -34,6 +34,8 @@ Everyone mentioned can be reached in person, though email, or on Kakaotalk.
 
 **Link to Midfidelity Prototype Video :** https://drive.google.com/file/d/1xo0M_NCYO23rQD5WKPuatNUN1Xb4umxv/view?usp=sharing
 
-**Link to Trackboard Presentation Video:** https://youtu.be/OzdJ0XOCiHo
+**Link to Trackboard Presentation Video:** https://www.youtube.com/watch?v=lgTFhaVtrlI&t=
+
+**Link to Trackboard Final Report:** https://drive.google.com/file/d/18OQYHonEmXpslcT683e0opmdfcK8ika4/view?usp=sharing
 
 **Link to Trackboard:** https://trackboard-d41a2.web.app
